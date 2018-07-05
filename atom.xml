@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>YOJIAKU</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://yojiaku.github.io/"/>
+  <updated>2018-07-05T12:19:41.086Z</updated>
+  <id>https://yojiaku.github.io/</id>
+  
+  <author>
+    <name>yojiaku</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test_my_site</title>
+    <link href="https://yojiaku.github.io/2018/07/05/test-my-site/"/>
+    <id>https://yojiaku.github.io/2018/07/05/test-my-site/</id>
+    <published>2018-07-05T12:19:41.000Z</published>
+    <updated>2018-07-05T12:19:41.086Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://yojiaku.github.io/2018/07/05/hello-world/"/>
+    <id>https://yojiaku.github.io/2018/07/05/hello-world/</id>
+    <published>2018-07-05T12:17:30.782Z</published>
+    <updated>2018-07-05T12:17:30.782Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
