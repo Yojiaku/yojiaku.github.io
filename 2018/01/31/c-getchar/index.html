@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="YOJIAKU" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>由linear search引出的getchar()输入字符和数字问题 | YOJIAKU</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">YOJIAKU</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/01/31/c-getchar/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">由linear search引出的getchar()输入字符和数字问题</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-01-31T20:53:37+08:00">2018-01-31 20:53:37</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="由linear-search引出的getchar-输入字符和数字问题"><a href="#由linear-search引出的getchar-输入字符和数字问题" class="headerlink" title="由linear search引出的getchar()输入字符和数字问题"></a>由linear search引出的getchar()输入字符和数字问题</h1><p>@C—language </p>
+<hr>
+<blockquote>
+<p>起因：在考研之际，重新拾起快忘光了的C语言，大一的时候没有认真学习，现在还真的发现好多以前遗漏了的问题<br>主要内容：C语言的获取字符输入方法getchar()，以及如何读取int型变量<br>操作系统：windows<br>编译器：Cygwin的gnu环境</p>
+</blockquote>
+<h2 id="getchar-的用途"><a href="#getchar-的用途" class="headerlink" title="getchar()的用途"></a>getchar()的用途</h2><p>初始代码（<code>linearSearch.c</code>)<br><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LEN 10</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">linearSearch</span><span class="params">(<span class="keyword">int</span> [], <span class="keyword">int</span>, <span class="keyword">int</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> nums[LEN] = &#123;<span class="number">5</span>, <span class="number">10</span>, <span class="number">22</span>, <span class="number">32</span>, <span class="number">45</span>, <span class="number">67</span>, <span class="number">73</span>, <span class="number">98</span>, <span class="number">99</span>, <span class="number">101</span>&#125;;</span><br><span class="line">	<span class="keyword">int</span> desiredElem, location;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"Input the desired element, please: \n"</span>);</span><br><span class="line">	desiredElem = getchar();</span><br><span class="line">	</span><br><span class="line">	location = linearSearch(nums, LEN, desiredElem);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span>(location != <span class="number">-1</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"The desired element was found at index location %d.\n"</span>, location);</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"The desired element was not found in the list. the location is %d.\n"</span>, location);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// this function returns the location of key in the list</span></span><br><span class="line"><span class="comment">// a -1 is returned if the value is not found</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">linearSearch</span><span class="params">(<span class="keyword">int</span> <span class="built_in">list</span>[], <span class="keyword">int</span> size, <span class="keyword">int</span> key)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"key = %d.\n"</span>, key);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;size; i++)&#123;</span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">list</span>[i] == key)&#123;</span><br><span class="line">			<span class="keyword">return</span> i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>乍看感觉这段代码还像模像样的，但是在Cygwin中编译结果：<br><figure class="hljs highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ./cygwinTest.exe</span><br><span class="line">Input the desired element, please:</span><br><span class="line"><span class="number">10</span></span><br><span class="line">key = <span class="number">49</span>.</span><br><span class="line">The desired element was not found in the list. the location is -<span class="number">1</span>.</span><br></pre></td></tr></table></figure></p>
+<p>可以轻易发现是getchar()方法出了问题，下面看看getchar()：</p>
+<ul>
+<li>名称：getchar()</li>
+<li>定义：用在文件读取中，读取文件时要区分文件中有效数据与输入结束符的问题，C语言解决方法是，在没有输入时，getchar函数将返回一个特殊值，这个特殊值与任何实际字符都不同，成为“EOF”（文件结束符），为int类型</li>
+<li>返回值类型：int类型(对应字符的ASCII值)</li>
+<li>一般用法：<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">读一个字符</span><br><span class="line"><span class="keyword">while</span>(该字符不是EOF)</span><br><span class="line">    输出刚读入的字符</span><br><span class="line">    读下一个字符</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>转换为C：<br><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">/* copy input to output; 1st version */</span></span><br><span class="line">main()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> c;</span><br><span class="line">    c = getchar();</span><br><span class="line">    <span class="keyword">while</span>(c != EOF)&#123;</span><br><span class="line">        <span class="built_in">putchar</span>(c);</span><br><span class="line">        c = getchar();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以找到问题的原因了：因为我们是要得到int型，但是getchar返回的是输入字符的ASCII码，所以就出错了，应该使用scanf函数：<br><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;desiredElem);</span><br></pre></td></tr></table></figure></p>
+<p>编译结果如下：<br><figure class="hljs highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ./cygwinTest.exe</span><br><span class="line">Input the desired element, please:</span><br><span class="line"><span class="number">22</span></span><br><span class="line">key = <span class="number">22</span>.</span><br><span class="line">The desired element was found at index location <span class="number">2</span>.</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>下面引出今天叙述的重点：C语言如何从键盘输入数据</p>
+</blockquote>
+<h3 id="scanf"><a href="#scanf" class="headerlink" title="scanf()"></a>scanf()</h3><p>scanf == scan format，意思是格式化扫描，即从键盘获得用户输入<br>一般用法为：<br><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a, b;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a);  <span class="comment">//输入整数并赋值给变量a</span></span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;b);  <span class="comment">//输入整数并赋值给变量b</span></span><br></pre></td></tr></table></figure></p>
+<p>scanf与printf非常相似：<br><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;a, &amp;b);  <span class="comment">// 获取用户输入的两个整数，分别赋值给变量 a 和 b</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d %d"</span>, a, b);  <span class="comment">// 将变量 a 和 b 的是在显示器上输出。</span></span><br></pre></td></tr></table></figure></p>
+<p>它们都有格式控制字符串，都有变量列表。不同的是，scanf的变量前要带一个<code>&amp;</code>符号，称为“取地址符”，即获得变量在内存中的地址。<br>数据都是以二进制的形式保存在内存中的，字节（Byte）是最小的可操作单位。为了便于管理，我们给每个字节分配了一个编号，使用该字节时，只要知道编号就可以，就像每个学生都有学号，老师会随机抽取学号来让学生回答问题。字节的编号是有顺序的，从 0 开始，接下来是 1、2、3……<br>下图是 4G 内存中每个字节的编号（以十六进制表示）：</p>
+<p><img src="https://raw.githubusercontent.com/Yojiaku/hexoBlogPic/676fef3df90d1f2b094c7ae72fa1503eceb5adae/2018-1-31charStore.png" alt="字节编号"></p>
+<p>这个编号，就叫做<strong>地址（Address）</strong>。<code>int a;</code>    会在内存中分配四个字节的空间，我们将第一个字节的地址称为变量 a 的地址，也就是<code>&amp;a</code>的值。对于的整数、浮点数、字符，都要使用 &amp; 获取它们的地址，scanf 会根据地址把读取到的数据写入内存。<br>不妨将变量地址数出来看看：<br><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a=<span class="string">'F'</span>;</span><br><span class="line">    <span class="keyword">int</span> b=<span class="number">12</span>;</span><br><span class="line">    <span class="keyword">int</span> c=<span class="number">452</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"&amp;a=%#x, &amp;b=%#x, &amp;c=%#x\n"</span>, &amp;a, &amp;b, &amp;c);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>输出结果：<br><figure class="hljs highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ./scanfAddress.exe</span><br><span class="line">&amp;a=<span class="number">0</span>xffffcbfc, &amp;b=<span class="number">0</span>xffffcbf8, &amp;c=<span class="number">0</span>xffffcbf4</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://raw.githubusercontent.com/Yojiaku/hexoBlogPic/f516a7e74f92ebc1991939583757173687f6f561/2018-1-31charStore2.png" alt="abc变量内存地址"></p>
+<blockquote>
+<p>注意：这里看到的地址是虚拟地址，并不等于它在物理内存中的地址。虚拟地址是现代计算机因内存管理的需要才提出的概念。</p>
+</blockquote>
+<p>以上。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/C—language/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>C—language</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/01/30/hello-hexo/" rel="next" title="markdown语法归纳"><i class="fas fa-angle-left"></i><span class="nav-title">markdown语法归纳</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/02/01/linearSearch-questions/" rel="prev" title="JS实现linearSearch动画时遇到的知识点"><span class="nav-title">JS实现linearSearch动画时遇到的知识点</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.jpg" alt="yojiaku">
+  
+  <h1 class="author-name">yojiaku</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">27</a></div>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#由linear-search引出的getchar-输入字符和数字问题"><span class="toc-text">由linear search引出的getchar()输入字符和数字问题</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#getchar-的用途"><span class="toc-text">getchar()的用途</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#scanf"><span class="toc-text">scanf()</span></a></li></ol></li></ol></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:2329082643@qq.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/3286626050/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">yojiaku</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

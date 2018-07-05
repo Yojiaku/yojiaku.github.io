@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="YOJIAKU" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>JavaScript对象 | YOJIAKU</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">YOJIAKU</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/03/26/JavaScript对象/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">JavaScript对象</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T21:25:57+08:00">2018-03-26 21:25:57</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="JavaScript对象"><a href="#JavaScript对象" class="headerlink" title="JavaScript对象"></a>JavaScript对象</h1><p>Jscript 对象是属性和方法的集合。一个方法就是一个函数，是对象的成员。属性是一个值或一组值（以数组或对象的形式），是对象的成员。Jscript 支持四种类型的对象：内部对象、生成的对象、宿主给出的对象（如 Internet 浏览器中的 window 和 document）以及 ActiveX 对象（外部组件）。</p>
+<h2 id="作为数组的对象"><a href="#作为数组的对象" class="headerlink" title="作为数组的对象"></a>作为数组的对象</h2><p>在 Jscript 中，对象和数组几乎是以相同的方式处理的。对象和数组均可以被赋予任意值，实际上数组只是一种特殊的对象。数组和对象的区别在于数组有一个“奇妙的” length 属性，而对象没有。这意味着可以给数组的一个元素赋予比其他元素更大的值。例如，myArray[100] = “hello” — 然后 length 属性将自动地被更新为 101（新长度）。同样，如果修改数组的 length 属性，将删除不再是数组部分的元素。</p>
+<p>Jscript 中所有的对象均支持“expando”属性或那些可以在运行时动态添加和删除的属性。这些属性可以有包含数字的任意名称。如果属性的名称是简单的标识符&lt;&lt;参考标识符规则&gt;&gt;，可以在对象名称的后面加句点，例如：</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加两个 expando 属性，'name' 和 'age'</span></span><br><span class="line">myObj.name = <span class="string">"Fred"</span>;</span><br><span class="line">myObj.age = <span class="number">42</span>;</span><br></pre></td></tr></table></figure>
+<p>如果属性名称不是一个简单的标识符，或者在写脚本的时候不知道，可以在方括号中使用任意表达式来索引属性。在 Jscript 中所有 expando 属性的名称在被添加到对象之前被转换为字符串。</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加两个无法写在 object.property 语</span></span><br><span class="line"><span class="comment">// 法中的 expando 属性。</span></span><br><span class="line"><span class="comment">// 第一个属性包含无效字符（空格），</span></span><br><span class="line"><span class="comment">// 所以必须写在方括号里。</span></span><br><span class="line">myObj[<span class="string">"not a valid identifier"</span>] = <span class="string">"This is the property value"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二个 expando 名称是一个数字，</span></span><br><span class="line"><span class="comment">// 所以也必须写在方括号里。</span></span><br><span class="line">myObj[<span class="number">100</span>] = <span class="string">"100"</span>;</span><br></pre></td></tr></table></figure>
+<p>传统的作法是赋给数组元素以 0 开始的数字索引。这些数组元素与 length 属性相交互。然而，由于所有的数组也是对象，也支持 expando 属性。请注意，虽然如此，expando 属性并不以任何方式与 length 属性相交互。例如：</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 三个元素的数组</span></span><br><span class="line"><span class="keyword">var</span> myArray = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加数据</span></span><br><span class="line">myArray[<span class="number">0</span>] = <span class="string">"Hello"</span>;</span><br><span class="line">myArray[<span class="number">1</span>] = <span class="number">42</span>;</span><br><span class="line">myArray[<span class="number">2</span>] = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2000</span>, <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 显示数组的长度 3</span></span><br><span class="line"><span class="built_in">window</span>.alert(myArray.length);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加某些 expando 属性</span></span><br><span class="line">myArray.expando = <span class="string">"JScript!"</span>;</span><br><span class="line">myArray[<span class="string">"another Expando"</span>] = <span class="string">"Windows"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 仍然显示 3，因为两个 expando 属性</span></span><br><span class="line"><span class="comment">// 并不影响长度。</span></span><br><span class="line"><span class="built_in">window</span>.alert(myArray.length);</span><br></pre></td></tr></table></figure>
+<p>虽然 Jscript 并不直接支持多维数组，但是可以在数组元素中存储任意种类的数据 — 包含其他数组。所以通过在另一个数组的元素里存储其他数组可以得到多维数组的特性。例如，下面的代码为最大为 5 的数字建立了乘法表：</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 若是更大的表请改变本数</span></span><br><span class="line"><span class="keyword">var</span> iMaxNum = <span class="number">5</span>;</span><br><span class="line"><span class="comment">// 循环计数</span></span><br><span class="line"><span class="keyword">var</span> i, j;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 新数组。由于数组从 0 开始计数，</span></span><br><span class="line"><span class="comment">// 而不是 1，所以数组大小为 iMaxNum + 1。</span></span><br><span class="line"><span class="keyword">var</span> MultiplicationTable = <span class="keyword">new</span> <span class="built_in">Array</span>(iMaxNum + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 为每个主要的数做循环（表中的每一行）</span></span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= iMaxNum; i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 生成表中的列</span></span><br><span class="line">    MultiplicationTable[i] = <span class="keyword">new</span> <span class="built_in">Array</span>(iMaxNum + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将乘法的结果存在行中</span></span><br><span class="line">    <span class="keyword">for</span> (j = <span class="number">1</span>; j &lt;= iMaxNum; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        MultiplicationTable[i][j] = i * j;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.alert(MultiplicationTable[<span class="number">3</span>][<span class="number">4</span>]); <span class="comment">// 显示 12</span></span><br><span class="line"><span class="built_in">window</span>.alert(MultiplicationTable[<span class="number">5</span>][<span class="number">2</span>]); <span class="comment">// 显示 10</span></span><br><span class="line"><span class="built_in">window</span>.alert(MultiplicationTable[<span class="number">1</span>][<span class="number">4</span>]); <span class="comment">// 显示 4</span></span><br></pre></td></tr></table></figure>
+<h2 id="创建自己的对象"><a href="#创建自己的对象" class="headerlink" title="创建自己的对象"></a>创建自己的对象</h2><p>要创建自己的对象实例，必须首先为其定义一个构造函数。构造函数创建一个新对象，赋予对象属性，并在合适的时候赋予方法。例如，下面的示例为 pasta 对象定义了构造函数。注意 this 关键字的使用，它指向当前对象。</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// pasta 是有四个参数的构造器。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pasta</span>(<span class="params">grain, width, shape, hasEgg</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 是用什么粮食做的？</span></span><br><span class="line">    <span class="keyword">this</span>.grain = grain;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 多宽？（数值）</span></span><br><span class="line">    <span class="keyword">this</span>.width = width;     </span><br><span class="line"></span><br><span class="line">    <span class="comment">// 横截面形状？（字符串）</span></span><br><span class="line">    <span class="keyword">this</span>.shape = shape;   </span><br><span class="line"></span><br><span class="line"><span class="comment">// 是否加蛋黄？（boolean）</span></span><br><span class="line">    <span class="keyword">this</span>.hasEgg = hasEgg;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>定义了对象构造器后，用 new 运算符创建对象实例。</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> spaghetti = <span class="keyword">new</span> pasta(<span class="string">"wheat"</span>, <span class="number">0.2</span>, <span class="string">"circle"</span>, <span class="literal">true</span>);</span><br><span class="line"><span class="keyword">var</span> linguine = <span class="keyword">new</span> pasta(<span class="string">"wheat"</span>, <span class="number">0.3</span>, <span class="string">"oval"</span>, <span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<p>可以给对象实例添加属性以改变该实例，但是用相同的构造器生成的其他对象定义中并不包括这些属性，而且除非你特意添加这些属性那么在其他实例中并不显示出来。如果要将对象所有实例的附加属性显示出来，必须将它们添加到构造函数或构造器原型对象（原型在高级文档中讨论）中。</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// spaghetti 的附加属性。</span></span><br><span class="line">spaghetti.color = <span class="string">"pale straw"</span>;</span><br><span class="line">spaghetti.drycook = <span class="number">7</span>;</span><br><span class="line">spaghetti.freshcook = <span class="number">0.5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> chowFun = <span class="keyword">new</span> pasta(<span class="string">"rice"</span>, <span class="number">3</span>, <span class="string">"flat"</span>, <span class="literal">false</span>); </span><br><span class="line"><span class="comment">// chowFun 对象或其他现有的 pasta 对象</span></span><br><span class="line"><span class="comment">// 都没有添加到 spaghetti 对象</span></span><br><span class="line"><span class="comment">// 的三个新属性。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将属性‘foodgroup’加到 pasta 原型对象</span></span><br><span class="line"><span class="comment">// 中，这样 pasta 对象的所有实例都可以有该属性，</span></span><br><span class="line"><span class="comment">// 包括那些已经生成的实例。</span></span><br><span class="line">pasta.prototype.foodgroup = <span class="string">"carbohydrates"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 现在 spaghetti.foodgroup、chowFun.foodgroup，等等</span></span><br><span class="line"><span class="comment">// 均包含值“carbohydrates”。</span></span><br></pre></td></tr></table></figure>
+<h2 id="在定义中包含方法"><a href="#在定义中包含方法" class="headerlink" title="在定义中包含方法"></a>在定义中包含方法</h2><p>可以在对象的定义中包含方法（函数）。一种方法是在引用别处定义的函数的构造函数中添加一个属性。例如，下面的示例扩充上面定义的 pasta 构造函数以包含 toString 方法，该方法将在显示对象的值时被调用。</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// pasta 是有四个参数的构造器。</span></span><br><span class="line"><span class="comment">// 第一部分与上面相同。</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pasta</span>(<span class="params">grain, width, shape, hasEgg</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 用什么粮食做的？</span></span><br><span class="line">    <span class="keyword">this</span>.grain = grain;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 多宽？（数值）</span></span><br><span class="line">    <span class="keyword">this</span>.width = width;     </span><br><span class="line"></span><br><span class="line">    <span class="comment">// 横截面形状？（字符串）</span></span><br><span class="line">    <span class="keyword">this</span>.shape = shape;   </span><br><span class="line"></span><br><span class="line">    <span class="comment">// 是否加蛋黄？（boolean）</span></span><br><span class="line">    <span class="keyword">this</span>.hasEgg = hasEgg;  </span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这里添加 toString 方法（如下定义）。</span></span><br><span class="line">    <span class="comment">// 注意在函数的名称后没有加圆括号；</span></span><br><span class="line">    <span class="comment">// 这不是一个函数调用，而是</span></span><br><span class="line">    <span class="comment">// 对函数自身的引用。</span></span><br><span class="line">    <span class="keyword">this</span>.toString = pastaToString;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 实际的用来显示 past 对象内容的函数。 </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pastaToString</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 返回对象的属性。</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Grain: "</span> + <span class="keyword">this</span>.grain + <span class="string">"\n"</span> +</span><br><span class="line">        <span class="string">"Width: "</span> + <span class="keyword">this</span>.width + <span class="string">"\n"</span> +</span><br><span class="line">        <span class="string">"Shape: "</span> + <span class="keyword">this</span>.shape + <span class="string">"\n"</span> +</span><br><span class="line">        <span class="string">"Egg?: "</span> + <span class="built_in">Boolean</span>(<span class="keyword">this</span>.hasEgg);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> spaghetti = <span class="keyword">new</span> pasta(<span class="string">"wheat"</span>, <span class="number">0.2</span>, <span class="string">"circle"</span>, <span class="literal">true</span>);</span><br><span class="line"><span class="comment">// 将调用 toString() 并显示 spaghetti 对象</span></span><br><span class="line"><span class="comment">// 的属性。</span></span><br><span class="line"><span class="built_in">window</span>.alert(spaghetti);</span><br></pre></td></tr></table></figure>
+<h2 id="内部对象"><a href="#内部对象" class="headerlink" title="内部对象"></a>内部对象</h2><p>Microsoft Jscript 提供了 11 个内部（或“内置”）对象。它们是Array、Boolean、Date、Function、Global、Math、Number、Object、RegExp、Error 以及 String 对象。</p>
+<h3 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h3><p>用关键字 Array 生成数组时，Jscript 包含了 length 属性，该属性记录了数组入口数。如果没有给该属性指定值，则设置长度为 0 且数组没有入口点。如果指定一个数值，则将长度设置为该数。如果指定了不止一个参数，则这些参数被用作数组的入口。另外，参数的数目被赋给 length 属性。如下面的示例与前一个示例是等价的。</p>
+<p>当向用关键字 Array 生成的数组中添加元素时，Jscript 自动改变属性 length 的值。Jscript 中的数组索引总是以 0 开始，而不是 1，所以属性 length 通常比数组的最大索引大 1。</p>
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><p>在 Jscript 中，可以将字符串（和数）当作对象来处理。string 对象 有一些内置方法，可以和自己的字符串一起使用。其中一个是substring 方法，它返回字符串的一部分。该方法以两个数字作为参数。</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">aString = <span class="string">"0123456789"</span>;</span><br><span class="line"><span class="keyword">var</span> aChunk = aString.substring(<span class="number">4</span>, <span class="number">7</span>);  <span class="comment">// 将 aChunk 设为 "456"。</span></span><br><span class="line"><span class="keyword">var</span> aNotherChunk = aString.substring(<span class="number">7</span>, <span class="number">4</span>);  <span class="comment">// 将 aNotherChunk 设为 "456"。</span></span><br><span class="line"><span class="comment">// 使用上面生成数组的示例：</span></span><br><span class="line">firstLetter = theMonths[<span class="number">5</span>].substring(<span class="number">0</span>,<span class="number">1</span>);  <span class="comment">// 将变量 firstLetter 设为“J”。</span></span><br></pre></td></tr></table></figure>
+<p>String 对象的另一个属性是 length 属性。本属性包含了字符串中的字符数（空字符串为 0）。它是一个数值，可以直接在计算中使用。</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> howLong = <span class="string">"Hello World"</span>.length  <span class="comment">// 设置变量 howLong 为 11。</span></span><br></pre></td></tr></table></figure>
+<h3 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAX_VALUE</td>
+<td>可能的最大数大约为 1.79E+308；可以是正数或负数。（具体数值随系统不同而有微小差别。）</td>
+</tr>
+<tr>
+<td>MIN_VALUE</td>
+<td>可能的最小数大约为 2.22E-308；可以是正数或负数。（具体数值随系统不同而有微小差别。）</td>
+</tr>
+<tr>
+<td>NaN</td>
+<td>特殊非数量值，“不是数值”。</td>
+</tr>
+<tr>
+<td>POSITIVE_INFINITY</td>
+<td>比最大正数（Number.MAX_VALUE）还要大的任意正值自动被转换为此值，代表正无穷大。</td>
+</tr>
+<tr>
+<td>NEGATIVE_INFINITY</td>
+<td>比最小的负数（负的 Number.MAX_VALUE）还小的任意值被自动转换为此值，代表负无穷。</td>
+</tr>
+</tbody>
+</table>
+<p>Number.NaN 是一个特殊的属性，被定义为“不是数值”。例如被 0 除返回 NaN。试图解析一个无法被解析为数字的字符串同样返回 Number.NaN。把 NaN 与任何数值或本身作比较的结果都是不相等。不能通过与 Number.NaN 比较来测试 NaN 结果，而应该使用 isNaN() 函数。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/JavaScript/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>JavaScript</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/03/26/JavaScript控制语句/" rel="next" title="JavaScript控制语句"><i class="fas fa-angle-left"></i><span class="nav-title">JavaScript控制语句</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/03/26/JavaScript创建高级对象/" rel="prev" title="JavaScript创建高级对象"><span class="nav-title">JavaScript创建高级对象</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.jpg" alt="yojiaku">
+  
+  <h1 class="author-name">yojiaku</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">27</a></div>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#JavaScript对象"><span class="toc-text">JavaScript对象</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#作为数组的对象"><span class="toc-text">作为数组的对象</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#创建自己的对象"><span class="toc-text">创建自己的对象</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#在定义中包含方法"><span class="toc-text">在定义中包含方法</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#内部对象"><span class="toc-text">内部对象</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Array"><span class="toc-text">Array</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#String"><span class="toc-text">String</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Number"><span class="toc-text">Number</span></a></li></ol></li></ol></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:2329082643@qq.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/3286626050/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">yojiaku</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

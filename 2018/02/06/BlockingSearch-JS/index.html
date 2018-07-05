@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="YOJIAKU" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>由编写Blocking Search动画引出的知识点 | YOJIAKU</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">YOJIAKU</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/02/06/BlockingSearch-JS/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">由编写Blocking Search动画引出的知识点</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-06T01:29:00+08:00">2018-02-06 01:29:00</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="动画控制-定时器"><a href="#动画控制-定时器" class="headerlink" title="动画控制-定时器"></a>动画控制-定时器</h1><p>引用自：<a href="https://www.zhihu.com/question/31636244" target="_blank" rel="noopener">异步控制完成sleep功能</a><br>具体如下：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello'</span>)</span><br><span class="line">  <span class="keyword">await</span> sleep(<span class="number">1000</span>)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'world!'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sleep</span>(<span class="params">ms</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(resolve, ms))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test()</span><br></pre></td></tr></table></figure></p>
+<p>关键点：</p>
+<ul>
+<li>async</li>
+<li>await</li>
+<li>Promise对象</li>
+<li>setTimeout</li>
+<li>“=&gt;”箭头函数<br>在Blocking Search动画中的应用：<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sleep</span>(<span class="params">ms</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> setTimeout(resolve, ms));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">startBlockingSearch</span>(<span class="params">desired_letter, array</span>) </span>&#123;</span><br><span class="line">...</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>; i&lt;=BLOCK_NUM; i++) &#123;</span><br><span class="line">		...</span><br><span class="line">		<span class="keyword">await</span> sleep(SEARCH_INTERVAL_TIME/<span class="number">2</span>);</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>实现效果：<br><img src="https://raw.githubusercontent.com/Yojiaku/hexoBlogPic/8a643fbd83faf6fc6a39c34a2969631406021177/blockingSearch01.gif" alt="blocking search"></p>
+<h1 id="JS动态命名变量名"><a href="#JS动态命名变量名" class="headerlink" title="JS动态命名变量名"></a>JS动态命名变量名</h1><h2 id="法一：用eval"><a href="#法一：用eval" class="headerlink" title="法一：用eval"></a>法一：用eval</h2><p>例子如下：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Thread_num=<span class="number">5</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">1</span>;i&lt;=Thread_num;i++)&#123;</span><br><span class="line"><span class="built_in">eval</span>(<span class="string">"var set_"</span> + i + <span class="string">"="</span> + i);</span><br><span class="line">&#125;</span><br><span class="line">alert(set_5);</span><br></pre></td></tr></table></figure></p>
+<p>但是此方法有一个缺点：eval函数占用内存，建议用法二</p>
+<h2 id="法二：用数组"><a href="#法二：用数组" class="headerlink" title="法二：用数组"></a>法二：用数组</h2><p>例子如下：<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var Thread_num=5;</span><br><span class="line">var arr=[];</span><br><span class="line">for(var i=1;i&lt;=Thread_num;i++)&#123;</span><br><span class="line">arr[i] = i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="在Blocking-Search动画中的应用："><a href="#在Blocking-Search动画中的应用：" class="headerlink" title="在Blocking Search动画中的应用："></a>在Blocking Search动画中的应用：</h2><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ID_index=[];</span><br><span class="line"><span class="keyword">for</span> (i=<span class="number">1</span>; i&lt;=BLOCK_NUM; i++) &#123;</span><br><span class="line">	...</span><br><span class="line">	ID_index[i] = <span class="keyword">new</span> ID(key, start, end);</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"ID_index"</span>+i+<span class="string">": key = "</span>+key+<span class="string">" start = "</span>+start+<span class="string">" end = "</span>+end);</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="JS中构建结构体数组"><a href="#JS中构建结构体数组" class="headerlink" title="JS中构建结构体数组"></a>JS中构建结构体数组</h1><h2 id="在Blocking-Search动画中的应用：-1"><a href="#在Blocking-Search动画中的应用：-1" class="headerlink" title="在Blocking Search动画中的应用："></a>在Blocking Search动画中的应用：</h2><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 块结构</span></span><br><span class="line"><span class="keyword">var</span> ID = <span class="function"><span class="keyword">function</span>(<span class="params">key, start, end</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">var</span> self = <span class="keyword">this</span>;</span><br><span class="line">	self.key = key;</span><br><span class="line">	self.start = start;</span><br><span class="line">	self.end = end;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">startBlockingSearch</span>(<span class="params">desired_letter, array</span>) </span>&#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">var</span> key, start, end;</span><br><span class="line">	<span class="keyword">var</span> ID_index=[];</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">1</span>; i&lt;=BLOCK_NUM; i++) &#123;</span><br><span class="line">		start = j+<span class="number">1</span>;</span><br><span class="line">		j = j+<span class="number">1</span>;</span><br><span class="line">		end = j+<span class="number">4</span>;</span><br><span class="line">		j = j+<span class="number">4</span>;</span><br><span class="line">		key = array[j];</span><br><span class="line">		ID_index[i] = <span class="keyword">new</span> ID(key, start, end);</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">"ID_index"</span>+i+<span class="string">": key = "</span>+key+<span class="string">" start = "</span>+start+<span class="string">" end = "</span>+end);</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中 <code>ID_index = []</code> 就是构建的结构体数组。</p>
+<h1 id="原生JS如何删除Ul下class为active的li-（没有用到，偶然搜到）"><a href="#原生JS如何删除Ul下class为active的li-（没有用到，偶然搜到）" class="headerlink" title="原生JS如何删除Ul下class为active的li （没有用到，偶然搜到）"></a>原生JS如何删除Ul下class为active的li （没有用到，偶然搜到）</h1><p>比如说，ul下有5个li，其中3个class是active的，我要把这3个元素节点删除，我写了这样的代码<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">oBtn2.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> aActive=oUl.getElementsByClassName(<span class="string">'active'</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;aActive.length;i++)&#123;</span><br><span class="line">        oUl.removeChild(aActive[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当点击btn2时，首先获取oUl下所有class为active的li，然后遍历删除，我后来大概知道是哪里出的问题，就是每次删除一个后，aActive的个数变了，因为aActive是动态的。<br>我才学js不久，只知道removeChild删除单个节点的方法，还有什么简单的办法可以实现删除一堆节点么？</p>
+<p>回答一：<br>将aActive长度保存即可，for(var i=0,len=aActive.length; i&lt;len; i++){oUl.removeChild(aActive[0])}，要注意的是低版本ie不支持getElementsByClassName方法，如果要兼容，要遍历所有节点查找。getElementsByTagName,getElementsByName这些方法都是动态，实时的，即是会根据节点的增删变化而变化的</p>
+<p>回答二：<br>数组的splice()方法,aActive.splice(0,3)</p>
+<p>回答三：<br><code>html</code><br><figure class="hljs highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>JS Bin<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">'a'</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">'a'</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">'a'</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><code>javascript</code><br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn=<span class="built_in">document</span>.querySelector(<span class="string">'button'</span>);</span><br><span class="line"><span class="keyword">var</span> activeIlists=<span class="built_in">document</span>.getElementsByClassName(<span class="string">'a'</span>);</span><br><span class="line"><span class="keyword">var</span> ul=<span class="built_in">document</span>.querySelector(<span class="string">'ul'</span>);</span><br><span class="line">btn.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(activeIlists.length&gt;<span class="number">0</span>)&#123;</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;=<span class="number">4</span>;i++)&#123;     </span><br><span class="line">     ul.removeChild(activeIlists[i]);</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>实现效果：<a href="http://jsbin.com/coxejo/1/edit?html,js,output" target="_blank" rel="noopener">点击这里查看</a></p>
+<p>回答四：从后往前删除，这样即使删除了li，也不会影响前面节点的位置。<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;<span class="xml"><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">&lt;ul&gt;</span></span><br><span class="line"><span class="regexp">    &lt;li class="active"&gt;1&lt;/</span>li&gt;</span><br><span class="line">    &lt;li &gt;<span class="number">2</span>&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">    &lt;li class="active"&gt;3&lt;/</span>li&gt;</span><br><span class="line">    &lt;li &gt;<span class="number">4</span>&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">    &lt;li class="active"&gt;5&lt;/</span>li&gt;</span><br><span class="line">&lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">function removeByClass()</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">        var ul = document.getElementsByTagName('ul')[0];</span></span><br><span class="line"><span class="string">        var _li = ul.getElementsByTagName('li');</span></span><br><span class="line"><span class="string">        </span></span><br><span class="line"><span class="string">        for(var i = _li.length -1; i &gt;= 0; i--)&#123;</span></span><br><span class="line"><span class="string">            if(_li[i].className =='active')&#123;</span></span><br><span class="line"><span class="string">                ul.removeChild(_li[i]);</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">window.onload = removeByClass();</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>主要重点是removeChild 函数对DOM的即时影响。</strong></p>
+<h1 id="JS在数组前添加元素"><a href="#JS在数组前添加元素" class="headerlink" title="JS在数组前添加元素"></a>JS在数组前添加元素</h1><p>用unshift方法：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]; </span><br><span class="line"><span class="keyword">var</span> b = a.unshift(<span class="number">0</span>);</span><br></pre></td></tr></table></figure></p>
+<p>则 a = [0,1,2,3,4,5];<br>b=6,即添加后数组长度</p>
+<h1 id="JavaScript-String-slice-函数详解"><a href="#JavaScript-String-slice-函数详解" class="headerlink" title="JavaScript String.slice() 函数详解"></a>JavaScript String.slice() 函数详解</h1><p><a href="http://www.365mini.com/page/javascript-string-slice.htm" target="_blank" rel="noopener">点击这里</a></p>
+<h1 id="getElementsByClassName-方法"><a href="#getElementsByClassName-方法" class="headerlink" title="getElementsByClassName() 方法"></a>getElementsByClassName() 方法</h1><p><a href="http://www.runoob.com/jsref/met-document-getelementsbyclassname.html" target="_blank" rel="noopener">点击这里</a></p>
+<h1 id="CSS-变量"><a href="#CSS-变量" class="headerlink" title="CSS 变量"></a>CSS 变量</h1><p><a href="http://blog.csdn.net/u011043843/article/details/46480677" target="_blank" rel="noopener">点击这里</a></p>
+<h2 id="在Blocking-Search动画中的应用：-2"><a href="#在Blocking-Search动画中的应用：-2" class="headerlink" title="在Blocking Search动画中的应用："></a>在Blocking Search动画中的应用：</h2><figure class="hljs highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 定义一些颜色变量 */</span></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">	<span class="comment">/* 分块区 */</span></span><br><span class="line">	--block_1-color: FireBrick;</span><br><span class="line">	<span class="selector-tag">--block_2-color</span>: <span class="selector-tag">DarkSeaGreen</span>;</span><br><span class="line">	<span class="selector-tag">--block_3-color</span>: <span class="selector-tag">Bisque</span>;</span><br><span class="line">	<span class="selector-tag">--block_4-color</span>: <span class="selector-tag">Aquamarine</span>;</span><br><span class="line">	<span class="selector-tag">--block_5-color</span>: <span class="selector-tag">CornflowerBlue</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-class">.data</span> <span class="selector-tag">li</span><span class="selector-class">.block_1</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="built_in">var</span>(--block_1-color);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-class">.data</span> <span class="selector-tag">li</span><span class="selector-class">.block_2</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="built_in">var</span>(--block_2-color);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-class">.data</span> <span class="selector-tag">li</span><span class="selector-class">.block_3</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="built_in">var</span>(--block_3-color);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-class">.data</span> <span class="selector-tag">li</span><span class="selector-class">.block_4</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="built_in">var</span>(--block_4-color);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-class">.data</span> <span class="selector-tag">li</span><span class="selector-class">.block_5</span> &#123;</span><br><span class="line">	<span class="attribute">color</span>: <span class="built_in">var</span>(--block_5-color);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </main>
+    <footer class="post-footer">
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/02/05/remove-node-in-js/" rel="next" title="删除元素所有子节点"><i class="fas fa-angle-left"></i><span class="nav-title">删除元素所有子节点</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/02/06/BlockingSearch-JS2/" rel="prev" title="由Blocking Search动画引出的知识点2"><span class="nav-title">由Blocking Search动画引出的知识点2</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.jpg" alt="yojiaku">
+  
+  <h1 class="author-name">yojiaku</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">27</a></div>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#动画控制-定时器"><span class="toc-text">动画控制-定时器</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#JS动态命名变量名"><span class="toc-text">JS动态命名变量名</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#法一：用eval"><span class="toc-text">法一：用eval</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#法二：用数组"><span class="toc-text">法二：用数组</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#在Blocking-Search动画中的应用："><span class="toc-text">在Blocking Search动画中的应用：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#JS中构建结构体数组"><span class="toc-text">JS中构建结构体数组</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#在Blocking-Search动画中的应用：-1"><span class="toc-text">在Blocking Search动画中的应用：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#原生JS如何删除Ul下class为active的li-（没有用到，偶然搜到）"><span class="toc-text">原生JS如何删除Ul下class为active的li （没有用到，偶然搜到）</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#JS在数组前添加元素"><span class="toc-text">JS在数组前添加元素</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#JavaScript-String-slice-函数详解"><span class="toc-text">JavaScript String.slice() 函数详解</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#getElementsByClassName-方法"><span class="toc-text">getElementsByClassName() 方法</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#CSS-变量"><span class="toc-text">CSS 变量</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#在Blocking-Search动画中的应用：-2"><span class="toc-text">在Blocking Search动画中的应用：</span></a></li></ol></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:2329082643@qq.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/3286626050/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">yojiaku</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

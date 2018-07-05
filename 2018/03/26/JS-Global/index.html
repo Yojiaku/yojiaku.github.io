@@ -47,7 +47,7 @@
     
     
 <link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/archive.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
@@ -80,7 +80,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>归档 | YOJIAKU</title>
+    <title>JS-Global | YOJIAKU</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -117,141 +117,85 @@
         <div class="main-container">
           <div class="content">
             
-<div id="archive" class="archive">
-  <h1 class="archive-counter">
-    
-    你已经写了 27 篇文章！
-    
-  </h1>
+<div id="post" class="post">
   
-  
-  
-  
-  <h1 class="archive-title">2018</h1>
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/07/05/test-my-site/" itemprop="url">test_my_site</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-05T20:19:41+08:00">07-05</time>
-    </span>
-    
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/03/26/JS-Global/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">JS-Global</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:52:06+08:00">2018-03-26 23:52:06</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="JavaScript-Global方法"><a href="#JavaScript-Global方法" class="headerlink" title="JavaScript Global方法"></a>JavaScript Global方法</h1><h2 id="isNaN方法"><a href="#isNaN方法" class="headerlink" title="isNaN方法"></a>isNaN方法</h2><p>返回一个 Boolean 值，指明提供的值是否是保留值 NaN （不是数字）。 </p>
+<p>isNaN(numValue)</p>
+<p>必选项 numvalue 参数为要检查是否为 NAN 的值。 </p>
+<p>说明<br>如果值是 NaN， 那么 isNaN 函数返回 true ，否则返回 false 。 使用这个函数的典型情况是检查 parseInt 和 parseFloat 方法的返回值。 </p>
+<p>还有一种办法，变量可以与它自身进行比较。 如果比较的结果不等，那么它就是 NaN 。 这是因为 NaN 是唯一与自身不等的值。 </p>
+<h2 id="isFinite-方法"><a href="#isFinite-方法" class="headerlink" title="isFinite 方法"></a>isFinite 方法</h2><p>返回一个 Boolean 值,指明所提供的数字是否是有限的。</p>
+<p>isFinite(number)</p>
+<p>必选项 number 参数为任意的数值。 </p>
+<p>说明<br>如果 number 不是 NaN 、负无穷或正无穷，那么 isFinite 方法将返回 true 。 如果是这三种情况，函数返回 false 。 </p>
+<h2 id="parseInt-方法"><a href="#parseInt-方法" class="headerlink" title="parseInt 方法"></a>parseInt 方法</h2><p>返回由字符串转换得到的整数。</p>
+<p>parseInt(numString, [radix])</p>
+<p>参数<br>numString</p>
+<p>必选项。要转换为数字的字符串。</p>
+<p>radix</p>
+<p>可选项。在 2 和 36 之间的表示 numString 所保存数字的进制的值。如果没有提供，则前缀为 ‘0x’ 的字符串被当作十六进制，前缀为 ‘0’ 的字符串被当作八进制。所有其它字符串都被当作是十进制的。</p>
+<p>说明<br>parseInt 方法返回与保存在 numString 中的数字值相等的整数。如果 numString 的前缀不能解释为整数，则返回 NaN（而不是数字）。 </p>
+<p>parseInt(“abc”)     // 返回 NaN。<br>parseInt(“12abc”)   // 返回 12。<br>可以用 isNaN 方法检测 NaN。 </p>
+<h2 id="parseFloat-方法"><a href="#parseFloat-方法" class="headerlink" title="parseFloat 方法"></a>parseFloat 方法</h2><p>返回由字符串转换得到的浮点数。 </p>
+<p>parseFloat(numString)</p>
+<p>必选项 numString 参数是包含浮点数的字符串。 </p>
+<p>说明<br>parseFloat 方法返回与 numString 中保存的数相等的数字表示。如果 numString 的前缀不能解释为浮点数，则返回 NaN （而不是数字）。</p>
+<p>parseFloat(“abc”)      // 返回 NaN。<br>parseFloat(“1.2abc”)   // 返回 1.2。<br>可以用 isNaN 方法检测 NaN。 </p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/JavaScript/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>JavaScript</a>
+        
+      </div>
+      
+    </footer>
   </article>
   
   
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/07/05/hello-world/" itemprop="url">Hello World</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-05T20:17:30+08:00">07-05</time>
-    </span>
-    
-  </article>
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/03/26/JS函数创建/" rel="next" title="JS函数创建"><i class="fas fa-angle-left"></i><span class="nav-title">JS函数创建</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/03/26/JS逻辑与运算符/" rel="prev" title="JS逻辑与运算符"><span class="nav-title">JS逻辑与运算符</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
   
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/28/BinarySearch/" itemprop="url">Algorithm-二维数组中的查找-BinarySearch</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-28T13:17:34+08:00">03-28</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS逻辑或运算符/" itemprop="url">JS逻辑或运算符</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:59:12+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS逻辑与运算符/" itemprop="url">JS逻辑与运算符</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:58:01+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS-Global/" itemprop="url">JS-Global</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:52:06+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS函数创建/" itemprop="url">JS函数创建</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:46:44+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS-throw语句/" itemprop="url">JS-throw语句</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:42:26+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS日期时间/" itemprop="url">JS日期时间</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:23:55+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JSNull/" itemprop="url">JSNull</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:20:19+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="page-number" href="/archives/2018/page/3/">3</a><a class="extend next" rel="next" href="/archives/2018/page/2/"><i class="fas fa-angle-right"></i></a>
-  </nav>
   
 </div>
 
@@ -294,6 +238,20 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#JavaScript-Global方法"><span class="toc-text">JavaScript Global方法</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#isNaN方法"><span class="toc-text">isNaN方法</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#isFinite-方法"><span class="toc-text">isFinite 方法</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#parseInt-方法"><span class="toc-text">parseInt 方法</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#parseFloat-方法"><span class="toc-text">parseFloat 方法</span></a></li></ol></li></ol></div>
+</div>
+
+
+
     
     
     

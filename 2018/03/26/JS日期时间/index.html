@@ -47,7 +47,7 @@
     
     
 <link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/archive.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
@@ -80,7 +80,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>归档 | YOJIAKU</title>
+    <title>JS日期时间 | YOJIAKU</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -117,141 +117,125 @@
         <div class="main-container">
           <div class="content">
             
-<div id="archive" class="archive">
-  <h1 class="archive-counter">
-    
-    你已经写了 27 篇文章！
-    
-  </h1>
+<div id="post" class="post">
   
-  
-  
-  
-  <h1 class="archive-title">2018</h1>
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/07/05/test-my-site/" itemprop="url">test_my_site</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-05T20:19:41+08:00">07-05</time>
-    </span>
-    
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/03/26/JS日期时间/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">JS日期时间</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:23:55+08:00">2018-03-26 23:23:55</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="JavaScript日期和时间"><a href="#JavaScript日期和时间" class="headerlink" title="JavaScript日期和时间"></a>JavaScript日期和时间</h1><h2 id="Date对象"><a href="#Date对象" class="headerlink" title="Date对象"></a>Date对象</h2><p>启用基本存储器并取得日期和时间。</p>
+<p>dateObj = new Date()<br>dateObj = new Date(dateVal)<br>dateObj = new Date(year, month, date[, hours[, minutes[, seconds[,ms]]]]) </p>
+<p>dateVal</p>
+<p>必选项。如果是数字值，dateVal 表示指定日期与 1970 年 1 月 1 日午夜间全球标准时间 的毫秒数。如果是字符串，则 dateVal 按照 parse 方法中的规则进行解析。dateVal 参数也可以是从某些 ActiveX(R) 对象返回的 VT_DATE 值</p>
+<p>year</p>
+<p>必选项。完整的年份，比如，1976（而不是 76）。</p>
+<p>month</p>
+<p>必选项。表示的月份，是从 0 到 11 之间的整数（ 1 月至 12 月）。</p>
+<p>date</p>
+<p>必选项。表示日期，是从 1 到 31 之间的整数。</p>
+<p>hours</p>
+<p>可选项。 如果提供了 minutes 则必须给出。表示小时，是从 0 到 23 的整数（午夜到 11pm）。</p>
+<p>Date 对象保存以毫秒为单位表示特定时间段。如果某个参数的值大于其范围或为负数，则存储的其他值将做相应的调整。例如，如果指定 150 秒，JScript 将该数字重新定义为 2 分 30 秒。 </p>
+<p>如果数字为 NaN，则表示该对象不代表特定的时间段。如果未向 Date 对象传递参数，它将被初始化为当前时间 (UTC)。在能够使用该对象前必须为其赋值。 </p>
+<p>Date 对象能够表示的日期范围约等于 1970 年 1 月 1 日前后各 285,616 年。 </p>
+<p>Date 对象具有两个不创建 Date 对象就可以调用的静态方法。它们是 parse 和 UTC。</p>
+<h2 id="getDate方法"><a href="#getDate方法" class="headerlink" title="getDate方法"></a>getDate方法</h2><p>返回Date对象中庸本地时间表示的一个月的日期值</p>
+<p>dateObj.getDate() </p>
+<p>要获取用全球标准时间 (UTC)表示的日期值，请使用 getUTCDate 方法。 </p>
+<p>返回值是一个处于 1 到 31 之间的整数，它代表了相应的 Date 对象中的日期值。</p>
+<h2 id="getDay方法"><a href="#getDay方法" class="headerlink" title="getDay方法"></a>getDay方法</h2><p>返回 Date 对象中用本地时间表示的一周中的日期值。 </p>
+<p>dateObj.getDay()</p>
+<p>要获取用全球标准时间 (UTC)表示的一周中日期值，请使用 getUTCDay 方法。</p>
+<p>getDay 方法所返回的值是一个处于 0 到 6 之间的整数，它代表了一周中的某一天，返回值与一周中日期的对应关系如下： </p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>星期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>星期天</td>
+</tr>
+<tr>
+<td>1</td>
+<td>星期一</td>
+</tr>
+<tr>
+<td>2</td>
+<td>星期二</td>
+</tr>
+<tr>
+<td>3</td>
+<td>星期三</td>
+</tr>
+<tr>
+<td>4</td>
+<td>星期四</td>
+</tr>
+<tr>
+<td>5</td>
+<td>星期五</td>
+</tr>
+<tr>
+<td>6</td>
+<td>星期六</td>
+</tr>
+</tbody>
+</table>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/JavaScript/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>JavaScript</a>
+        
+      </div>
+      
+    </footer>
   </article>
   
   
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/07/05/hello-world/" itemprop="url">Hello World</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-05T20:17:30+08:00">07-05</time>
-    </span>
-    
-  </article>
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/03/26/JSNull/" rel="next" title="JSNull"><i class="fas fa-angle-left"></i><span class="nav-title">JSNull</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/03/26/JS-throw语句/" rel="prev" title="JS-throw语句"><span class="nav-title">JS-throw语句</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
   
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/28/BinarySearch/" itemprop="url">Algorithm-二维数组中的查找-BinarySearch</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-28T13:17:34+08:00">03-28</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS逻辑或运算符/" itemprop="url">JS逻辑或运算符</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:59:12+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS逻辑与运算符/" itemprop="url">JS逻辑与运算符</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:58:01+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS-Global/" itemprop="url">JS-Global</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:52:06+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS函数创建/" itemprop="url">JS函数创建</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:46:44+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS-throw语句/" itemprop="url">JS-throw语句</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:42:26+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS日期时间/" itemprop="url">JS日期时间</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:23:55+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JSNull/" itemprop="url">JSNull</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:20:19+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="page-number" href="/archives/2018/page/3/">3</a><a class="extend next" rel="next" href="/archives/2018/page/2/"><i class="fas fa-angle-right"></i></a>
-  </nav>
   
 </div>
 
@@ -294,6 +278,20 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#JavaScript日期和时间"><span class="toc-text">JavaScript日期和时间</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Date对象"><span class="toc-text">Date对象</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#getDate方法"><span class="toc-text">getDate方法</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#getDay方法"><span class="toc-text">getDay方法</span></a></li></ol></li></ol></div>
+</div>
+
+
+
     
     
     

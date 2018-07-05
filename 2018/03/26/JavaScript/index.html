@@ -47,7 +47,7 @@
     
     
 <link rel="stylesheet" type="text/css" href="/css/page.css">
-<link rel="stylesheet" type="text/css" href="/css/archive.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
 
     <link rel="stylesheet" type="text/css" href="/css/custom.css">
     <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
@@ -80,7 +80,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>归档 | YOJIAKU</title>
+    <title>JavaScript变量 | YOJIAKU</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -117,141 +117,81 @@
         <div class="main-container">
           <div class="content">
             
-<div id="archive" class="archive">
-  <h1 class="archive-counter">
-    
-    你已经写了 27 篇文章！
-    
-  </h1>
+<div id="post" class="post">
   
-  
-  
-  
-  <h1 class="archive-title">2018</h1>
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/07/05/test-my-site/" itemprop="url">test_my_site</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-05T20:19:41+08:00">07-05</time>
-    </span>
-    
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/03/26/JavaScript/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">JavaScript变量</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T20:45:53+08:00">2018-03-26 20:45:53</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="JavaScript变量"><a href="#JavaScript变量" class="headerlink" title="JavaScript变量"></a>JavaScript变量</h1><h2 id="名称规则"><a href="#名称规则" class="headerlink" title="名称规则"></a>名称规则</h2><ul>
+<li>第一个字符必须是一个 ASCII 字母（大小写均可），或一个下划线( _ )。注意第一个字符不能是数字。 </li>
+<li>后续的字符必须是字母、数字或下划线。 </li>
+<li>变量名称一定不能是 保留字。</li>
+</ul>
+<h2 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h2><ol>
+<li>当药声明一个变量并进行初始化，但又不想指定任何特殊值，可以赋为NULL。</li>
+<li>如果声明了一个变量却没有对其赋值，该变量存在，其值为 <code>undefined</code>。</li>
+</ol>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> currentCount;</span><br><span class="line"><span class="keyword">var</span> finalCount = <span class="number">1</span> * currentCount; <span class="comment">// finalCount 的值为 NaN，因为 currentCount 为 undefined。</span></span><br></pre></td></tr></table></figure>
+<p>注意：任何在undefined上的运算结果都为NaN。</p>
+<ol start="3">
+<li>可以不用 <code>var</code> 关键字声明变量，并赋值–（隐式声明）。</li>
+<li>不能使用未经过声明的变量。</li>
+</ol>
+<h2 id="NULL和undefined的区别"><a href="#NULL和undefined的区别" class="headerlink" title="NULL和undefined的区别"></a>NULL和undefined的区别</h2><p>注意在 JScript 中 null 和 undefined 的主要区别是 null 的操作象数字 0，而 undefined 的操作象特殊值NaN （不是一个数字）。对 null 值和 undefined 值作比较总是相等的。<br>例如：<br>var bestAge = null;var muchTooOld = 3 * bestAge; // muchTooOld 的值为 0。</p>
+<h2 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h2><p>JScript 是一种自由类型的语言。它的变量没有预定类型（相对于强类型语言，如 C++）。相反，JScript 变量的类型相应于他们包含的值的类型。这种操作的好处是能将值作为另一类型处理。</p>
+<p>要想显式地将字符串转换为整数，使用 parseInt 方法。要想显式地将字符串转换为数字，使用 parseFloat 方法。请注意，比较大小时字符串自动转换为相等的数字，但加法（连接）运算时保留为字符串。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/JavaScript/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>JavaScript</a>
+        
+      </div>
+      
+    </footer>
   </article>
   
   
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/07/05/hello-world/" itemprop="url">Hello World</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-05T20:17:30+08:00">07-05</time>
-    </span>
-    
-  </article>
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/02/11/CustomEvents-js/" rel="next" title="对CustomEvents.js文件的解读"><i class="fas fa-angle-left"></i><span class="nav-title">对CustomEvents.js文件的解读</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/03/26/JavaScript数据类型/" rel="prev" title="JavaScript数据类型"><span class="nav-title">JavaScript数据类型</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
   
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/28/BinarySearch/" itemprop="url">Algorithm-二维数组中的查找-BinarySearch</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-28T13:17:34+08:00">03-28</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS逻辑或运算符/" itemprop="url">JS逻辑或运算符</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:59:12+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS逻辑与运算符/" itemprop="url">JS逻辑与运算符</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:58:01+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS-Global/" itemprop="url">JS-Global</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:52:06+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS函数创建/" itemprop="url">JS函数创建</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:46:44+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS-throw语句/" itemprop="url">JS-throw语句</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:42:26+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JS日期时间/" itemprop="url">JS日期时间</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:23:55+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <article class="archive-article card animate" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="/2018/03/26/JSNull/" itemprop="url">JSNull</a>
-    </h1>
-    
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:20:19+08:00">03-26</time>
-    </span>
-    
-  </article>
-  
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="page-number" href="/archives/2018/page/3/">3</a><a class="extend next" rel="next" href="/archives/2018/page/2/"><i class="fas fa-angle-right"></i></a>
-  </nav>
   
 </div>
 
@@ -294,6 +234,20 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#JavaScript变量"><span class="toc-text">JavaScript变量</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#名称规则"><span class="toc-text">名称规则</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#变量声明"><span class="toc-text">变量声明</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#NULL和undefined的区别"><span class="toc-text">NULL和undefined的区别</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#强制转换"><span class="toc-text">强制转换</span></a></li></ol></li></ol></div>
+</div>
+
+
+
     
     
     

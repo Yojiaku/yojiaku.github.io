@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="YOJIAKU" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>由Blocking Search动画引出的知识点2 | YOJIAKU</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">YOJIAKU</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/02/06/BlockingSearch-JS2/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">由Blocking Search动画引出的知识点2</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-06T23:51:04+08:00">2018-02-06 23:51:04</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="调用含有-setInterval-的函数时异步问题的解决"><a href="#调用含有-setInterval-的函数时异步问题的解决" class="headerlink" title="调用含有 setInterval 的函数时异步问题的解决"></a>调用含有 setInterval 的函数时异步问题的解决</h1><p>重点：使用 async/await 与 Promise 对象</p>
+<h2 id="在代码中引用"><a href="#在代码中引用" class="headerlink" title="在代码中引用"></a>在代码中引用</h2><ul>
+<li>引用前（有问题的代码）<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> linearSearch = <span class="function"><span class="keyword">function</span> (<span class="params">desired_letter, array, flag</span>) </span>&#123;</span><br><span class="line">	...</span><br><span class="line">	linear_interval = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">		...</span><br><span class="line">		<span class="keyword">if</span> (current_index &gt;= array.length) &#123;</span><br><span class="line">			clearInterval(linear_interval);</span><br><span class="line">			<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		...</span><br><span class="line">		<span class="keyword">if</span> (current_value &gt;= desired_letter) &#123;</span><br><span class="line">			clearInterval(linear_interval);</span><br><span class="line">			...</span><br><span class="line">			<span class="keyword">return</span> current_index;</span><br><span class="line">		&#125;</span><br><span class="line">		current_index += <span class="number">1</span>;</span><br><span class="line">	&#125;, SEARCH_INTERVAL_TIME/<span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ## Blocking Search</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">startBlockingSearch</span>(<span class="params">desired_letter, array</span>) </span>&#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">const</span> which_block = linearSearch(desired_letter, block_arr, <span class="number">0</span>);</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"which_block = "</span>, which_block);</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这里遇到了 which_block 打印出来始终为 undefined 的问题。</p>
+<ul>
+<li><p>问题解决后的代码</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> linearSearch = <span class="function"><span class="keyword">function</span> (<span class="params">desired_letter, array, flag</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>&#123;</span><br><span class="line">		...</span><br><span class="line">		linear_interval = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">			...</span><br><span class="line">			<span class="keyword">if</span> (current_index &gt;= array.length) &#123;</span><br><span class="line">				clearInterval(linear_interval);</span><br><span class="line">				resolve(<span class="number">-1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			...</span><br><span class="line">			<span class="keyword">if</span> (current_value &gt;= desired_letter) &#123;</span><br><span class="line">				clearInterval(linear_interval);</span><br><span class="line">				...</span><br><span class="line">				resolve(current_index);</span><br><span class="line">			&#125;</span><br><span class="line">			...</span><br><span class="line">		&#125;, SEARCH_INTERVAL_TIME/<span class="number">2</span>);</span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ## Blocking Search</span></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">startBlockingSearch</span>(<span class="params">desired_letter, array</span>) </span>&#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="keyword">const</span> which_block = <span class="keyword">await</span> linearSearch(desired_letter, block_arr, <span class="number">0</span>);</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">"which_block = "</span>, which_block);</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>需要注意的地方</p>
+<ul>
+<li>在 async 的函数（这里是 startBlockingSearch 函数）里面引用的函数（这里是 linearSearch 函数）的真正返回值需要用 <strong><code>resolve</code></strong> 包裹起来</li>
+<li>且引用的函数必须再用 <strong>return new Promise(function(resolve, reject){…}</strong> 嵌套一次</li>
+</ul>
+</li>
+</ul>
+<h2 id="关于Promise对象"><a href="#关于Promise对象" class="headerlink" title="关于Promise对象"></a>关于Promise对象</h2><h3 id="一些参考链接"><a href="#一些参考链接" class="headerlink" title="一些参考链接"></a>一些参考链接</h3><ul>
+<li><p><a href="https://www.cnblogs.com/blog-index/p/6637543.html?utm_source=itdadao&amp;utm_medium=referral" target="_blank" rel="noopener">JS Promise API</a></p>
+<ul>
+<li><p>主要内容：<br><strong>Promise 三状态</strong></p>
+<ul>
+<li>pending：初始状态，未完成或拒绝</li>
+<li>fulfilled：操作成功完成[Resolved（已完成，又称 Fulfilled）]</li>
+<li><p>rejected：操作失败</p>
+<p>pending状态的Promise对象可能被填充了（fulfilled）值，也可能被某种理由（异常信息）拒绝（reject）了。当其中任一种情况出现时，Promise对象的then方法绑定的处理方法（handlers ）就会被调用(then方法包含两个参数：onfulfilled和onrejected，它们都是Function类型。当值被填充时，调用then的onfulfilled方法，当Promise被拒绝时，调用then的onrejected方法， 所以在异步操作的完成和绑定处理方法之间不存在竞争)</p>
+<p>因为Promise.prototype.then和 Promise.prototype.catch方法返回 promises对象自身， 所以它们可以被链式调用.</p>
+<p><img src="https://raw.githubusercontent.com/Yojiaku/hexoBlogPic/566b52408c23a0153c65326a68039833de085a39/promise.png" alt="promise"></p>
+</li>
+</ul>
+<p><strong>Promise API</strong></p>
+<ul>
+<li>Promise.resolve() 执行成功</li>
+<li>Promise.reject() 执行失败</li>
+<li>Promise.prototype.then() 递延处理</li>
+<li>Promise.prototype.catch() 异常</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a href="https://www.cnblogs.com/dojo-lzz/p/4340897.html" target="_blank" rel="noopener">闲话Promise机制</a></p>
+</li>
+<li><p><a href="https://www.jianshu.com/p/063f7e490e9a" target="_blank" rel="noopener">Javascript 中的神器——Promise</a></p>
+<ul>
+<li><p>主要内容：<br><strong>封装代码与异步代码</strong></p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">resolve(someValue);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">写成</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.resolve(someValue);</span><br></pre></td></tr></table></figure>
+<p><strong>捕获同步异常</strong></p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line"> <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'悲剧了，又出 bug 了'</span>);</span><br><span class="line"> &#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(err);</span><br><span class="line"> &#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href="http://www.zhangxinxu.com/wordpress/2014/02/es6-javascript-promise-%E6%84%9F%E6%80%A7%E8%AE%A4%E7%9F%A5/" target="_blank" rel="noopener">ES6 JavaScript Promise的感性认知</a></li>
+<li><a href="https://www.cnblogs.com/yunfeifei/p/4453690.html" target="_blank" rel="noopener">JavaScript进阶之路——认识和使用Promise，重构你的Js代码</a></li>
+<li><a href="http://blog.csdn.net/jasonzds/article/details/53717501" target="_blank" rel="noopener">JavaScript再述promise的用法和常用方法</a></li>
+</ul>
+<h2 id="关于async-与-await"><a href="#关于async-与-await" class="headerlink" title="关于async 与 await"></a>关于async 与 await</h2><h3 id="一些参考链接-1"><a href="#一些参考链接-1" class="headerlink" title="一些参考链接"></a>一些参考链接</h3><ul>
+<li><p><a href="https://www.cnblogs.com/cpselvis/p/6344122.html" target="_blank" rel="noopener">Javascript中的async await</a></p>
+<ul>
+<li><p>注意点：</p>
+<ul>
+<li>async用来申明里面包裹的内容可以进行同步的方式执行，await则是进行执行顺序控制，每次执行一个await，程序都会暂停等待await返回值，然后再执行之后的await。</li>
+<li>await后面调用的函数需要返回一个promise，另外这个函数是一个普通的函数即可，而不是generator。</li>
+<li><p>await只能用在async函数之中，用在普通函数中会报错。</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">dbFuc</span>(<span class="params">db</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> docs = [&#123;&#125;, &#123;&#125;, &#123;&#125;];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 报错</span></span><br><span class="line">  docs.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">doc</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">await</span> db.post(doc);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  上面代码会报错，因为 await 用在普通函数之中了。但是，如果将 forEach 方法的参数改成 async 函数，也有问题。</p>
+  <figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">dbFuc</span>(<span class="params">db</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> docs = [&#123;&#125;, &#123;&#125;, &#123;&#125;];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 可能得到错误结果</span></span><br><span class="line">  docs.forEach(<span class="keyword">async</span> <span class="function"><span class="keyword">function</span> (<span class="params">doc</span>) </span>&#123;</span><br><span class="line">	<span class="keyword">await</span> db.post(doc);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  上面代码可能不会正常工作，原因是这时三个 db.post 操作将是并发执行，也就是同时执行，而不是继发执行。正确的写法是采用 for 循环。</p>
+  <figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">dbFuc</span>(<span class="params">db</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> docs = [&#123;&#125;, &#123;&#125;, &#123;&#125;];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> doc <span class="keyword">of</span> docs) &#123;</span><br><span class="line">	<span class="keyword">await</span> db.post(doc);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  如果确实希望多个请求并发执行，可以使用 Promise.all 方法。</p>
+  <figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">dbFuc</span>(<span class="params">db</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> docs = [&#123;&#125;, &#123;&#125;, &#123;&#125;];</span><br><span class="line">  <span class="keyword">let</span> promises = docs.map(<span class="function">(<span class="params">doc</span>) =&gt;</span> db.post(doc));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> results = <span class="keyword">await</span> <span class="built_in">Promise</span>.all(promises);</span><br><span class="line">  <span class="built_in">console</span>.log(results);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者使用下面的写法</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">dbFuc</span>(<span class="params">db</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> docs = [&#123;&#125;, &#123;&#125;, &#123;&#125;];</span><br><span class="line">  <span class="keyword">let</span> promises = docs.map(<span class="function">(<span class="params">doc</span>) =&gt;</span> db.post(doc));</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> results = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> promise <span class="keyword">of</span> promises) &#123;</span><br><span class="line">	results.push(<span class="keyword">await</span> promise);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(results);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>+ await命令后面的 Promise 对象，运行结果可能是 rejected，所以最好把 await 命令放在 try...catch 代码块中。
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">	<span class="keyword">await</span> somethingThatReturnsAPromise();</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">	<span class="built_in">console</span>.log(err);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 另一种写法</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">await</span> somethingThatReturnsAPromise().catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.log(err);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><ul>
+<li><p><a href="http://www.ruanyifeng.com/blog/2015/05/async.html" target="_blank" rel="noopener">async 函数的含义和用法</a></p>
+<ul>
+<li>示例：指定多少毫秒后输出一个值。(指定50毫秒以后，输出”hello world”。)<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">timeout</span>(<span class="params">ms</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">	setTimeout(resolve, ms);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">asyncPrint</span>(<span class="params">value, ms</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">await</span> timeout(ms);</span><br><span class="line">  <span class="built_in">console</span>.log(value)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">asyncPrint(<span class="string">'hello world'</span>, <span class="number">50</span>);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><a href="https://segmentfault.com/a/1190000007535316" target="_blank" rel="noopener">理解JavaScript的async/await</a><br><strong> 这篇很重要 </strong></p>
+</li>
+<li><p><a href="http://cnodejs.org/topic/5976b6d668aa87c774e5eb85" target="_blank" rel="noopener">用async/await多个返回值的方法，可以直接接收吗？比如 var value = request(url);</a></p>
+</li>
+</ul>
+<h2 id="实现效果"><a href="#实现效果" class="headerlink" title="实现效果"></a>实现效果</h2><p><img src="https://raw.githubusercontent.com/Yojiaku/hexoBlogPic/8906194b095bc9b644f5697ea9f7091b5853eed5/blockingSearch02.gif" alt="blockingSearch02.GIF"></p>
+<h1 id="动态添加li的方法"><a href="#动态添加li的方法" class="headerlink" title="动态添加li的方法"></a>动态添加li的方法</h1><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i=<span class="number">0</span>; i&lt;len; i++) &#123;</span><br><span class="line">	<span class="keyword">var</span> node = <span class="built_in">document</span>.createElement(<span class="string">"LI"</span>);</span><br><span class="line">	<span class="keyword">var</span> text = index_table_key[i].innerHTML;</span><br><span class="line">	<span class="keyword">var</span> textnode = <span class="built_in">document</span>.createTextNode(text);</span><br><span class="line">	block_arr.push(text);</span><br><span class="line">	node.setAttribute(<span class="string">'id'</span>, text+<span class="string">'-linear'</span>);</span><br><span class="line">	node.appendChild(textnode);</span><br><span class="line">	<span class="built_in">document</span>.getElementById(<span class="string">'block-linear-search'</span>).appendChild(node);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/JavaScript/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>JavaScript</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/02/06/BlockingSearch-JS/" rel="next" title="由编写Blocking Search动画引出的知识点"><i class="fas fa-angle-left"></i><span class="nav-title">由编写Blocking Search动画引出的知识点</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/02/07/JS-class/" rel="prev" title="用原生JS获取CLASS对象(很简单实用)"><span class="nav-title">用原生JS获取CLASS对象(很简单实用)</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.jpg" alt="yojiaku">
+  
+  <h1 class="author-name">yojiaku</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">27</a></div>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#调用含有-setInterval-的函数时异步问题的解决"><span class="toc-text">调用含有 setInterval 的函数时异步问题的解决</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#在代码中引用"><span class="toc-text">在代码中引用</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#关于Promise对象"><span class="toc-text">关于Promise对象</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#一些参考链接"><span class="toc-text">一些参考链接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#关于async-与-await"><span class="toc-text">关于async 与 await</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#一些参考链接-1"><span class="toc-text">一些参考链接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#实现效果"><span class="toc-text">实现效果</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#动态添加li的方法"><span class="toc-text">动态添加li的方法</span></a></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:2329082643@qq.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/3286626050/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">yojiaku</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="YOJIAKU" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>C语言概览（基础） | YOJIAKU</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">YOJIAKU</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/02/02/C-Introduction/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">C语言概览（基础）</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-02T22:14:57+08:00">2018-02-02 22:14:57</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h2 id="入门知识（hello-world级别）"><a href="#入门知识（hello-world级别）" class="headerlink" title="入门知识（hello world级别）"></a>入门知识（hello world级别）</h2><h2 id="printf"><a href="#printf" class="headerlink" title="printf()"></a>printf()</h2><p>printf函数永远不会自动换行。<br>“\n”只代表一个字符。类似于 <code>\n</code> 的转义字符序列为表示无法输入的字符或不可见的字符提供了一种通用的可扩充机制。</p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
+<li>变量类型：<ul>
+<li>int         整型（16位）</li>
+<li>float        浮点型（32位）-至少6位有效数字</li>
+<li>char         字符-一个字节</li>
+<li>short     短整型</li>
+<li>long         长整型</li>
+<li>double     双精度浮点型</li>
+</ul>
+</li>
+<li>符号常量：<br>  “幻数”：指200、30这种数字，不能向以后阅读该程序的人提供什么信息，而且程序修改困难。<br>  “常量”：给幻数赋予有意义的名字<pre><code>工具：#define 名字 替换文本
+</code></pre></li>
+<li><p>字符输入/输出<br>  无论文本从何处输入，输出到何处，其输入/输出都是按照字符流的方式处理。文本流是由多行字符构成的字符序列，而每行字符则有0个或多个字符组成，行末是一个换行符。<br>  getchar()与putchar()</p>
+<pre><code>+ 每次调用时，getchar从文本流中读入下一个输入字符，并将其作为结果值返回。
+即：在执行语句
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c = getchar();</span><br></pre></td></tr></table></figure>
+
+之后，变量 c 将包含输入流中的下一个字符。这种字符通常是通过**键盘**输入的。
++ 每次调用 putchar 时将打印出一个字符，例如：
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">putchar</span>();</span><br></pre></td></tr></table></figure>
+
+将把整型变量 c 的内容以**字符**的形式打印出来，通常是显示在屏幕上。
++ putchar 与 getchar 可以交替调用，输出的次序与调用次序一致。
++ 文件复制
+<figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"> <span class="comment">/* copy input to output; 1st version */</span></span><br><span class="line"> main()</span><br><span class="line"> &#123;</span><br><span class="line">	 <span class="keyword">int</span> c;</span><br><span class="line">	 c = getchar();</span><br><span class="line">	 <span class="keyword">while</span> (c != EOF) &#123;</span><br><span class="line">		<span class="built_in">putchar</span>(c);</span><br><span class="line">		c = getchar();</span><br><span class="line">	 &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+&gt; 字符在键盘、屏幕或者其他任何地方无论以什么形式表现，它在机器内部都是以位模式存储的。
+char类型专门用于存储这种字符型数据，当然 int 也可以用于存储字符型数据，因为某种原因，这里使用 int。
+</code></pre></li>
+</ul>
+<h3 id="字符数组"><a href="#字符数组" class="headerlink" title="字符数组"></a>字符数组</h3><p>例子：读入一组文本行，并把最长的文本行打印出来<br><figure class="hljs highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (还有未处理的行)</span><br><span class="line"><span class="keyword">if</span> (该行比已处理的最长行还要长)</span><br><span class="line">	保存该行为最长行</span><br><span class="line">	保存该行的长度</span><br><span class="line">打印最长的行</span><br></pre></td></tr></table></figure></p>
+<p>编写 getline 函数：读取输入的下一行，在督导文件末尾时返回一个信号（更好的是能够在读入文本行时返回该行的长度，而在遇到文件结束符时返回 0 ）。且只包含换行符的行，其长度为1.<br>编写 copy 函数：发现某个新读入的行比以前读入的最长行还要长时，就需要把该行保存起来，即 copy 到另一个安全的位置。<br>程序如下：<br><figure class="hljs highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">/* maximum input line length */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXLINE 1000 </span></span><br><span class="line"><span class="keyword">int</span> _getline(<span class="keyword">char</span> line[], <span class="keyword">int</span> maxline);</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">copy</span><span class="params">(<span class="keyword">char</span> to[], <span class="keyword">char</span> from[])</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* print the longest input line */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> len;							<span class="comment">/* current line length */</span></span><br><span class="line">	<span class="keyword">int</span> max; 						<span class="comment">/* maximum length seen so far */</span></span><br><span class="line">	<span class="keyword">char</span> line[MAXLINE];		<span class="comment">/* current input line */</span></span><br><span class="line">	<span class="keyword">char</span> longest[MAXLINE]; <span class="comment">/* longest line saved here */</span></span><br><span class="line">	</span><br><span class="line">	max = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> ((len = _getline(line, MAXLINE)) &gt; <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">if</span> (len &gt; max) &#123;</span><br><span class="line">			max = len;</span><br><span class="line">			copy(longest, line);</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="keyword">if</span> (max &gt; <span class="number">0</span>) <span class="comment">/* there was a line */</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%s"</span>, longest);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* getline: read a line into line, return maxline */</span></span><br><span class="line"><span class="keyword">int</span> _getline(<span class="keyword">char</span> line[], <span class="keyword">int</span> maxline) &#123;</span><br><span class="line">	<span class="keyword">int</span> c, i;</span><br><span class="line">	<span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;maxline<span class="number">-1</span> &amp;&amp; (c=getchar())!=EOF &amp;&amp; c!=<span class="string">'\n'</span>; ++i)</span><br><span class="line">		line[i] = c;</span><br><span class="line">	<span class="keyword">if</span> (c == <span class="string">'\n'</span>) &#123;</span><br><span class="line">		line[i] = c;</span><br><span class="line">		++i;</span><br><span class="line">	&#125;</span><br><span class="line">	line[i] = <span class="string">'\0'</span>;</span><br><span class="line">	<span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* copy: copy 'from' into 'to'; assume to is big enough */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">copy</span><span class="params">(<span class="keyword">char</span> to[], <span class="keyword">char</span> from[])</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	i = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> ((to[i] = from[i]) != <span class="string">'\0'</span>)</span><br><span class="line">		++i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/C-languge/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>C-languge</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/02/01/linearSearch-questions/" rel="next" title="JS实现linearSearch动画时遇到的知识点"><i class="fas fa-angle-left"></i><span class="nav-title">JS实现linearSearch动画时遇到的知识点</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/02/05/remove-node-in-js/" rel="prev" title="删除元素所有子节点"><span class="nav-title">删除元素所有子节点</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.jpg" alt="yojiaku">
+  
+  <h1 class="author-name">yojiaku</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">27</a></div>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#入门知识（hello-world级别）"><span class="toc-text">入门知识（hello world级别）</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#printf"><span class="toc-text">printf()</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#变量"><span class="toc-text">变量</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#字符数组"><span class="toc-text">字符数组</span></a></li></ol></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:2329082643@qq.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/3286626050/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">yojiaku</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

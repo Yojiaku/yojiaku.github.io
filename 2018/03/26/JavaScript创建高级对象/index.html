@@ -80,7 +80,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>Hello World | YOJIAKU</title>
+    <title>JavaScript创建高级对象 | YOJIAKU</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -121,7 +121,7 @@
   
   <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/07/05/hello-world/">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/03/26/JavaScript创建高级对象/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="yojiaku">
        <meta itemprop="description" content="">
@@ -132,11 +132,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">Hello World</h1>
+      <h1 class="post-title" itemprop="name headline">JavaScript创建高级对象</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-05T20:17:30+08:00">2018-07-05 20:17:30</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T22:02:46+08:00">2018-03-26 22:02:46</time></span>
         </span>
         
         
@@ -144,21 +144,24 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="hljs highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<p>顺序：<br>先：hexo clean 清除缓存</p>
-<p>然后： hexo g 生成待发布的文件</p>
-<p>最后： hexo d 发布</p>
-
+      <h1 id="JavaScript创建高级对象"><a href="#JavaScript创建高级对象" class="headerlink" title="JavaScript创建高级对象"></a>JavaScript创建高级对象</h1><h2 id="使用构造函数"><a href="#使用构造函数" class="headerlink" title="使用构造函数"></a>使用构造函数</h2><p>构造函数是一个函数，调用它来例示并初始化特殊类型的对象。可以使用 new 关键字来调用一个构造函数。下面给出了使用构造函数的新示例。</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myObject = <span class="keyword">new</span> <span class="built_in">Object</span>();             <span class="comment">// 创建没有属性的通用对象。</span></span><br><span class="line"><span class="keyword">var</span> myBirthday = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">1961</span>, <span class="number">5</span>, <span class="number">10</span>);  <span class="comment">// 创建一个 Date 对象。</span></span><br><span class="line"><span class="keyword">var</span> myCar = <span class="keyword">new</span> Car();                   <span class="comment">// 创建一个用户定义的对象，并初始化其属性。</span></span><br></pre></td></tr></table></figure>
+<p>通过构造函数将一个参数作为特定的 this 关键字的值传递给新创建的空对象。然后构造函数负责为新对象执行适应的初始化（创建属性并给出其初始值）。完成后，构造函数返回它所构造的对象的一个参数。</p>
+<h2 id="使用原型"><a href="#使用原型" class="headerlink" title="使用原型"></a>使用原型</h2><p>在编写构造函数时，可以使用原型对象（它本身是所有构造函数的一个属性）的属性来创建继承属性和共享方法。原型属性和方法将按引用复制给类中的每个对象，因此它们都具有相同的值。可以在一个对象中更改原型属性的值，新的值将覆盖默认值，但仅在该实例中有效。属于这个类的其他对象不受此更改的影响。下面给出了使用自定义构造函数的示例，Circle（注意 this 关键字的使用）。</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Circle.prototype.pi = <span class="built_in">Math</span>.PI;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ACirclesArea</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.pi * <span class="keyword">this</span>.r * <span class="keyword">this</span>.r; <span class="comment">// 计算圆面积的公式为 ?r2。</span></span><br><span class="line">&#125;</span><br><span class="line">Circle.prototype.area = ACirclesArea; <span class="comment">// 计算圆面积的函数现在是 Circle Prototype 对象的一个方法。</span></span><br><span class="line"><span class="keyword">var</span> a = ACircle.area();               <span class="comment">// 此为如何在 Circle 对象上调用面积函数。</span></span><br></pre></td></tr></table></figure>
+<p>使用这个原则，可以给预定义的构造函数（都具有原型对象）定义附加属性。例如，如果想要能够删除字符串的前后空格（与 VBScript 的 Trim 函数类似），就可以给 String 原型对象创建自己的方法。</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 增加一个名为 trim 的函数作为</span></span><br><span class="line"><span class="comment">// String 构造函数的原型对象的一个方法。</span></span><br><span class="line"><span class="built_in">String</span>.prototype.trim = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 用正则表达式将前后空格</span></span><br><span class="line">    <span class="comment">// 用空字符串替代。</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/(^\s*)|(\s*$)/g</span>, <span class="string">""</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 有空格的字符串</span></span><br><span class="line"><span class="keyword">var</span> s = <span class="string">"    leading and trailing spaces    "</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 显示 "    leading and trailing spaces     (35)"</span></span><br><span class="line"><span class="built_in">window</span>.alert(s + <span class="string">" ("</span> + s.length + <span class="string">")"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除前后空格</span></span><br><span class="line">s = s.trim();</span><br><span class="line"><span class="comment">// 显示"leading and trailing spaces (27)"</span></span><br></pre></td></tr></table></figure>
     </main>
     <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/JavaScript/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>JavaScript</a>
+        
+      </div>
       
     </footer>
   </article>
@@ -167,12 +170,12 @@
   <div class="post-nav">
     <div class="post-nav-next post-nav-item">
       
-      <a href="/2018/03/28/BinarySearch/" rel="next" title="Algorithm-二维数组中的查找-BinarySearch"><i class="fas fa-angle-left"></i><span class="nav-title">Algorithm-二维数组中的查找-BinarySearch</span></a>
+      <a href="/2018/03/26/JavaScript对象/" rel="next" title="JavaScript对象"><i class="fas fa-angle-left"></i><span class="nav-title">JavaScript对象</span></a>
       
     </div>
     <div class="post-nav-prev post-nav-item">
       
-      <a href="/2018/07/05/test-my-site/" rel="prev" title="test_my_site"><span class="nav-title">test_my_site</span><i class="fas fa-angle-right"></i></a>
+      <a href="/2018/03/26/JS数组处理/" rel="prev" title="JS数组处理"><span class="nav-title">JS数组处理</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </div>
@@ -228,7 +231,7 @@
 <hr>
 <div class="post-toc sidebar-item" id="toc-div">
   <div><i class="fas fa-list-ol"></i>文章目录</div>
-  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#JavaScript创建高级对象"><span class="toc-text">JavaScript创建高级对象</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#使用构造函数"><span class="toc-text">使用构造函数</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#使用原型"><span class="toc-text">使用原型</span></a></li></ol></li></ol></div>
 </div>
 
 

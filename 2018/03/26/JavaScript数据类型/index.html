@@ -80,7 +80,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>test_my_site | YOJIAKU</title>
+    <title>JavaScript数据类型 | YOJIAKU</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -121,7 +121,7 @@
   
   <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/07/05/test-my-site/">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/03/26/JavaScript数据类型/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="yojiaku">
        <meta itemprop="description" content="">
@@ -132,11 +132,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">test_my_site</h1>
+      <h1 class="post-title" itemprop="name headline">JavaScript数据类型</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-05T20:19:41+08:00">2018-07-05 20:19:41</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T20:54:12+08:00">2018-03-26 20:54:12</time></span>
         </span>
         
         
@@ -144,9 +144,43 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      
+      <h1 id="JavaScript数据类型"><a href="#JavaScript数据类型" class="headerlink" title="JavaScript数据类型"></a>JavaScript数据类型</h1><p>三种主要数据类型、两种复合数据类型、两种特殊数据类型</p>
+<ul>
+<li><p>主要（基本）数据类型：<br>字符串<br>数值<br>布尔</p>
+</li>
+<li><p>复合（引用）数据类型：<br>对象<br>数组</p>
+</li>
+<li><p>特殊数据类型：<br>Null<br>undefined</p>
+</li>
+</ul>
+<h2 id="Null"><a href="#Null" class="headerlink" title="Null"></a>Null</h2><p>在 Jscript 中数据类型 null 只有一个值：null。关键字 null 不能用作函数或变量的名称。</p>
+<p>包含 null 的变量包含“无值”或“无对象”。换句话说，该变量没有保存有效的数、字符串、boolean、数组或对象。可以通过给一个变量赋 null 值来清除变量的内容。</p>
+<p>请注意，在 Jscript 中，null 与 0 不相等（与在 C 和 C++ 中不同）。同时应该指出的是，Jscript中 typeof 运算符将报告 null 值为 Object 类型，而非类型 null。这点潜在的混淆是为了向下兼容。</p>
+<h2 id="undefined"><a href="#undefined" class="headerlink" title="undefined"></a>undefined</h2><p>如下情况使返回 undefined 值： </p>
+<ul>
+<li>对象属性不存在， </li>
+<li>声明了变量但从未赋值。 </li>
+</ul>
+<p>注意不能通过与 undefined 做比较来测试一个变量是否存在，虽然可以检查它的类型是否为“undefined”。在以下的代码范例中，假设程序员想测试是否已经声明变量 x ：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这种方法不起作用</span></span><br><span class="line"><span class="keyword">if</span> (x == <span class="literal">undefined</span>)</span><br><span class="line">    <span class="comment">// 作某些操作</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这个方法同样不起作用- 必须检查</span></span><br><span class="line"><span class="comment">// 字符串 "undefined"</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span>(x) == <span class="literal">undefined</span>)</span><br><span class="line">    <span class="comment">// 作某些操作</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 这个方法有效</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span>(x) == <span class="string">"undefined"</span>)</span><br><span class="line">    <span class="comment">// 作某些操作</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="null-和-undefined-比较"><a href="#null-和-undefined-比较" class="headerlink" title="null 和 undefined 比较"></a>null 和 undefined 比较</h2><p>考虑将 undefined 值与null做比较。</p>
+<p>someObject.prop == null;<br>如下情况时，比较的结果为 true， </p>
+<ul>
+<li>如果属性 someObject.prop 包含 null 值， </li>
+<li>如果属性 someObject.prop 不存在。 </li>
+</ul>
+<p>要检查一个对象属性是否存在，可以使用新的 in 运算符： (？)<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if (&quot;prop&quot; in someObject)</span><br><span class="line">// someObject 有属性 &apos;prop&apos;</span><br></pre></td></tr></table></figure></p>
+
     </main>
     <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/JavaScript/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>JavaScript</a>
+        
+      </div>
       
     </footer>
   </article>
@@ -155,10 +189,12 @@
   <div class="post-nav">
     <div class="post-nav-next post-nav-item">
       
-      <a href="/2018/07/05/hello-world/" rel="next" title="Hello World"><i class="fas fa-angle-left"></i><span class="nav-title">Hello World</span></a>
+      <a href="/2018/03/26/JavaScript/" rel="next" title="JavaScript变量"><i class="fas fa-angle-left"></i><span class="nav-title">JavaScript变量</span></a>
       
     </div>
     <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/03/26/JavaScript运算符/" rel="prev" title="JavaScript运算符"><span class="nav-title">JavaScript运算符</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </div>
@@ -205,6 +241,20 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#JavaScript数据类型"><span class="toc-text">JavaScript数据类型</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#Null"><span class="toc-text">Null</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#undefined"><span class="toc-text">undefined</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#null-和-undefined-比较"><span class="toc-text">null 和 undefined 比较</span></a></li></ol></li></ol></div>
+</div>
+
+
+
     
     
     

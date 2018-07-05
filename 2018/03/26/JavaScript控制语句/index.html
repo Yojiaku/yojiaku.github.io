@@ -80,7 +80,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>test_my_site | YOJIAKU</title>
+    <title>JavaScript控制语句 | YOJIAKU</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -121,7 +121,7 @@
   
   <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/07/05/test-my-site/">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/03/26/JavaScript控制语句/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="yojiaku">
        <meta itemprop="description" content="">
@@ -132,11 +132,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">test_my_site</h1>
+      <h1 class="post-title" itemprop="name headline">JavaScript控制语句</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-05T20:19:41+08:00">2018-07-05 20:19:41</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T21:16:13+08:00">2018-03-26 21:16:13</time></span>
         </span>
         
         
@@ -144,9 +144,28 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      
+      <h1 id="JavaScript控制语句"><a href="#JavaScript控制语句" class="headerlink" title="JavaScript控制语句"></a>JavaScript控制语句</h1><h2 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h2><p>如果要一起测试多个条件，并且知道某个条件比其他条件更可能满足或不满足测试，可以使用称为“短路计算”的特性来加速脚本的运行速度。当 JScript 计算逻辑表达式时，只计算要得到结果所需的子表达式。</p>
+<p>例如，如果有一个“与”表达式，如 ((x == 123) &amp;&amp; (y == 42))，Jscript 首先检查 x 是否为 123。如果不是，即使 y 等于 42，整个表达式的值也不可能为 true。因此，并不对 y 作测试，Jscript 返回 false 值。</p>
+<p>类似地，如果多个条件中只要有一个为真（使用 || 运算符），则当任何一个条件满足该测试时测试则停止。如果要测试的条件包括函数调用或其他复合表达式，这种处理方式就有效。出于此种想法，写 OR 表达式时，先写最有可能为 true 的条件。写 AND 表达式时，先写最有可能为 false 的条件。</p>
+<p>以这种方式设计脚本的好处的一个示例是：在下例中如果 runfirst() 返回 0 或 false， 则不会运行 runsecond()。</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ((runfirst() == <span class="number">0</span>) || (runsecond() == <span class="number">0</span>)) &#123;</span><br><span class="line">    <span class="comment">// 若干代码。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="使用循环"><a href="#使用循环" class="headerlink" title="使用循环"></a>使用循环</h2><p>JScript 支持四种循环： for 循环、 for…in 循环、 while 循环、 do…while 循环。</p>
+<h3 id="使用-for…in-循环"><a href="#使用-for…in-循环" class="headerlink" title="使用 for…in 循环"></a>使用 for…in 循环</h3><p>JScript 提供了一种特别的循环方式来遍历一个对象的所有用户定义的属性或者一个数组的所有元素。for…in 循环中的循环计数器是一个字符串，而不是数字。它包含当前属性的名称或者当前数组元素的下标。</p>
+<p>下面的代码范例应在 Internet 浏览器中运行，因为它使用 alert 方法，该方法不属于 Jscript。</p>
+<figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建具有某些属性的对象</span></span><br><span class="line"><span class="keyword">var</span> myObject = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">myObject.name = <span class="string">"James"</span>;</span><br><span class="line">myObject.age = <span class="string">"22"</span>;</span><br><span class="line">myObject.phone = <span class="string">"555 1234"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 枚举（循环）对象的所有属性</span></span><br><span class="line"><span class="keyword">for</span> (prop <span class="keyword">in</span> myObject)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 显示 "The property 'name' is James"，等等。</span></span><br><span class="line">    <span class="built_in">window</span>.alert(<span class="string">"The property '"</span> + prop + <span class="string">"' is "</span> + myObject[prop]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>尽管 for…in 循环看起来像 VBScript 的 For Each…Next 循环，其实并不一样。JScript 的 for…in 循环重复Jscript 对象所有的属性。VBScript 的 For Each…Next 循环重复集合中的所有项目。要循环 JScript 中的所有集合，需要用 Enumerator 对象。尽管某些对象（像 Internet 浏览器中的那些）支持 VBScript 的 For Each…Next 和 Jscript 的 for…in 循环，但多数对象并不都支持。</p>
+
     </main>
     <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/JavaScript/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>JavaScript</a>
+        
+      </div>
       
     </footer>
   </article>
@@ -155,10 +174,12 @@
   <div class="post-nav">
     <div class="post-nav-next post-nav-item">
       
-      <a href="/2018/07/05/hello-world/" rel="next" title="Hello World"><i class="fas fa-angle-left"></i><span class="nav-title">Hello World</span></a>
+      <a href="/2018/03/26/JavaScript运算符/" rel="next" title="JavaScript运算符"><i class="fas fa-angle-left"></i><span class="nav-title">JavaScript运算符</span></a>
       
     </div>
     <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/03/26/JavaScript对象/" rel="prev" title="JavaScript对象"><span class="nav-title">JavaScript对象</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </div>
@@ -205,6 +226,20 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#JavaScript控制语句"><span class="toc-text">JavaScript控制语句</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#条件运算符"><span class="toc-text">条件运算符</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#使用循环"><span class="toc-text">使用循环</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#使用-for…in-循环"><span class="toc-text">使用 for…in 循环</span></a></li></ol></li></ol></li></ol></div>
+</div>
+
+
+
     
     
     

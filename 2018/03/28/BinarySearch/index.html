@@ -80,7 +80,7 @@
     <script defer type="text/javascript" src="/js/index.js"></script>
     
     <script defer type="text/javascript" src="/js/custom.js"></script>
-    <title>test_my_site | YOJIAKU</title>
+    <title>Algorithm-二维数组中的查找-BinarySearch | YOJIAKU</title>
   </head>
   <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
     
@@ -121,7 +121,7 @@
   
   <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/07/05/test-my-site/">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/03/28/BinarySearch/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="yojiaku">
        <meta itemprop="description" content="">
@@ -132,11 +132,11 @@
       </span>
     </div>
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">test_my_site</h1>
+      <h1 class="post-title" itemprop="name headline">Algorithm-二维数组中的查找-BinarySearch</h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-05T20:19:41+08:00">2018-07-05 20:19:41</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-28T13:17:34+08:00">2018-03-28 13:17:34</time></span>
         </span>
         
         
@@ -144,9 +144,22 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      
+      <h1 id="二维数组中的查找"><a href="#二维数组中的查找" class="headerlink" title="二维数组中的查找"></a>二维数组中的查找</h1><blockquote>
+<p>题目描述<br>在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+</blockquote>
+<h2 id="最简单的思路"><a href="#最简单的思路" class="headerlink" title="最简单的思路"></a>最简单的思路</h2><p>对每行采用二分查找，时间复杂度是O(nlogn)</p>
+<h2 id="JavaScript实现"><a href="#JavaScript实现" class="headerlink" title="JavaScript实现"></a>JavaScript实现</h2><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// js-binary search-iterative</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">binarySearchIterative</span>(<span class="params">a, value</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="keyword">var</span> mid, lo = <span class="number">0</span>,</span><br><span class="line">      hi = a.length - <span class="number">1</span>;</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">while</span> (lo &lt;= hi) &#123;</span><br><span class="line">    mid = <span class="built_in">Math</span>.floor((lo + hi) / <span class="number">2</span>);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> (a[mid] &gt; value) &#123;</span><br><span class="line">      hi = mid - <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (a[mid] &lt; value) &#123;</span><br><span class="line">      lo = mid + <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Find</span>(<span class="params">target, array</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">let</span> row = array.length;</span><br><span class="line">    <span class="keyword">let</span> colFirst = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;row; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> result = binarySearchIterative(array[i], target);</span><br><span class="line">        <span class="keyword">if</span> (result == <span class="literal">true</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </main>
     <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/BinarySearch-Algorithm/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>BinarySearch Algorithm</a>
+        
+      </div>
       
     </footer>
   </article>
@@ -155,10 +168,12 @@
   <div class="post-nav">
     <div class="post-nav-next post-nav-item">
       
-      <a href="/2018/07/05/hello-world/" rel="next" title="Hello World"><i class="fas fa-angle-left"></i><span class="nav-title">Hello World</span></a>
+      <a href="/2018/03/26/JS逻辑或运算符/" rel="next" title="JS逻辑或运算符"><i class="fas fa-angle-left"></i><span class="nav-title">JS逻辑或运算符</span></a>
       
     </div>
     <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/07/05/hello-world/" rel="prev" title="Hello World"><span class="nav-title">Hello World</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </div>
@@ -205,6 +220,20 @@
 
 
   <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#二维数组中的查找"><span class="toc-text">二维数组中的查找</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#最简单的思路"><span class="toc-text">最简单的思路</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#JavaScript实现"><span class="toc-text">JavaScript实现</span></a></li></ol></li></ol></div>
+</div>
+
+
+
     
     
     

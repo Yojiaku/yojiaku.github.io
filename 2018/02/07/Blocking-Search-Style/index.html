@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="YOJIAKU" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>由Blocking Search动画引出的CSS样式的知识 | YOJIAKU</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">YOJIAKU</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/02/07/Blocking-Search-Style/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">由Blocking Search动画引出的CSS样式的知识</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-02-07T22:45:30+08:00">2018-02-07 22:45:30</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="前后对比图"><a href="#前后对比图" class="headerlink" title="前后对比图"></a>前后对比图</h1><p><img src="https://raw.githubusercontent.com/Yojiaku/hexoBlogPic/8906194b095bc9b644f5697ea9f7091b5853eed5/blockingSearch02.gif" alt="BlockingSearch.GIF before"><br><img src="https://raw.githubusercontent.com/Yojiaku/hexoBlogPic/259f6e2b6e095e56ccdf6babad9a7e7674623826/blockingSearch04.gif" alt="BlockingSearch.GIF after"></p>
+<h1 id="CSS清除浮动的8种方法"><a href="#CSS清除浮动的8种方法" class="headerlink" title="CSS清除浮动的8种方法"></a>CSS清除浮动的8种方法</h1><p>浮动会使当前标签产生向上浮的效果，同时会影响到前后标签、父级标签的位置及 width height 属性。而且同样的代码，在各种浏览器中显示效果也有可能不相同，这样让清除浮动更难了。解决浮动引起的问题有多种方法，但有些方法在浏览器兼容性方面还有问题。</p>
+<h2 id="父级div定义-height"><a href="#父级div定义-height" class="headerlink" title="父级div定义 height"></a>父级div定义 height</h2><p>代码如下：<br><figure class="hljs highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type="text/css"&gt; </span><br><span class="line"><span class="selector-class">.div1</span>&#123;<span class="attribute">background</span>:<span class="number">#000080</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid red;<span class="comment">/*解决代码*/</span><span class="attribute">height</span>:<span class="number">200px</span>;&#125; </span><br><span class="line"><span class="selector-class">.div2</span>&#123;<span class="attribute">background</span>:<span class="number">#800080</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid red;<span class="attribute">height</span>:<span class="number">100px</span>;<span class="attribute">margin-top</span>:<span class="number">10px</span>&#125; </span><br><span class="line"><span class="selector-class">.left</span>&#123;<span class="attribute">float</span>:left;<span class="attribute">width</span>:<span class="number">20%</span>;<span class="attribute">height</span>:<span class="number">200px</span>;<span class="attribute">background</span>:<span class="number">#DDD</span>&#125; </span><br><span class="line"><span class="selector-class">.right</span>&#123;<span class="attribute">float</span>:right;<span class="attribute">width</span>:<span class="number">30%</span>;<span class="attribute">height</span>:<span class="number">80px</span>;<span class="attribute">background</span>:<span class="number">#DDD</span>&#125; </span><br><span class="line">&lt;/style&gt; </span><br><span class="line">&lt;div class="div1"&gt; </span><br><span class="line">&lt;div class="left"&gt;Left&lt;/div&gt; </span><br><span class="line">&lt;div class="right"&gt;Right&lt;/div&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div class="div2"&gt; </span><br><span class="line"><span class="selector-tag">div2</span> </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>原理：父级div手动定义height，就解决了父级div无法自动获取到高度的问题。 </p>
+<p>优点：简单、代码少、容易掌握 </p>
+<p>缺点：只适合高度固定的布局，要给出精确的高度，如果高度和父级div不一样时，会产生问题 </p>
+<p>建议：不推荐使用，只建议高度固定的布局时使用 </p>
+<h2 id="结尾处加空div标签-clear-both"><a href="#结尾处加空div标签-clear-both" class="headerlink" title="结尾处加空div标签 clear:both"></a>结尾处加空div标签 clear:both</h2><p>代码如下:<br><figure class="hljs highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type="text/css"&gt; </span><br><span class="line"><span class="selector-class">.div1</span>&#123;<span class="attribute">background</span>:<span class="number">#000080</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid red&#125; </span><br><span class="line"><span class="selector-class">.div2</span>&#123;<span class="attribute">background</span>:<span class="number">#800080</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid red;<span class="attribute">height</span>:<span class="number">100px</span>;<span class="attribute">margin-top</span>:<span class="number">10px</span>&#125; </span><br><span class="line"><span class="selector-class">.left</span>&#123;<span class="attribute">float</span>:left;<span class="attribute">width</span>:<span class="number">20%</span>;<span class="attribute">height</span>:<span class="number">200px</span>;<span class="attribute">background</span>:<span class="number">#DDD</span>&#125; </span><br><span class="line"><span class="selector-class">.right</span>&#123;<span class="attribute">float</span>:right;<span class="attribute">width</span>:<span class="number">30%</span>;<span class="attribute">height</span>:<span class="number">80px</span>;<span class="attribute">background</span>:<span class="number">#DDD</span>&#125; </span><br><span class="line"><span class="comment">/*清除浮动代码*/</span> </span><br><span class="line"><span class="selector-class">.clearfloat</span>&#123;<span class="attribute">clear</span>:both&#125; </span><br><span class="line">&lt;/style&gt; </span><br><span class="line">&lt;div class="div1"&gt; </span><br><span class="line">&lt;div class="left"&gt;Left&lt;/div&gt; </span><br><span class="line">&lt;div class="right"&gt;Right&lt;/div&gt; </span><br><span class="line">&lt;div class="clearfloat"&gt;&lt;/div&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div class="div2"&gt; </span><br><span class="line"><span class="selector-tag">div2</span> </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>原理：添加一个空div，利用css提高的clear:both清除浮动，让父级div能自动获取到高度 </p>
+<p>优点：简单、代码少、浏览器支持好、不容易出现怪问题 </p>
+<p>缺点：不少初学者不理解原理；如果页面浮动布局多，就要增加很多空div，让人感觉很不好 </p>
+<p>建议：不推荐使用，但此方法是以前主要使用的一种清除浮动方法 </p>
+<h2 id="父级div定义-伪类-after-和-zoom-采用的"><a href="#父级div定义-伪类-after-和-zoom-采用的" class="headerlink" title="父级div定义 伪类:after 和 zoom (采用的)"></a>父级div定义 伪类:after 和 zoom (采用的)</h2><p>代码如下:<br><figure class="hljs highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type="text/css"&gt; </span><br><span class="line"><span class="selector-class">.div1</span>&#123;<span class="attribute">background</span>:<span class="number">#000080</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid red;&#125; </span><br><span class="line"><span class="selector-class">.div2</span>&#123;<span class="attribute">background</span>:<span class="number">#800080</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid red;<span class="attribute">height</span>:<span class="number">100px</span>;<span class="attribute">margin-top</span>:<span class="number">10px</span>&#125; </span><br><span class="line"><span class="selector-class">.left</span>&#123;<span class="attribute">float</span>:left;<span class="attribute">width</span>:<span class="number">20%</span>;<span class="attribute">height</span>:<span class="number">200px</span>;<span class="attribute">background</span>:<span class="number">#DDD</span>&#125; </span><br><span class="line"><span class="selector-class">.right</span>&#123;<span class="attribute">float</span>:right;<span class="attribute">width</span>:<span class="number">30%</span>;<span class="attribute">height</span>:<span class="number">80px</span>;<span class="attribute">background</span>:<span class="number">#DDD</span>&#125; </span><br><span class="line"><span class="comment">/*清除浮动代码*/</span> </span><br><span class="line"><span class="selector-class">.clearfloat</span><span class="selector-pseudo">:after</span>&#123;<span class="attribute">display</span>:block;<span class="attribute">clear</span>:both;<span class="attribute">content</span>:<span class="string">""</span>;<span class="attribute">visibility</span>:hidden;<span class="attribute">height</span>:<span class="number">0</span>&#125; </span><br><span class="line"><span class="selector-class">.clearfloat</span>&#123;<span class="attribute">zoom</span>:<span class="number">1</span>&#125; </span><br><span class="line">&lt;/style&gt; </span><br><span class="line">&lt;div class="div1 clearfloat"&gt; </span><br><span class="line">&lt;div class="left"&gt;Left&lt;/div&gt; </span><br><span class="line">&lt;div class="right"&gt;Right&lt;/div&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div class="div2"&gt; </span><br><span class="line"><span class="selector-tag">div2</span> </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>原理：IE8以上和非IE浏览器才支持:after，原理和方法2有点类似，zoom(IE转有属性)可解决ie6,ie7浮动问题 </p>
+<p>优点：浏览器支持好、不容易出现怪问题（目前：大型网站都有使用，如：腾迅，网易，新浪等等） </p>
+<p>缺点：代码多、不少初学者不理解原理，要两句代码结合使用才能让主流浏览器都支持。 </p>
+<p>建议：推荐使用，建议定义公共类，以减少CSS代码。</p>
+<h2 id="父级div定义-overflow-hidden"><a href="#父级div定义-overflow-hidden" class="headerlink" title="父级div定义 overflow:hidden"></a>父级div定义 overflow:hidden</h2><p>代码如下:<br><figure class="hljs highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type="text/css"&gt; </span><br><span class="line"><span class="selector-class">.div1</span>&#123;<span class="attribute">background</span>:<span class="number">#000080</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid red;<span class="comment">/*解决代码*/</span><span class="attribute">width</span>:<span class="number">98%</span>;<span class="attribute">overflow</span>:hidden&#125; </span><br><span class="line"><span class="selector-class">.div2</span>&#123;<span class="attribute">background</span>:<span class="number">#800080</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid red;<span class="attribute">height</span>:<span class="number">100px</span>;<span class="attribute">margin-top</span>:<span class="number">10px</span>;<span class="attribute">width</span>:<span class="number">98%</span>&#125; </span><br><span class="line"><span class="selector-class">.left</span>&#123;<span class="attribute">float</span>:left;<span class="attribute">width</span>:<span class="number">20%</span>;<span class="attribute">height</span>:<span class="number">200px</span>;<span class="attribute">background</span>:<span class="number">#DDD</span>&#125; </span><br><span class="line"><span class="selector-class">.right</span>&#123;<span class="attribute">float</span>:right;<span class="attribute">width</span>:<span class="number">30%</span>;<span class="attribute">height</span>:<span class="number">80px</span>;<span class="attribute">background</span>:<span class="number">#DDD</span>&#125; </span><br><span class="line">&lt;/style&gt; </span><br><span class="line">&lt;div class="div1"&gt; </span><br><span class="line">&lt;div class="left"&gt;Left&lt;/div&gt; </span><br><span class="line">&lt;div class="right"&gt;Right&lt;/div&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div class="div2"&gt; </span><br><span class="line"><span class="selector-tag">div2</span> </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:hidden时，浏览器会自动检查浮动区域的高度 </p>
+<p>优点：简单、代码少、浏览器支持好 </p>
+<p>缺点：不能和position配合使用，因为超出的尺寸的会被隐藏。 </p>
+<p>建议：只推荐没有使用position或对overflow:hidden理解比较深的朋友使用。</p>
+<h2 id="父级div定义-overflow-auto"><a href="#父级div定义-overflow-auto" class="headerlink" title="父级div定义 overflow:auto"></a>父级div定义 overflow:auto</h2><p>代码如下:<br><figure class="hljs highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type="text/css"&gt; </span><br><span class="line"><span class="selector-class">.div1</span>&#123;<span class="attribute">background</span>:<span class="number">#000080</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid red;<span class="comment">/*解决代码*/</span><span class="attribute">width</span>:<span class="number">98%</span>;<span class="attribute">overflow</span>:auto&#125; </span><br><span class="line"><span class="selector-class">.div2</span>&#123;<span class="attribute">background</span>:<span class="number">#800080</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid red;<span class="attribute">height</span>:<span class="number">100px</span>;<span class="attribute">margin-top</span>:<span class="number">10px</span>;<span class="attribute">width</span>:<span class="number">98%</span>&#125; </span><br><span class="line"><span class="selector-class">.left</span>&#123;<span class="attribute">float</span>:left;<span class="attribute">width</span>:<span class="number">20%</span>;<span class="attribute">height</span>:<span class="number">200px</span>;<span class="attribute">background</span>:<span class="number">#DDD</span>&#125; </span><br><span class="line"><span class="selector-class">.right</span>&#123;<span class="attribute">float</span>:right;<span class="attribute">width</span>:<span class="number">30%</span>;<span class="attribute">height</span>:<span class="number">80px</span>;<span class="attribute">background</span>:<span class="number">#DDD</span>&#125; </span><br><span class="line">&lt;/style&gt; </span><br><span class="line">&lt;div class="div1"&gt; </span><br><span class="line">&lt;div class="left"&gt;Left&lt;/div&gt; </span><br><span class="line">&lt;div class="right"&gt;Right&lt;/div&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div class="div2"&gt; </span><br><span class="line"><span class="selector-tag">div2</span> </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>原理：必须定义width或zoom:1，同时不能定义height，使用overflow:auto时，浏览器会自动检查浮动区域的高度 </p>
+<p>优点：简单、代码少、浏览器支持好 </p>
+<p>缺点：内部宽高超过父级div时，会出现滚动条。 </p>
+<p>建议：不推荐使用，如果你需要出现滚动条或者确保你的代码不会出现滚动条就使用吧。 </p>
+<h2 id="父级div-也一起浮动"><a href="#父级div-也一起浮动" class="headerlink" title="父级div 也一起浮动"></a>父级div 也一起浮动</h2><p>代码如下:<br><figure class="hljs highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type="text/css"&gt; </span><br><span class="line"><span class="selector-class">.div1</span>&#123;<span class="attribute">background</span>:<span class="number">#000080</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid red;<span class="comment">/*解决代码*/</span><span class="attribute">width</span>:<span class="number">98%</span>;<span class="attribute">margin-bottom</span>:<span class="number">10px</span>;<span class="attribute">float</span>:left&#125; </span><br><span class="line"><span class="selector-class">.div2</span>&#123;<span class="attribute">background</span>:<span class="number">#800080</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid red;<span class="attribute">height</span>:<span class="number">100px</span>;<span class="attribute">width</span>:<span class="number">98%</span>;<span class="comment">/*解决代码*/</span><span class="attribute">clear</span>:both&#125; </span><br><span class="line"><span class="selector-class">.left</span>&#123;<span class="attribute">float</span>:left;<span class="attribute">width</span>:<span class="number">20%</span>;<span class="attribute">height</span>:<span class="number">200px</span>;<span class="attribute">background</span>:<span class="number">#DDD</span>&#125; </span><br><span class="line"><span class="selector-class">.right</span>&#123;<span class="attribute">float</span>:right;<span class="attribute">width</span>:<span class="number">30%</span>;<span class="attribute">height</span>:<span class="number">80px</span>;<span class="attribute">background</span>:<span class="number">#DDD</span>&#125; </span><br><span class="line">&lt;/style&gt; </span><br><span class="line">&lt;div class="div1"&gt; </span><br><span class="line">&lt;div class="left"&gt;Left&lt;/div&gt; </span><br><span class="line">&lt;div class="right"&gt;Right&lt;/div&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div class="div2"&gt; </span><br><span class="line"><span class="selector-tag">div2</span> </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>原理：所有代码一起浮动，就变成了一个整体 </p>
+<p>优点：没有优点 </p>
+<p>缺点：会产生新的浮动问题。 </p>
+<p>建议：不推荐使用，只作了解。 </p>
+<h2 id="父级div定义-display-table"><a href="#父级div定义-display-table" class="headerlink" title="父级div定义 display:table"></a>父级div定义 display:table</h2><p>代码如下:<br><figure class="hljs highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type="text/css"&gt; </span><br><span class="line"><span class="selector-class">.div1</span>&#123;<span class="attribute">background</span>:<span class="number">#000080</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid red;<span class="comment">/*解决代码*/</span><span class="attribute">width</span>:<span class="number">98%</span>;<span class="attribute">display</span>:table;<span class="attribute">margin-bottom</span>:<span class="number">10px</span>;&#125; </span><br><span class="line"><span class="selector-class">.div2</span>&#123;<span class="attribute">background</span>:<span class="number">#800080</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid red;<span class="attribute">height</span>:<span class="number">100px</span>;<span class="attribute">width</span>:<span class="number">98%</span>;&#125; </span><br><span class="line"><span class="selector-class">.left</span>&#123;<span class="attribute">float</span>:left;<span class="attribute">width</span>:<span class="number">20%</span>;<span class="attribute">height</span>:<span class="number">200px</span>;<span class="attribute">background</span>:<span class="number">#DDD</span>&#125; </span><br><span class="line"><span class="selector-class">.right</span>&#123;<span class="attribute">float</span>:right;<span class="attribute">width</span>:<span class="number">30%</span>;<span class="attribute">height</span>:<span class="number">80px</span>;<span class="attribute">background</span>:<span class="number">#DDD</span>&#125; </span><br><span class="line">&lt;/style&gt; </span><br><span class="line">&lt;div class="div1"&gt; </span><br><span class="line">&lt;div class="left"&gt;Left&lt;/div&gt; </span><br><span class="line">&lt;div class="right"&gt;Right&lt;/div&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div class="div2"&gt; </span><br><span class="line"><span class="selector-tag">div2</span> </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>原理：将div属性变成表格 </p>
+<p>优点：没有优点 </p>
+<p>缺点：会产生新的未知问题。 </p>
+<p>建议：不推荐使用，只作了解。 </p>
+<h2 id="结尾处加-br标签-clear-both"><a href="#结尾处加-br标签-clear-both" class="headerlink" title="结尾处加 br标签 clear:both"></a>结尾处加 br标签 clear:both</h2><p>代码如下:<br><figure class="hljs highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type="text/css"&gt; </span><br><span class="line"><span class="selector-class">.div1</span>&#123;<span class="attribute">background</span>:<span class="number">#000080</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid red;<span class="attribute">margin-bottom</span>:<span class="number">10px</span>;<span class="attribute">zoom</span>:<span class="number">1</span>&#125; </span><br><span class="line"><span class="selector-class">.div2</span>&#123;<span class="attribute">background</span>:<span class="number">#800080</span>;<span class="attribute">border</span>:<span class="number">1px</span> solid red;<span class="attribute">height</span>:<span class="number">100px</span>&#125; </span><br><span class="line"><span class="selector-class">.left</span>&#123;<span class="attribute">float</span>:left;<span class="attribute">width</span>:<span class="number">20%</span>;<span class="attribute">height</span>:<span class="number">200px</span>;<span class="attribute">background</span>:<span class="number">#DDD</span>&#125; </span><br><span class="line"><span class="selector-class">.right</span>&#123;<span class="attribute">float</span>:right;<span class="attribute">width</span>:<span class="number">30%</span>;<span class="attribute">height</span>:<span class="number">80px</span>;<span class="attribute">background</span>:<span class="number">#DDD</span>&#125; </span><br><span class="line"><span class="selector-class">.clearfloat</span>&#123;<span class="attribute">clear</span>:both&#125; </span><br><span class="line">&lt;/style&gt; </span><br><span class="line">&lt;div class="div1"&gt; </span><br><span class="line">&lt;div class="left"&gt;Left&lt;/div&gt; </span><br><span class="line">&lt;div class="right"&gt;Right&lt;/div&gt; </span><br><span class="line">&lt;br class="clearfloat" /&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;div class="div2"&gt; </span><br><span class="line"><span class="selector-tag">div2</span> </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>原理：父级div定义zoom:1来解决IE浮动问题，结尾处加 br标签 clear:both </p>
+<p>建议：不推荐使用，只作了解。</p>
+<h1 id="原生JS给元素添加class属性"><a href="#原生JS给元素添加class属性" class="headerlink" title="原生JS给元素添加class属性"></a>原生JS给元素添加class属性</h1><p>有下面三种语句：<br><figure class="hljs highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>].className = <span class="string">'snow-container'</span>; <span class="comment">//设置为新的</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>].className += <span class="string">'snow-container'</span>; <span class="comment">//在原来的后面加这个</span></span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>].classList.add(<span class="string">"snow-container"</span>); <span class="comment">//与第一个等价</span></span><br></pre></td></tr></table></figure></p>
+<p>用第三种<br>因为第一种是直接将旧的class改为新的<br>第二种实在旧的class基础上像字符串拼接一样<br>只有第三种实现了目的</p>
+<h1 id="Flex-布局"><a href="#Flex-布局" class="headerlink" title="Flex 布局"></a>Flex 布局</h1><p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">点击这里</a></p>
+<h1 id="ul内容自适应居中"><a href="#ul内容自适应居中" class="headerlink" title="ul内容自适应居中"></a>ul内容自适应居中</h1><p>在开发过程中，想到一个问题，平时对块级元素居中的时候都是定义一个宽度然后简单的通过margin:0 auto;实现，但是如果内容增加，是不是每次都需要修改宽度呢。我觉得需要思考一个自适应内容，并居中的方案。<br><figure class="hljs highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">'container'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"clearfix"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="hljs highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="string">''</span>;</span><br><span class="line">    <span class="attribute">visibility</span>:hidden;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">0</span>;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">    <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">text-align</span>:center;          </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="selector-tag">ul</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>:inline-block;  </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="selector-tag">li</span>&#123;</span><br><span class="line">     <span class="attribute">float</span>:left;</span><br><span class="line">     <span class="attribute">width</span>:<span class="number">20px</span>;</span><br><span class="line">     <span class="attribute">height</span>:<span class="number">20px</span>;</span><br><span class="line">     <span class="attribute">margin</span>:<span class="number">0</span> <span class="number">20px</span>;</span><br><span class="line">     <span class="attribute">-webkit-border-radius</span>: <span class="number">10px</span>;</span><br><span class="line">     <span class="attribute">-moz-border-radius</span>: <span class="number">10px</span>;</span><br><span class="line">     <span class="attribute">-o-border-radius</span>: <span class="number">10px</span>;</span><br><span class="line">     <span class="attribute">border-radius</span>: <span class="number">10px</span>;</span><br><span class="line">     <span class="attribute">cursor</span>:pointer;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="selector-tag">a</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>:block;</span><br><span class="line">    <span class="attribute">background-color</span>:<span class="number">#000</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这实现思想是，先让ul定义 display:inline-block 属性，让其变成行内块级元素。</p>
+<p>当ul成为行内块级元素后，它便有了行级元素的特性。</p>
+<p>那么，重点来了。</p>
+<p>只需要对ul的父级元素 .container 定义一个text-align:center;</p>
+<p>效果便可以很明显的看到了。</p>
+<p>更重点是，ul内的li的增减并不会对其位置造成偏移。</p>
+<h1 id="css-行高-line-height"><a href="#css-行高-line-height" class="headerlink" title="css 行高 line-height"></a>css 行高 line-height</h1><p><a href="http://www.zhangxinxu.com/wordpress/2009/11/css%E8%A1%8C%E9%AB%98line-height%E7%9A%84%E4%B8%80%E4%BA%9B%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E5%8F%8A%E5%BA%94%E7%94%A8/" target="_blank" rel="noopener">点击这里</a></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/CSS/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>CSS</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/02/07/JS-class/" rel="next" title="用原生JS获取CLASS对象(很简单实用)"><i class="fas fa-angle-left"></i><span class="nav-title">用原生JS获取CLASS对象(很简单实用)</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/02/11/CustomEvents-js/" rel="prev" title="对CustomEvents.js文件的解读"><span class="nav-title">对CustomEvents.js文件的解读</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.jpg" alt="yojiaku">
+  
+  <h1 class="author-name">yojiaku</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">27</a></div>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#前后对比图"><span class="toc-text">前后对比图</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#CSS清除浮动的8种方法"><span class="toc-text">CSS清除浮动的8种方法</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#父级div定义-height"><span class="toc-text">父级div定义 height</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#结尾处加空div标签-clear-both"><span class="toc-text">结尾处加空div标签 clear:both</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#父级div定义-伪类-after-和-zoom-采用的"><span class="toc-text">父级div定义 伪类:after 和 zoom (采用的)</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#父级div定义-overflow-hidden"><span class="toc-text">父级div定义 overflow:hidden</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#父级div定义-overflow-auto"><span class="toc-text">父级div定义 overflow:auto</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#父级div-也一起浮动"><span class="toc-text">父级div 也一起浮动</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#父级div定义-display-table"><span class="toc-text">父级div定义 display:table</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#结尾处加-br标签-clear-both"><span class="toc-text">结尾处加 br标签 clear:both</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#原生JS给元素添加class属性"><span class="toc-text">原生JS给元素添加class属性</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#Flex-布局"><span class="toc-text">Flex 布局</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#ul内容自适应居中"><span class="toc-text">ul内容自适应居中</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#css-行高-line-height"><span class="toc-text">css 行高 line-height</span></a></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:2329082643@qq.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/3286626050/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">yojiaku</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

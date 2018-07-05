@@ -35,7 +35,7 @@
     <link href="https://yojiaku.github.io/2018/07/05/hello-world/"/>
     <id>https://yojiaku.github.io/2018/07/05/hello-world/</id>
     <published>2018-07-05T12:17:30.782Z</published>
-    <updated>2018-07-05T12:17:30.782Z</updated>
+    <updated>2018-01-31T08:40:41.484Z</updated>
     
     <summary type="html">
     
@@ -49,6 +49,440 @@
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>Algorithm-二维数组中的查找-BinarySearch</title>
+    <link href="https://yojiaku.github.io/2018/03/28/BinarySearch/"/>
+    <id>https://yojiaku.github.io/2018/03/28/BinarySearch/</id>
+    <published>2018-03-28T05:17:34.000Z</published>
+    <updated>2018-03-28T05:23:32.080Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;二维数组中的查找&quot;&gt;&lt;a href=&quot;#二维数组中的查找&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="BinarySearch Algorithm" scheme="https://yojiaku.github.io/tags/BinarySearch-Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS逻辑或运算符</title>
+    <link href="https://yojiaku.github.io/2018/03/26/JS%E9%80%BB%E8%BE%91%E6%88%96%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <id>https://yojiaku.github.io/2018/03/26/JS逻辑或运算符/</id>
+    <published>2018-03-26T15:59:12.000Z</published>
+    <updated>2018-03-26T16:04:57.249Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JavaScript逻辑或运算符&quot;&gt;&lt;a href=&quot;#JavaScript逻辑或运算符&quot; class=&quot;headerlink&quot; title=&quot;JavaScript逻辑或运算符&quot;&gt;&lt;/a&gt;JavaScript逻辑或运算符&lt;/h1&gt;&lt;p&gt;JScript
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS逻辑与运算符</title>
+    <link href="https://yojiaku.github.io/2018/03/26/JS%E9%80%BB%E8%BE%91%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <id>https://yojiaku.github.io/2018/03/26/JS逻辑与运算符/</id>
+    <published>2018-03-26T15:58:01.000Z</published>
+    <updated>2018-03-26T15:58:43.907Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JavaScript逻辑“与”运算符&quot;&gt;&lt;a href=&quot;#JavaScript逻辑“与”运算符&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS-Global</title>
+    <link href="https://yojiaku.github.io/2018/03/26/JS-Global/"/>
+    <id>https://yojiaku.github.io/2018/03/26/JS-Global/</id>
+    <published>2018-03-26T15:52:06.000Z</published>
+    <updated>2018-03-26T15:54:12.235Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JavaScript-Global方法&quot;&gt;&lt;a href=&quot;#JavaScript-Global方法&quot; class=&quot;headerlink&quot; title=&quot;JavaScript Global方法&quot;&gt;&lt;/a&gt;JavaScript Global方法&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS函数创建</title>
+    <link href="https://yojiaku.github.io/2018/03/26/JS%E5%87%BD%E6%95%B0%E5%88%9B%E5%BB%BA/"/>
+    <id>https://yojiaku.github.io/2018/03/26/JS函数创建/</id>
+    <published>2018-03-26T15:46:44.000Z</published>
+    <updated>2018-03-26T15:51:25.225Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JavaScript函数创建&quot;&gt;&lt;a href=&quot;#JavaScript函数创建&quot; class=&quot;headerlink&quot; title=&quot;JavaScript函数创建&quot;&gt;&lt;/a&gt;JavaScript函数创建&lt;/h1&gt;&lt;h2 id=&quot;caller属性&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS-throw语句</title>
+    <link href="https://yojiaku.github.io/2018/03/26/JS-throw%E8%AF%AD%E5%8F%A5/"/>
+    <id>https://yojiaku.github.io/2018/03/26/JS-throw语句/</id>
+    <published>2018-03-26T15:42:26.000Z</published>
+    <updated>2018-03-26T15:43:14.329Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JavaScript-throw语句&quot;&gt;&lt;a href=&quot;#JavaScript-throw语句&quot; class=&quot;headerlink&quot; title=&quot;JavaScript throw语句&quot;&gt;&lt;/a&gt;JavaScript
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS日期时间</title>
+    <link href="https://yojiaku.github.io/2018/03/26/JS%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4/"/>
+    <id>https://yojiaku.github.io/2018/03/26/JS日期时间/</id>
+    <published>2018-03-26T15:23:55.000Z</published>
+    <updated>2018-03-26T15:42:05.634Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JavaScript日期和时间&quot;&gt;&lt;a href=&quot;#JavaScript日期和时间&quot; class=&quot;headerlink&quot; title=&quot;JavaScript日期和时间&quot;&gt;&lt;/a&gt;JavaScript日期和时间&lt;/h1&gt;&lt;h2 id=&quot;Date对象&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JSNull</title>
+    <link href="https://yojiaku.github.io/2018/03/26/JSNull/"/>
+    <id>https://yojiaku.github.io/2018/03/26/JSNull/</id>
+    <published>2018-03-26T15:20:19.000Z</published>
+    <updated>2018-03-26T15:20:59.923Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JavaScript-Null&quot;&gt;&lt;a href=&quot;#JavaScript-Null&quot; class=&quot;headerlink&quot; title=&quot;JavaScript Null&quot;&gt;&lt;/a&gt;JavaScript Null&lt;/h1&gt;&lt;p&gt;null
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS数组处理</title>
+    <link href="https://yojiaku.github.io/2018/03/26/JS%E6%95%B0%E7%BB%84%E5%A4%84%E7%90%86/"/>
+    <id>https://yojiaku.github.io/2018/03/26/JS数组处理/</id>
+    <published>2018-03-26T15:03:05.000Z</published>
+    <updated>2018-03-26T15:19:13.439Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JavaScript数组处理&quot;&gt;&lt;a href=&quot;#JavaScript数组处理&quot; class=&quot;headerlink&quot; title=&quot;JavaScript数组处理&quot;&gt;&lt;/a&gt;JavaScript数组处理&lt;/h1&gt;&lt;p&gt;Array, concat, join,
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript创建高级对象</title>
+    <link href="https://yojiaku.github.io/2018/03/26/JavaScript%E5%88%9B%E5%BB%BA%E9%AB%98%E7%BA%A7%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://yojiaku.github.io/2018/03/26/JavaScript创建高级对象/</id>
+    <published>2018-03-26T14:02:46.000Z</published>
+    <updated>2018-03-26T14:04:36.963Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JavaScript创建高级对象&quot;&gt;&lt;a href=&quot;#JavaScript创建高级对象&quot; class=&quot;headerlink&quot; title=&quot;JavaScript创建高级对象&quot;&gt;&lt;/a&gt;JavaScript创建高级对象&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript对象</title>
+    <link href="https://yojiaku.github.io/2018/03/26/JavaScript%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://yojiaku.github.io/2018/03/26/JavaScript对象/</id>
+    <published>2018-03-26T13:25:57.000Z</published>
+    <updated>2018-03-26T13:44:04.947Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JavaScript对象&quot;&gt;&lt;a href=&quot;#JavaScript对象&quot; class=&quot;headerlink&quot; title=&quot;JavaScript对象&quot;&gt;&lt;/a&gt;JavaScript对象&lt;/h1&gt;&lt;p&gt;Jscript
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript控制语句</title>
+    <link href="https://yojiaku.github.io/2018/03/26/JavaScript%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/"/>
+    <id>https://yojiaku.github.io/2018/03/26/JavaScript控制语句/</id>
+    <published>2018-03-26T13:16:13.000Z</published>
+    <updated>2018-03-26T13:25:07.929Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JavaScript控制语句&quot;&gt;&lt;a href=&quot;#JavaScript控制语句&quot; class=&quot;headerlink&quot; title=&quot;JavaScript控制语句&quot;&gt;&lt;/a&gt;JavaScript控制语句&lt;/h1&gt;&lt;h2 id=&quot;条件运算符&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript运算符</title>
+    <link href="https://yojiaku.github.io/2018/03/26/JavaScript%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <id>https://yojiaku.github.io/2018/03/26/JavaScript运算符/</id>
+    <published>2018-03-26T13:12:25.000Z</published>
+    <updated>2018-03-26T13:13:08.660Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JavaScript运算符&quot;&gt;&lt;a href=&quot;#JavaScript运算符&quot; class=&quot;headerlink&quot; title=&quot;JavaScript运算符&quot;&gt;&lt;/a&gt;JavaScript运算符&lt;/h1&gt;&lt;p&gt;== （相等）与 ===
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript数据类型</title>
+    <link href="https://yojiaku.github.io/2018/03/26/JavaScript%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
+    <id>https://yojiaku.github.io/2018/03/26/JavaScript数据类型/</id>
+    <published>2018-03-26T12:54:12.000Z</published>
+    <updated>2018-03-26T13:10:01.702Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JavaScript数据类型&quot;&gt;&lt;a href=&quot;#JavaScript数据类型&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript变量</title>
+    <link href="https://yojiaku.github.io/2018/03/26/JavaScript/"/>
+    <id>https://yojiaku.github.io/2018/03/26/JavaScript/</id>
+    <published>2018-03-26T12:45:53.000Z</published>
+    <updated>2018-03-26T12:53:49.273Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JavaScript变量&quot;&gt;&lt;a href=&quot;#JavaScript变量&quot; class=&quot;headerlink&quot; title=&quot;JavaScript变量&quot;&gt;&lt;/a&gt;JavaScript变量&lt;/h1&gt;&lt;h2 id=&quot;名称规则&quot;&gt;&lt;a href=&quot;#名称规则&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>对CustomEvents.js文件的解读</title>
+    <link href="https://yojiaku.github.io/2018/02/11/CustomEvents-js/"/>
+    <id>https://yojiaku.github.io/2018/02/11/CustomEvents-js/</id>
+    <published>2018-02-11T14:48:48.000Z</published>
+    <updated>2018-02-11T18:07:28.150Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;建立Visualization需要的步骤&quot;&gt;&lt;a href=&quot;#建立Visualization需要的步骤&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
+    
+      <category term="Visualization" scheme="https://yojiaku.github.io/tags/Visualization/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>由Blocking Search动画引出的CSS样式的知识</title>
+    <link href="https://yojiaku.github.io/2018/02/07/Blocking-Search-Style/"/>
+    <id>https://yojiaku.github.io/2018/02/07/Blocking-Search-Style/</id>
+    <published>2018-02-07T14:45:30.000Z</published>
+    <updated>2018-02-07T15:11:36.401Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;前后对比图&quot;&gt;&lt;a href=&quot;#前后对比图&quot; class=&quot;headerlink&quot; title=&quot;前后对比图&quot;&gt;&lt;/a&gt;前后对比图&lt;/h1&gt;&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="https://yojiaku.github.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用原生JS获取CLASS对象(很简单实用)</title>
+    <link href="https://yojiaku.github.io/2018/02/07/JS-class/"/>
+    <id>https://yojiaku.github.io/2018/02/07/JS-class/</id>
+    <published>2018-02-06T16:44:08.000Z</published>
+    <updated>2018-02-07T08:55:39.661Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;用原生JS获取CLASS对象-很简单实用&quot;&gt;&lt;a href=&quot;#用原生JS获取CLASS对象-很简单实用&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
     
   </entry>
   
