@@ -144,12 +144,11 @@
       </div>
     </header>
     <main class="post-main" itemprop="articleBody">
-      <p>###文章重点<br>区块链技术原理、数据结构、运行机制、区块链的分叉</p>
-<p>###区块链技术原理</p>
-<blockquote>
+      <h3 id="文章重点"><a href="#文章重点" class="headerlink" title="文章重点"></a>文章重点</h3><p>区块链技术原理、数据结构、运行机制、区块链的分叉</p>
+<h3 id="区块链技术原理"><a href="#区块链技术原理" class="headerlink" title="区块链技术原理"></a>区块链技术原理</h3><blockquote>
 <p>前言：今天在学校上了一门有关银行金融的课程，了解到一个术语<code>financial intermediation</code>——金融中介，早期的银行直至现在贷款人和被贷款人依旧采取中介的方式进行交易，究其原因是现在的交易是基于信用。<br>而区块链打破的正是基于信用的交易方式，它假设交易双方互不信任，完全依靠密码学原理进行交易和记账，由此打破交易需要第三方介入的传统贸易方式。</p>
 </blockquote>
-<p>####区块链定义和特点<br>区块链，顾名思义，很容易就联想到<code>链表</code>这一数据结构。实际上，区块链就是一种分布式<em><code>(1)</code></em>数据库，通过去中心化<em><code>(2)</code></em>、去信任的方式，集体维护一个可靠数据库。<br>传统数据库的4中操作可以简写为CURD，C表示创建（create）、U表示更新（update）、R表示读取（read）、D表示删除（delete）。<br>而区块链作为分布式数据库，相当于放弃了更新（U）和删除（D）这两个操作，用“<code>无法篡改</code>”和“<code>不可抵赖</code>”两个重要特点代替，依托P2P网络提供的分布式端对端网络的特点，可将之归结为<code>CROSS</code>原则：</p>
+<h4 id="区块链定义和特点"><a href="#区块链定义和特点" class="headerlink" title="区块链定义和特点"></a>区块链定义和特点</h4><p>区块链，顾名思义，很容易就联想到<code>链表</code>这一数据结构。实际上，区块链就是一种分布式<em><code>(1)</code></em>数据库，通过去中心化<em><code>(2)</code></em>、去信任的方式，集体维护一个可靠数据库。<br>传统数据库的4中操作可以简写为CURD，C表示创建（create）、U表示更新（update）、R表示读取（read）、D表示删除（delete）。<br>而区块链作为分布式数据库，相当于放弃了更新（U）和删除（D）这两个操作，用“<code>无法篡改</code>”和“<code>不可抵赖</code>”两个重要特点代替，依托P2P网络提供的分布式端对端网络的特点，可将之归结为<code>CROSS</code>原则：</p>
 <ul>
 <li>C（create）：创建</li>
 <li>R（retrieve）：可溯，依托区块彼此相连的链式结构，用户可以追溯至最初交易来查看整个交易过程（想象拉链，总能通过任一个链条项找到其他任意链条项）</li>
@@ -158,16 +157,16 @@
 <li>S（stable）：稳定，系统中任何节点的退出，都不会影响到整个系统的稳定性，不会遇到中心化节点通常遇到的“单点故障”问题。</li>
 </ul>
 <p>由此可见，具有CROSS特点的区块链技术极有可能改变现有的交易模式。传统的交易中，商家和消费者之间难以做到完全信任，为了保证对方是可信的，常常需要国家信用背书或者企业背书的第三方机构。商家和消费者为了证明自己合规，需要自己把自己部分的材料都汇聚到第三方机构，能想象一下这冗长的手续以及额外的费用，这也常常使得交易滞后。区块链技术则逐步实现去中心化、去中介，实现消费者和商家之间直接支付，减去了中间不必要的时间。</p>
-<p>####区块链的技术原语<br>主要运用了4个基础技术——哈希运算（SHA256）、数字签名、P2P网络、工作量证明（PoW）</p>
-<p>#####哈希加密算法（SHA256）<br>将任何一串数据输入到SHA256都能得到一个256位的<code>Hash值</code>（散列值），特点：相同的数据输入将得到相同的结果，输入数据只要稍有变化，则将得到一个千差万别的结果，且结果无法事先预知——我们不能通过找规律的方式找到这个Hash值。</p>
-<p>#####数字签名<br>通常数字签名是基于椭圆曲线加密技术的公私钥来实现，有两个很重要的概念：</p>
+<h4 id="区块链的技术原语"><a href="#区块链的技术原语" class="headerlink" title="区块链的技术原语"></a>区块链的技术原语</h4><p>主要运用了4个基础技术——哈希运算（SHA256）、数字签名、P2P网络、工作量证明（PoW）</p>
+<h5 id="哈希加密算法（SHA256）"><a href="#哈希加密算法（SHA256）" class="headerlink" title="哈希加密算法（SHA256）"></a>哈希加密算法（SHA256）</h5><p>将任何一串数据输入到SHA256都能得到一个256位的<code>Hash值</code>（散列值），特点：相同的数据输入将得到相同的结果，输入数据只要稍有变化，则将得到一个千差万别的结果，且结果无法事先预知——我们不能通过找规律的方式找到这个Hash值。</p>
+<h5 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h5><p>通常数字签名是基于椭圆曲线加密技术的公私钥来实现，有两个很重要的概念：</p>
 <ol>
 <li>公私钥是非对称加密技术，公钥和私钥不同，但是可以基于私钥生成公钥。</li>
 <li>相关性，公钥加密的，对应的私钥才能解密。私钥加密的内容，对应的公钥才能解密。</li>
 </ol>
-<p>#####P2P网络<br>P2P网络分为有结构和无结构，区别在于路由规则的制定方面。<br>有结构的P2P网络，例如Chord，利用<code>一致性哈希表（DHT）</code>构建每个节点的路由表。<br>无结构的P2P网络代表是Gnutella，节点之间的路由靠广播的方式。一个节点要想查找一个文件，首先问其邻居有没有这个文件，他的邻居再问各自的邻居有没有，这样迭代，容易形成<code>广播风暴</code>，因此一般设置一个网络TTL，来限制广播传播的范围。<br>区块链采用的是无结构P2P网络。</p>
-<p>#####工作量证明机制<br>相当于一份工作证明，确认你做过一定量的工作。工作量是信任产生的基础，在区块链中，我们通过解决一个数学难题来证明自己的工作量。<br>这个数据难题就是，对一个数字串进行两次SHA256运算，如果得到的数小于一个指定的值，就算成功。否则，要通过不断的尝试试错，来求解这个数。一般来说，指定的结果值，前面都是多个零开头。</p>
-<p>####区块链的数据结构<br>一个区块链依托于一个P2P网络。<br>节点可以有 4 种功能，即钱包、完整的区块链拷贝、挖矿和路由。<br><code>路由</code>功能是每个节点必需的，前3个功能，根据节点自己的需求来定。<br>对于一个区块链拷贝来说，它记录了从 2009 年，中本聪建立创世区块以来，系统运行时记录的所有交易记录。<br>区块链分为区块头和区块体。<br>区块头包含版本号、上一个区块的哈希值、Merkle根节点哈希值、时间戳、难度值、随机数和交易记录这些字段。<br>区块与区块之间彼此相连，构成的一个链式结构，叫做区块链。这跟以前编写C语言，用指针实现链表是一个道理。不过，这里的指针不是内存地址，而是将上一个区块的区块头，使用两次SHA256加密算法，得到的哈希值。</p>
+<h5 id="P2P网络"><a href="#P2P网络" class="headerlink" title="P2P网络"></a>P2P网络</h5><p>P2P网络分为有结构和无结构，区别在于路由规则的制定方面。<br>有结构的P2P网络，例如Chord，利用<code>一致性哈希表（DHT）</code>构建每个节点的路由表。<br>无结构的P2P网络代表是Gnutella，节点之间的路由靠广播的方式。一个节点要想查找一个文件，首先问其邻居有没有这个文件，他的邻居再问各自的邻居有没有，这样迭代，容易形成<code>广播风暴</code>，因此一般设置一个网络TTL，来限制广播传播的范围。<br>区块链采用的是无结构P2P网络。</p>
+<h5 id="工作量证明机制"><a href="#工作量证明机制" class="headerlink" title="工作量证明机制"></a>工作量证明机制</h5><p>相当于一份工作证明，确认你做过一定量的工作。工作量是信任产生的基础，在区块链中，我们通过解决一个数学难题来证明自己的工作量。<br>这个数据难题就是，对一个数字串进行两次SHA256运算，如果得到的数小于一个指定的值，就算成功。否则，要通过不断的尝试试错，来求解这个数。一般来说，指定的结果值，前面都是多个零开头。</p>
+<h4 id="区块链的数据结构"><a href="#区块链的数据结构" class="headerlink" title="区块链的数据结构"></a>区块链的数据结构</h4><p>一个区块链依托于一个P2P网络。<br>节点可以有 4 种功能，即钱包、完整的区块链拷贝、挖矿和路由。<br><code>路由</code>功能是每个节点必需的，前3个功能，根据节点自己的需求来定。<br>对于一个区块链拷贝来说，它记录了从 2009 年，中本聪建立创世区块以来，系统运行时记录的所有交易记录。<br>区块链分为区块头和区块体。<br>区块头包含版本号、上一个区块的哈希值、Merkle根节点哈希值、时间戳、难度值、随机数和交易记录这些字段。<br>区块与区块之间彼此相连，构成的一个链式结构，叫做区块链。这跟以前编写C语言，用指针实现链表是一个道理。不过，这里的指针不是内存地址，而是将上一个区块的区块头，使用两次SHA256加密算法，得到的哈希值。</p>
 <blockquote>
 <p>区块头没有包含任何交易记录信息，怎么能保证交易记录不被篡改？</p>
 </blockquote>
@@ -249,6 +248,12 @@
 
 
 
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#文章重点"><span class="toc-text">文章重点</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#区块链技术原理"><span class="toc-text">区块链技术原理</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区块链定义和特点"><span class="toc-text">区块链定义和特点</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区块链的技术原语"><span class="toc-text">区块链的技术原语</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#哈希加密算法（SHA256）"><span class="toc-text">哈希加密算法（SHA256）</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#数字签名"><span class="toc-text">数字签名</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#P2P网络"><span class="toc-text">P2P网络</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#工作量证明机制"><span class="toc-text">工作量证明机制</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区块链的数据结构"><span class="toc-text">区块链的数据结构</span></a></li></ol></li></ol></div>
+</div>
 
 
 
