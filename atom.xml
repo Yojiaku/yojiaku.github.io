@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yojiaku.github.io/"/>
-  <updated>2018-07-19T12:34:09.742Z</updated>
+  <updated>2018-07-05T12:19:41.086Z</updated>
   <id>https://yojiaku.github.io/</id>
   
   <author>
@@ -15,33 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>区块链的技术原理和意义（论文祥读）</title>
-    <link href="https://yojiaku.github.io/2018/07/15/blockchainPage1/"/>
-    <id>https://yojiaku.github.io/2018/07/15/blockchainPage1/</id>
-    <published>2018-07-15T15:52:06.000Z</published>
-    <updated>2018-07-19T12:34:09.742Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h3 id=&quot;文章重点&quot;&gt;&lt;a href=&quot;#文章重点&quot; class=&quot;headerlink&quot; title=&quot;文章重点&quot;&gt;&lt;/a&gt;文章重点&lt;/h3&gt;&lt;p&gt;区块链技术原理、数据结构、运行机制、区块链的分叉&lt;/p&gt;
-&lt;h3 id=&quot;区块链技术原理&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="区块链" scheme="https://yojiaku.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
-      <category term="论文" scheme="https://yojiaku.github.io/tags/%E8%AE%BA%E6%96%87/"/>
-    
-  </entry>
   
   <entry>
     <title>test_my_site</title>
@@ -76,6 +49,112 @@
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title>分块查找（Blocking Search）</title>
+    <link href="https://yojiaku.github.io/2018/06/17/BucketSort/"/>
+    <id>https://yojiaku.github.io/2018/06/17/BucketSort/</id>
+    <published>2018-06-17T14:05:35.000Z</published>
+    <updated>2018-07-19T15:36:23.107Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;桶排序 (Bucket
+        
+      
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="https://yojiaku.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="排序" scheme="https://yojiaku.github.io/tags/%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>分块查找（Blocking Search）</title>
+    <link href="https://yojiaku.github.io/2018/06/16/Blocking_Search/"/>
+    <id>https://yojiaku.github.io/2018/06/16/Blocking_Search/</id>
+    <published>2018-06-16T14:51:35.000Z</published>
+    <updated>2018-07-19T15:35:05.669Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;分块查找，又称索引顺序查找。它是一种性能介于顺序查找和二分查找之间的改进方法。它是为了找到 &lt;strong&gt;二分查找的高效但需要顺序存储&lt;/strong&gt; 和 &lt;strong&gt;顺序查找可以解决元素动态变化但效率低下&lt;/strong&gt; 之间更平衡的方法。&lt;/p&gt;
+&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="https://yojiaku.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="查找" scheme="https://yojiaku.github.io/tags/%E6%9F%A5%E6%89%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Prim最小生成树算法</title>
+    <link href="https://yojiaku.github.io/2018/06/15/Prim_Minimum_Spanning_Tree/"/>
+    <id>https://yojiaku.github.io/2018/06/15/Prim_Minimum_Spanning_Tree/</id>
+    <published>2018-06-15T12:34:05.000Z</published>
+    <updated>2018-07-19T15:34:27.473Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Prim最小生成树算法搜索到的边子集所构成的树中，不但包括了连通图里的所有顶点，且其所有边的权值之和亦为最小。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克发现；并在1957年由美国计算机科学家罗伯特·普里姆独立发现；1959年，艾兹格·迪科斯彻再次发现了该算法。因此，在
+        
+      
+    
+    </summary>
+    
+    
+      <category term="算法" scheme="https://yojiaku.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="最小生成树" scheme="https://yojiaku.github.io/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>区块链的技术原理和意义（论文祥读）</title>
+    <link href="https://yojiaku.github.io/2018/06/10/blockchainPage1/"/>
+    <id>https://yojiaku.github.io/2018/06/10/blockchainPage1/</id>
+    <published>2018-06-10T15:52:06.000Z</published>
+    <updated>2018-07-19T15:34:30.705Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h3 id=&quot;文章重点&quot;&gt;&lt;a href=&quot;#文章重点&quot; class=&quot;headerlink&quot; title=&quot;文章重点&quot;&gt;&lt;/a&gt;文章重点&lt;/h3&gt;&lt;p&gt;区块链技术原理、数据结构、运行机制、区块链的分叉&lt;/p&gt;
+&lt;h3 id=&quot;区块链技术原理&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="区块链" scheme="https://yojiaku.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="论文" scheme="https://yojiaku.github.io/tags/%E8%AE%BA%E6%96%87/"/>
     
   </entry>
   
@@ -412,80 +491,6 @@
     
     
       <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript变量</title>
-    <link href="https://yojiaku.github.io/2018/03/26/JavaScript/"/>
-    <id>https://yojiaku.github.io/2018/03/26/JavaScript/</id>
-    <published>2018-03-26T12:45:53.000Z</published>
-    <updated>2018-03-26T12:53:49.273Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;JavaScript变量&quot;&gt;&lt;a href=&quot;#JavaScript变量&quot; class=&quot;headerlink&quot; title=&quot;JavaScript变量&quot;&gt;&lt;/a&gt;JavaScript变量&lt;/h1&gt;&lt;h2 id=&quot;名称规则&quot;&gt;&lt;a href=&quot;#名称规则&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>对CustomEvents.js文件的解读</title>
-    <link href="https://yojiaku.github.io/2018/02/11/CustomEvents-js/"/>
-    <id>https://yojiaku.github.io/2018/02/11/CustomEvents-js/</id>
-    <published>2018-02-11T14:48:48.000Z</published>
-    <updated>2018-02-11T18:07:28.150Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;建立Visualization需要的步骤&quot;&gt;&lt;a href=&quot;#建立Visualization需要的步骤&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
-    
-      <category term="Visualization" scheme="https://yojiaku.github.io/tags/Visualization/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>由Blocking Search动画引出的CSS样式的知识</title>
-    <link href="https://yojiaku.github.io/2018/02/07/Blocking-Search-Style/"/>
-    <id>https://yojiaku.github.io/2018/02/07/Blocking-Search-Style/</id>
-    <published>2018-02-07T14:45:30.000Z</published>
-    <updated>2018-02-07T15:11:36.401Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;前后对比图&quot;&gt;&lt;a href=&quot;#前后对比图&quot; class=&quot;headerlink&quot; title=&quot;前后对比图&quot;&gt;&lt;/a&gt;前后对比图&lt;/h1&gt;&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-      <category term="CSS" scheme="https://yojiaku.github.io/tags/CSS/"/>
     
   </entry>
   

@@ -121,7 +121,7 @@
   
   <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/07/15/blockchainPage1/">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/10/blockchainPage1/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
        <meta itemprop="name" content="yojiaku">
        <meta itemprop="description" content="">
@@ -136,7 +136,7 @@
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-07-15T23:52:06+08:00">2018-07-15 23:52:06</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-10T23:52:06+08:00">2018-06-10 23:52:06</time></span>
         </span>
         
         
@@ -170,7 +170,19 @@
 <blockquote>
 <p>区块头没有包含任何交易记录信息，怎么能保证交易记录不被篡改？</p>
 </blockquote>
-<p>答案是，为了提高区块链的校验效率，把一个区块里的所有交易记录，构建成Merkle树这样的二叉树结构。如图4（c）所示，如果交易记录是奇数，图中的 3 个记录，剩下的二叉树节点由自己填补：图中的交易 2 和自己构成了一个二叉树。以此类推，直到根节点。二叉树的两个交易记录哈希值直接串联，作为下一个二叉树的输入。通过这种方式，如果有人更改任何一个交易记录，按照前面 SHA256 加密哈希的特性，Merkle根节点就会变动很大，以致其他节点在验证区块链的哈希值时，能够很明显地发现问题。</p>
+<p>答案是，为了提高区块链的校验效率，把一个区块里的所有交易记录，构建成Merkle树这样的二叉树结构。如下图（c）所示，如果交易记录是奇数，图中的 3 个记录，剩下的二叉树节点由自己填补：图中的交易 2 和自己构成了一个二叉树。以此类推，直到根节点。二叉树的两个交易记录哈希值直接串联，作为下一个二叉树的输入。通过这种方式，如果有人更改任何一个交易记录，按照前面 SHA256 加密哈希的特性，Merkle根节点就会变动很大，以致其他节点在验证区块链的哈希值时，能够很明显地发现问题。</p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/blog/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%BB%93%E6%9E%84.png" alt="图 区块链的数据结构"></p>
+<h4 id="区块链的运行机制"><a href="#区块链的运行机制" class="headerlink" title="区块链的运行机制"></a>区块链的运行机制</h4><p>用户A想把比特币支付给用户B，首先要知道用户 B 的钱包地址。B 可以通过钱包，产生一对公私钥，通过一些处理，得到新的私钥和钱包 B的地址。通过数字签名，B 将钱包地址发给 A。A 根据 B 的地址，发起一个交易，通过自己的数字签名授权，将这个交易发给 B，这时 B 已经收到了这些比特币，但是还不能用，因为没有得到系统的确认。之后，A向全网内所有人广播，告诉其他节点有关交易的信息。类似的交易重复发生，直到区块确权时间到，矿工们开始竞争记账权。首先，计算Merkle根节点的哈希值，然后不断调整区块头中的随机数，争取小于系统的设定值，此为工作量证明。第一个算出结果的矿工，得到系统给予的比特币奖励，也向全网广播这个消息。其他节点在收到该消息时，结束工作量证明，并对区块进行验证（随机数），如果验证合格，将区块接入到区块链的末尾。具体如下图：</p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/blog/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6.png" alt="图 区块链的运行机制"></p>
+<p>相关技术细节：</p>
+<ul>
+<li><p>地址生成机制<br>B通过钱包，生成256位的私钥，基于椭圆曲线加密算法，得到有前缀的512位公钥哈希字符串；经过SHA256算法，得到256位的哈希加密字符串；通过RIPEMD160算法，得到160位的公钥哈希字符串；使用Base58算法，将二进制字符串翻译成人眼可识别的字符串，也就是B钱包的地址。</p>
+</li>
+<li><p>消息交互机制</p>
+</li>
+<li>区块确认机制<br>上下文固定，只能通过随机数的不断尝试来进行暴力破解，争取小于系统要求的门限值。最后的胜出者将区块链入区块链的末尾（<strong>只是链接到末尾，而不是确认</strong>）。区块链为了防止<code>51%</code>攻击，延迟<code>6个区块</code>再对这个区块进行确认。</li>
+</ul>
+<h4 id="区块链的分叉和51-攻击"><a href="#区块链的分叉和51-攻击" class="headerlink" title="区块链的分叉和51%攻击"></a>区块链的分叉和51%攻击</h4><p>分叉：指同一时间段内全网不止一个节点能计算出随机数，即会有多个节点在网络中广播它们各自打包好的临时区块。<br>某一节点若收到多个针对同一个前续区块的后续临时区块，则该节点会在本地区块链上建立分支，多个临时区块对应多个分支。<br>需要等到下一个工作量证明被发现，而其中一个分支被证实为最长的一条，那么在另一条分支链条上工作的节点将转换阵营，开始在较长的区块链条上工作，而其他分支将会被网络彻底抛弃。<br>51%攻击则是由区块链的分叉衍生出来的。</p>
 
     </main>
     <footer class="post-footer">
@@ -193,10 +205,12 @@
   <div class="post-nav">
     <div class="post-nav-next post-nav-item">
       
-      <a href="/2018/07/05/test-my-site/" rel="next" title="test_my_site"><i class="fas fa-angle-left"></i><span class="nav-title">test_my_site</span></a>
+      <a href="/2018/03/28/BinarySearch/" rel="next" title="Algorithm-二维数组中的查找-BinarySearch"><i class="fas fa-angle-left"></i><span class="nav-title">Algorithm-二维数组中的查找-BinarySearch</span></a>
       
     </div>
     <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/06/15/Prim_Minimum_Spanning_Tree/" rel="prev" title="Prim最小生成树算法"><span class="nav-title">Prim最小生成树算法</span><i class="fas fa-angle-right"></i></a>
       
     </div>
   </div>
@@ -228,7 +242,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">27</a></div>
+      <div><a href="/archives/">30</a></div>
     </div>
     
     
@@ -252,7 +266,7 @@
 <hr>
 <div class="post-toc sidebar-item" id="toc-div">
   <div><i class="fas fa-list-ol"></i>文章目录</div>
-  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#文章重点"><span class="toc-text">文章重点</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#区块链技术原理"><span class="toc-text">区块链技术原理</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区块链定义和特点"><span class="toc-text">区块链定义和特点</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区块链的技术原语"><span class="toc-text">区块链的技术原语</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#哈希加密算法（SHA256）"><span class="toc-text">哈希加密算法（SHA256）</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#数字签名"><span class="toc-text">数字签名</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#P2P网络"><span class="toc-text">P2P网络</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#工作量证明机制"><span class="toc-text">工作量证明机制</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区块链的数据结构"><span class="toc-text">区块链的数据结构</span></a></li></ol></li></ol></div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#文章重点"><span class="toc-text">文章重点</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#区块链技术原理"><span class="toc-text">区块链技术原理</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区块链定义和特点"><span class="toc-text">区块链定义和特点</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区块链的技术原语"><span class="toc-text">区块链的技术原语</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#哈希加密算法（SHA256）"><span class="toc-text">哈希加密算法（SHA256）</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#数字签名"><span class="toc-text">数字签名</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#P2P网络"><span class="toc-text">P2P网络</span></a></li><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#工作量证明机制"><span class="toc-text">工作量证明机制</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区块链的数据结构"><span class="toc-text">区块链的数据结构</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区块链的运行机制"><span class="toc-text">区块链的运行机制</span></a></li><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#区块链的分叉和51-攻击"><span class="toc-text">区块链的分叉和51%攻击</span></a></li></ol></li></ol></div>
 </div>
 
 
