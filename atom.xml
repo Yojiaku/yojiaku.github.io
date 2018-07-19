@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yojiaku.github.io/"/>
-  <updated>2018-07-05T12:19:41.086Z</updated>
+  <updated>2018-07-18T15:53:22.805Z</updated>
   <id>https://yojiaku.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>区块链的技术原理和意义（论文祥读）</title>
+    <link href="https://yojiaku.github.io/2018/07/15/blockchainPage1/"/>
+    <id>https://yojiaku.github.io/2018/07/15/blockchainPage1/</id>
+    <published>2018-07-15T15:52:06.000Z</published>
+    <updated>2018-07-18T15:53:22.805Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;###文章重点&lt;br&gt;区块链技术原理、数据结构、运行机制、区块链的分叉&lt;/p&gt;
+&lt;p&gt;###区块链技术原理&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;前言：今天在学校上了一门有关银行金融的课程，了解到一个术语&lt;code&gt;financial
+        
+      
+    
+    </summary>
+    
+    
+      <category term="区块链" scheme="https://yojiaku.github.io/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+      <category term="论文" scheme="https://yojiaku.github.io/tags/%E8%AE%BA%E6%96%87/"/>
+    
+  </entry>
   
   <entry>
     <title>test_my_site</title>
@@ -459,30 +488,6 @@
     
     
       <category term="CSS" scheme="https://yojiaku.github.io/tags/CSS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>由Blocking Search动画引出的知识点2</title>
-    <link href="https://yojiaku.github.io/2018/02/06/BlockingSearch-JS2/"/>
-    <id>https://yojiaku.github.io/2018/02/06/BlockingSearch-JS2/</id>
-    <published>2018-02-06T15:51:04.000Z</published>
-    <updated>2018-02-06T16:39:17.315Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;调用含有-setInterval-的函数时异步问题的解决&quot;&gt;&lt;a href=&quot;#调用含有-setInterval-的函数时异步问题的解决&quot; class=&quot;headerlink&quot; title=&quot;调用含有 setInterval
-        
-      
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://yojiaku.github.io/tags/JavaScript/"/>
     
   </entry>
   
