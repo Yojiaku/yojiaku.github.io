@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="YOJIAKU" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>插值查找 | YOJIAKU</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">YOJIAKU</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/29/Interpolation_Search/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">插值查找</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-29T21:03:24+08:00">2018-06-29 21:03:24</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>我们很容易理解折半查找（二分查找），那么在折半查找原理的基础上我们会进一步思考，为什么一定要折半呢，而不是折四分之一，或者其他呢？比如说我们要搜索的值更接近最后一个元素，为什么还要从中间开始搜索，而不是从较后面的一部分开始搜索呢？因此研究学者们在折半查找的基础上进行了改进，以便更迅速准确的找到要搜素的目标值。</p>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>插值查找是对二分查找的改进，其中排序数组中的值是均匀分布。 插值查找根据正在搜索的键的值，可以去不同的位置。插值查找也是有序表查找算法。</p>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>插值查找的前提是有序数列元素的值是成线性增长的。对于大多数有序数列来说，这前提是可以成立的。我们不妨假设它就是成立的，那样，当我们知道一个要查找值的大小后。就可以根据数列线性增长的性质，求出要查找的值在数列中的大概位置。比如说在数列A[low,high]中查找key。我们key的下标为mid。由于数列线性增长，我们不难得到这个等式：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\frac&#123;mid-low&#125;&#123;high-low&#125;=\frac&#123;key-A[low]&#125;&#123;A[high]-A[low]&#125;</span><br></pre></td></tr></table></figure>
+<p>进而得出：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mid = low+\frac&#123;key-A[low]&#125;&#123;A[high]-A[low]&#125;*(high-low)</span><br></pre></td></tr></table></figure>
+<p>因此我们可求出mid的值，以它为轴点，可以极大的提高查找的收敛速度。说到这里，大家也都明白了，其实插值查找就是更准的二分查找而已。我们可以将插值查找与折半查找进行对比分析，看看插值查找的改进优化之处：</p>
+<p>我们先将折半查找的核心公式变换得到：</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mid = \frac&#123;low+high&#125;&#123;2&#125;=low+\frac&#123;1&#125;&#123;2&#125;(high-low)</span><br></pre></td></tr></table></figure>
+<p>将此公式与插值公式进行对比可发现：折半查找的公式中的<code>$\frac{1}{2}$</code>变成<code>$\frac{key-A[low]}{A[high]-A[low]}$</code>就成了插值查找的核心公式。这样的改进有什么道理呢？</p>
+<p>纯粹从公式上分析，如果key的值和下界的值的差值<code>$key-A[low]$</code>相对于上下界的差值<code>$A[high]-A[low]$</code>占比例较大，说明key值更靠近上界，mid的值会较大；反之如果比例较小，说明关键字与下界的值差别不大，mid较小，说明我们更倾向于在下界附近来寻找key值。</p>
+<p>通过一个简单的例子进一步说明改进之后的优势。假设A[11]={0，1，16，24，35，47，59，62，73，88，99}，则low=1，hig=10，A[low]=1，A[high]=99。如果我们要找的是key=16时，按照折半查找的原理，我们需要四次才可以得到结果（读者可以自行计算），但如果用插值查找，则<code>$\frac{key-A[low]}{A[high]-A[low]}=\frac{16-1}{99-1}=0.153$</code>即mid = 1 + 0.153 *（10 - 1）= 2.377，取整得到mid=2，我们只需要二次就可以查找到结果，显然大大提高了查找的效率。</p>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;  </span><br><span class="line">using namespace std;  </span><br><span class="line">int InterpolationSearch(int *A,int e,int lo,int hi)  </span><br><span class="line">&#123;  </span><br><span class="line">    while(lo&lt;hi)  </span><br><span class="line">    &#123;  </span><br><span class="line">        int mi=lo+(hi-lo-1)*(e-A[lo])/(A[hi-1]-A[lo]);//获取查找轴点   </span><br><span class="line">        if(mi&gt;=10)//排除越界情况   </span><br><span class="line">        &#123;  </span><br><span class="line">            return -1;  </span><br><span class="line">        &#125;  </span><br><span class="line">        if(e&lt;A[mi])  </span><br><span class="line">        &#123;  </span><br><span class="line">            hi=mi;//深入左侧[lo,hi)   </span><br><span class="line">        &#125;  </span><br><span class="line">        else if(e&gt;A[mi])  </span><br><span class="line">        &#123;  </span><br><span class="line">            lo=mi+1;//深入右侧[mi+1,hi)   </span><br><span class="line">        &#125;  </span><br><span class="line">        else  </span><br><span class="line">        &#123;  </span><br><span class="line">            return mi;//命中   </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">    return -1;//查找失败   </span><br><span class="line">&#125;  </span><br><span class="line">int main()  </span><br><span class="line">&#123;  </span><br><span class="line">    /*******插值查找测试******/  </span><br><span class="line">    int a[10];  </span><br><span class="line">    cout&lt;&lt;&quot;测试数组：&quot;;  </span><br><span class="line">    for(int i=0;i&lt;10;i++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        a[i]=(float)(i);  </span><br><span class="line">        cout&lt;&lt;a[i]&lt;&lt;&quot; &quot;;   </span><br><span class="line">    &#125;  </span><br><span class="line">    cout&lt;&lt;endl;  </span><br><span class="line">    cout&lt;&lt;&quot;查找结果：&quot; ;  </span><br><span class="line">    for(int i=0;i&lt;13;i++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        cout&lt;&lt;InterpolationSearch(a,i-1,0,10)&lt;&lt;&quot; &quot;;   </span><br><span class="line">    &#125;   </span><br><span class="line">    cout&lt;&lt;endl;  </span><br><span class="line">    /***************************/  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>插值查找比二分查找有所改进，但是其效率提高的并不明显(除非所查找的数列特别庞大，它的用处才能显现)。算法中引用了乘法和除法，增加了额外的消耗。如果所需查找的数列不大，由于每次深入都要进行乘除操作，用此算法可能得不偿失。所以，在实际应用中，该算法常常与二分查找算法联合使用，来处理较大的数据：用插值查找将数据缩小到一定范围，再用二分查找完成查询。时间复杂性：如果元素均匀分布，则O（log log n）），在最坏的情况下可能需要O（n）。<br>辅助空间：O（1）</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+        <a class="post-tag button" href="/tags/查找/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>查找</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/06/28/Eight_queens/" rel="next" title="八皇后问题"><i class="fas fa-angle-left"></i><span class="nav-title">八皇后问题</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/06/30/Fibonacci_Search/" rel="prev" title="斐波那契查找"><span class="nav-title">斐波那契查找</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.jpg" alt="yojiaku">
+  
+  <h1 class="author-name">yojiaku</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">43</a></div>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#定义"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#原理"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#代码实现"><span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:2329082643@qq.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/3286626050/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">yojiaku</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

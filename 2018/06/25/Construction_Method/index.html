@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="YOJIAKU" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>哈希方法 | YOJIAKU</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">YOJIAKU</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/25/Construction_Method/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">哈希方法</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-25T22:28:23+08:00">2018-06-25 22:28:23</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="直接定址法"><a href="#直接定址法" class="headerlink" title="直接定址法"></a>直接定址法</h1><p>直接定址法是以数据元素关键字k本身或它的线性函数作为它的哈希地址，即：H（k）=k或 H（k）=a×k+b ； (其中a,b为常数)<br><code>例</code> 有一个人口统计表，记录了从1岁到100岁的人口数目，其中年龄作为关键字，哈希函数取关键字本身，如图：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">地址</th>
+<th style="text-align:center">年龄</th>
+<th style="text-align:center">人数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">980</td>
+</tr>
+<tr>
+<td style="text-align:center">A2</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">800</td>
+</tr>
+<tr>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">A99</td>
+<td style="text-align:center">99</td>
+<td style="text-align:center">495</td>
+</tr>
+<tr>
+<td style="text-align:center">A100</td>
+<td style="text-align:center">100</td>
+<td style="text-align:center">107</td>
+</tr>
+</tbody>
+</table>
+<p>可以看到，当需要查找某一年龄的人数时，直接查找相应的项即可。如查找99岁的老人数，则直接读出第99项即可。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">地址</th>
+<th style="text-align:center">年龄</th>
+<th style="text-align:center">人数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A0</td>
+<td style="text-align:center">1980</td>
+<td style="text-align:center">980</td>
+</tr>
+<tr>
+<td style="text-align:center">A1</td>
+<td style="text-align:center">1981</td>
+<td style="text-align:center">800</td>
+</tr>
+<tr>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+<td style="text-align:center">…</td>
+</tr>
+<tr>
+<td style="text-align:center">A99</td>
+<td style="text-align:center">1999</td>
+<td style="text-align:center">495</td>
+</tr>
+<tr>
+<td style="text-align:center">A100</td>
+<td style="text-align:center">2000</td>
+<td style="text-align:center">107</td>
+</tr>
+</tbody>
+</table>
+<p>如果我们要统计的是80后出生的人口数，如上表所示，那么我们队出生年份这个关键字可以用年份减去1980来作为地址，此时f(key)=key-1980</p>
+<p>这种哈希函数简单，并且对于不同的关键字不会产生冲突，但可以看出这是一种较为特殊的哈希函数，实际生活中，关键字的元素很少是连续的。用该方法产生的哈希表会造成空间大量的浪费，因此这种方法适应性并不强。</p>
+<p><code>适用</code>：地址集合的大小与关键字集合的大小相同情况下，其中a和b为常数。</p>
+<h1 id="数字分析法"><a href="#数字分析法" class="headerlink" title="数字分析法"></a>数字分析法</h1><p>假设关键字集合中的每个关键字都是由 s 位数字组成 (u1, u2, …, us)，分析关键字集中的全体，并从中提取分布均匀的若干位或它们的组合作为地址。</p>
+<p>数字分析法是取数据元素关键字中某些取值较均匀的数字位作为哈希地址的方法。即当关键字的位数很多时，可以通过对关键字的各位进行分析，丢掉分布不均匀的位，作为哈希值。它只适合于所有关键字值已知的情况。通过分析分布情况把关键字取值区间转化为一个较小的关键字取值区间。</p>
+<p><code>例</code> 要构造一个数据元素个数n=80,哈希长度m=100的哈希表。不失一般性，我们这里只给出其中8个关键字进行分析，8个关键字如下所示：</p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/yuanJiaLi/pic/Hash/Hash_Method2.png" alt=""><br>分析上述8个关键字可知，关键字从左到右的第1、2、3、6位取值比较集中，不宜作为哈希地址，剩余的第4、5、7、8位取值较均匀，可选取其中的两位作为哈希地址。设选取最后两位作为哈希地址，则这8个关键字的哈希地址分别为：2，75，28，34，15，38，62，20。</p>
+<p><code>适用</code>：能预先估计出全体关键字的每一位上各种数字出现的频度。</p>
+<h1 id="折叠法"><a href="#折叠法" class="headerlink" title="折叠法"></a>折叠法</h1><p>将关键字分割成若干部分，然后取它们的叠加和为哈希地址。两种叠加处理的方法：<br><strong>移位叠加</strong>：将分 割后的几部分低位对齐相加；<br><strong>边界叠加</strong>：从一端沿分割界来回折叠，然后对齐相加。</p>
+<p>所谓<strong>折叠法</strong>是将关键字分割成位数相同的几部分（最后一部分的位数可以不同），然后取这几部分的叠加和（舍去进位），这方法称为折叠法。这种方法适用于关键字位数较多，而且关键字中每一位上数字分布大致均匀的情况。<br>  折叠法中数位折叠又分为移位叠加和边界叠加两种方法，移位叠加是将分割后是每一部分的最低位对齐，然后相加；边界叠加是从一端向另一端沿分割界来回折叠，然后对齐相加。</p>
+<p><code>例</code> 当哈希表长为1000时，关键字key=110108331119891，允许的地址空间为三位十进制数，则这两种叠加情况如图：<br><strong>由折叠法求哈希地址</strong>：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">移位叠加</th>
+<th style="text-align:center"></th>
+<th style="text-align:right">边界叠加</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">8 9 1</td>
+<td style="text-align:center"></td>
+<td style="text-align:right">8 9 1</td>
+</tr>
+<tr>
+<td style="text-align:right">1 1 9</td>
+<td style="text-align:center"></td>
+<td style="text-align:right">1 1 9</td>
+</tr>
+<tr>
+<td style="text-align:right">3 3 1</td>
+<td style="text-align:center"></td>
+<td style="text-align:right">3 3 1</td>
+</tr>
+<tr>
+<td style="text-align:right">1 0 8</td>
+<td style="text-align:center"></td>
+<td style="text-align:right">1 0 8</td>
+</tr>
+<tr>
+<td style="text-align:right">+1 1 0</td>
+<td style="text-align:center"></td>
+<td style="text-align:right">+1 1 0</td>
+</tr>
+<tr>
+<td style="text-align:right">(1) 5 5 9</td>
+<td style="text-align:center"></td>
+<td style="text-align:right">(3) 0 4 4</td>
+</tr>
+</tbody>
+</table>
+<p>用移位叠加得到的哈希地址是559，而用边界叠加所得到的哈希地址是44。如果关键字不是数值而是字符串，则可先转化为数。转化的办法可以用ASCⅡ字符或字符的次序值。</p>
+<p><code>适用</code>：关键字的数字位数特别多。</p>
+<h1 id="平方取中法"><a href="#平方取中法" class="headerlink" title="平方取中法"></a>平方取中法</h1><p><strong>平方取中法</strong>是一种常用的哈希函数构造方法。这个方法是先取关键字的平方，然后根据可使用空间的大小，选取平方数是中间几位为哈希地址。</p>
+<p>哈希函数 H(key)=“key2的中间几位”因为这种方法的原理是通过取平方扩大差别，平方值的中间几位和这个数的每一位都相关，则对不同的关键字得到的哈希函数值不易产生冲突，由此产生的哈希地址也较为均匀。<br><code>例</code> 若设哈希表长为1000则可取关键字平方值的中间三位，如图所示：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">关键字</th>
+<th style="text-align:center">关键字的平方</th>
+<th style="text-align:center">哈希函数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1234</td>
+<td style="text-align:center">1522756</td>
+<td style="text-align:center">227</td>
+</tr>
+<tr>
+<td style="text-align:center">2143</td>
+<td style="text-align:center">4592449</td>
+<td style="text-align:center">924</td>
+</tr>
+<tr>
+<td style="text-align:center">4132</td>
+<td style="text-align:center">17073424</td>
+<td style="text-align:center">734</td>
+</tr>
+<tr>
+<td style="text-align:center">3214</td>
+<td style="text-align:center">10329796</td>
+<td style="text-align:center">297</td>
+</tr>
+</tbody>
+</table>
+<p>下面给出平方取中法的哈希函数<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//平方取中法哈希函数，结设关键字值32位的整数</span><br><span class="line">//哈希函数将返回key * key的中间10位</span><br><span class="line">Int  Hash (int key)&#123;</span><br><span class="line">    //计算key的平方</span><br><span class="line">    Key * = key ;</span><br><span class="line">    //去掉低11位</span><br><span class="line">    Key&gt;&gt;=11;</span><br><span class="line">    // 返回低10位（即key * key的中间10位）</span><br><span class="line">    Return key %1024;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>适用</code>：关键字中的每一位都有某些数字重复出现频度很高的现象。</p>
+<h1 id="减去法"><a href="#减去法" class="headerlink" title="减去法"></a>减去法</h1><p><strong>减去法</strong>是数据的键值减去一个特定的数值以求得数据存储的位置。</p>
+<p><code>例</code> 公司有一百个员工，而员工的编号介于1001到1100，减去法就是员工编号减去1000后即为数据的位置。编号1001员工的数据在数据中的第一笔。编号1002员工的数据在数据中的第二笔…依次类推。从而获得有关员工的所有信息，因为编号1000以前并没有数据，所有员工编号都从1001开始编号。</p>
+<h1 id="基数转换法"><a href="#基数转换法" class="headerlink" title="基数转换法"></a>基数转换法</h1><p>将十进制数X看作其他进制，比如十三进制，再按照十三进制数转换成十进制数，提取其中若干为作为X的哈希值。一般取大于原来基数的数作为转换的基数，并且两个基数应该是互素的。<br><code>例</code> Hash(80127429)=(80127429)13=8<em>137+0</em>136+1<em>135+2</em>134+7<em>133+4</em>132+2*131+9=(502432641)10如果取中间三位作为哈希值，得Hash（80127429）=432</p>
+<p>为了获得良好的哈希函数，可以将几种方法联合起来使用，比如先变基，再折叠或平方取中等等，只要散列均匀，就可以随意拼凑。</p>
+<h1 id="除留余数法"><a href="#除留余数法" class="headerlink" title="除留余数法"></a>除留余数法</h1><p>假设哈希表长为m，p为小于等于m的最大素数，则哈希函数为<br>h（k）=k  %  p ，其中%为模p取余运算。<br><code>例</code> 已知待散列元素为（18，75，60，43，54，90，46），表长m=10，p=7，则有</p>
+<blockquote>
+<p>  h(18)=18 % 7=4    h(75)=75 % 7=5    h(60)=60 % 7=4<br>  h(43)=43 % 7=1    h(54)=54 % 7=5    h(90)=90 % 7=6<br>  h(46)=46 % 7=4</p>
+</blockquote>
+<p>此时冲突较多。为减少冲突，可取较大的m值和p值，如m=p=13，结果如下：</p>
+<blockquote>
+<p>  h(18)=18 % 13=5    h(75)=75 % 13=10    h(60)=60 % 13=8<br>  h(43)=43 % 13=4    h(54)=54 % 13=2    h(90)=90 % 13=12<br>  h(46)=46 % 13=7</p>
+</blockquote>
+<p>此时没有冲突，如图所示。</p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/yuanJiaLi/pic/Hash/Hash_Method7.png" alt=""><br>理论研究表明，除留余数法的模p取不大于表长且最接近表长m素数时效果最好，且p最好取1.1n～1.7n之间的一个素数（n为存在的数据元素个数）。</p>
+<h1 id="随机数法"><a href="#随机数法" class="headerlink" title="随机数法"></a>随机数法</h1><p>设定哈希函数为:H(key) = Random(key)其中，Random 为伪随机函数</p>
+<p>实际构造表时，采用何种构造哈希函数的方法取决于建表的关键字集合的情况(包括关键字的范围和形态)，以及哈希表长度（哈希地址范围），总的原则是使产生冲突的可能性降到尽可能地小。</p>
+<p><code>适用</code>：对长度不等的关键字构造哈希函数。</p>
+<h1 id="随机乘数法"><a href="#随机乘数法" class="headerlink" title="随机乘数法"></a>随机乘数法</h1><p>也称为“乘余取整法”。随机乘数法使用一个随机实数f,0≤f&lt;1,乘积f<em>k的分数部分在0～1之间，用这个分数部分的值与n（哈希表的长度）相乘，乘积的整数部分就是对应的哈希值，显然这个哈希值落在0～n-1之间。其表达公式为：Hash(k)=「n</em>(f<em>k%1)」其中“f</em>k%1”表示f<em>k 的小数部分，即f</em>k%1=f<em>k-「f</em>k」</p>
+<p><code>例</code> 对下列关键字值集合采用随机乘数法计算哈希值，随机数f=0.103149002 哈希表长度n=100得图：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">k</th>
+<th style="text-align:center">f*k</th>
+<th style="text-align:center">n<em>((f</em>k)的小数部分)</th>
+<th style="text-align:center">Hash(k)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">319426</td>
+<td style="text-align:center">32948.47311</td>
+<td style="text-align:center">47.78411</td>
+<td style="text-align:center">47</td>
+</tr>
+<tr>
+<td style="text-align:center">718309</td>
+<td style="text-align:center">74092.85648</td>
+<td style="text-align:center">86.50488</td>
+<td style="text-align:center">86</td>
+</tr>
+<tr>
+<td style="text-align:center">629443</td>
+<td style="text-align:center">64926.41727</td>
+<td style="text-align:center">42.14427</td>
+<td style="text-align:center">42</td>
+</tr>
+<tr>
+<td style="text-align:center">919697</td>
+<td style="text-align:center">84865.82769</td>
+<td style="text-align:center">83.59669</td>
+<td style="text-align:center">83</td>
+</tr>
+</tbody>
+</table>
+<p>此方法的优点是对n的选择不很关键。通常若地址空间为p位就是选n=2p.Knuth对常数f的取法做了仔细的研究，他认为f取任何值都可以，但某些值效果更好。(如f=（-1）/2=0.6180329…比较理想)</p>
+<h1 id="字符串数值哈希法"><a href="#字符串数值哈希法" class="headerlink" title="字符串数值哈希法"></a>字符串数值哈希法</h1><p>在很都情况下关键字是字符串，因此这样对字符串设计Hash函数是一个需要讨论的问题。下列函数是取字符串前10个字符来设计的哈希函数<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Int Hash _ char (char *X)</span><br><span class="line">&#123;</span><br><span class="line">  int I ,sum</span><br><span class="line">  i=0;</span><br><span class="line">  while (i 10 &amp;&amp; X[i])</span><br><span class="line">  Sum +=X[i++];</span><br><span class="line">  sum%=N;      //N是记录的条数</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>这种函数把字符串的前10个字符的ASCⅡ值之和对N取摸作为Hash地址，只要N较小，Hash地址将较均匀分布[0，N]区间内，因此这个函数还是可用的。对于N很大的情形，可使用下列函数<br><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int ELFhash (char *key )</span><br><span class="line">&#123;</span><br><span class="line"> Unsigned long h=0,g;</span><br><span class="line">whie (*key)</span><br><span class="line">&#123;</span><br><span class="line">h=(h&lt;&lt;4)+ *key;</span><br><span class="line">key++;</span><br><span class="line">g=h &amp; 0 xF0000000L;</span><br><span class="line">if (g) h^=g&gt;&gt;24;</span><br><span class="line">h &amp; =～g;</span><br><span class="line">&#125;</span><br><span class="line">h=h % N</span><br><span class="line">return （h）;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个函数称为ELFHash(Exextable and Linking Format ,ELF,可执行链接格式)函数。它把一个字符串的绝对长度作为输入，并通过一种方式把字符的十进制值结合起来，对长字符串和短字符串都有效，这种方式产生的位置不可能不均匀分布。</p>
+<h1 id="旋转法"><a href="#旋转法" class="headerlink" title="旋转法"></a>旋转法</h1><p><strong>旋转法</strong>是将数据的键值中进行旋转。旋转法通常并不直接使用在哈希函数上，而是搭配其他哈希函数使用。<br><code>例</code> 某学校同一个系的新生（小于100人）的学号前5位数是相同的，只有最后2位数不同，我们将最后一位数，旋转放置到第一位，其余的往右移。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">新生学号</th>
+<th style="text-align:center">旋转过程</th>
+<th style="text-align:center">旋转后的新键值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">5062101</td>
+<td style="text-align:center">506210 1</td>
+<td style="text-align:center">1506210</td>
+</tr>
+<tr>
+<td style="text-align:center">5062102</td>
+<td style="text-align:center">506210 2</td>
+<td style="text-align:center">2506210</td>
+</tr>
+<tr>
+<td style="text-align:center">5062103</td>
+<td style="text-align:center">506210 3</td>
+<td style="text-align:center">3506210</td>
+</tr>
+<tr>
+<td style="text-align:center">5062104</td>
+<td style="text-align:center">506210 4</td>
+<td style="text-align:center">4506210</td>
+</tr>
+<tr>
+<td style="text-align:center">5062105</td>
+<td style="text-align:center">506210 5</td>
+<td style="text-align:center">5506210</td>
+</tr>
+</tbody>
+</table>
+<p>运用这种方法可以只输入一个数值从而快速地查到有关学生的信息。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+        <a class="post-tag button" href="/tags/哈希/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>哈希</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/06/24/Graph/" rel="next" title="图"><i class="fas fa-angle-left"></i><span class="nav-title">图</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/06/26/Conflict_Resolution/" rel="prev" title="哈希方法"><span class="nav-title">哈希方法</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.jpg" alt="yojiaku">
+  
+  <h1 class="author-name">yojiaku</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">43</a></div>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#直接定址法"><span class="toc-text">直接定址法</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#数字分析法"><span class="toc-text">数字分析法</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#折叠法"><span class="toc-text">折叠法</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#平方取中法"><span class="toc-text">平方取中法</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#减去法"><span class="toc-text">减去法</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#基数转换法"><span class="toc-text">基数转换法</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#除留余数法"><span class="toc-text">除留余数法</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#随机数法"><span class="toc-text">随机数法</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#随机乘数法"><span class="toc-text">随机乘数法</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#字符串数值哈希法"><span class="toc-text">字符串数值哈希法</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#旋转法"><span class="toc-text">旋转法</span></a></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:2329082643@qq.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/3286626050/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">yojiaku</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

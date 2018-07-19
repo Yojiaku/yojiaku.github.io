@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="YOJIAKU" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>队列 | YOJIAKU</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">YOJIAKU</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/20/Queue/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">队列</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-20T23:02:20+08:00">2018-06-20 23:02:20</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <h1 id="队列的定义"><a href="#队列的定义" class="headerlink" title="队列的定义"></a>队列的定义</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>队列是只允许在一端进行插入操作，而在另一端进行删除操纵的特殊的线性表。</p>
+<p>允许进行元素插入操作的一端称为队尾（rear），允许进行元素删除操作的一端称为队头（front）。在队尾插入元素的操作称为入队（Enqueue），在队头删除元素的操作称为出队（Dequeue）如图1-1-1所示。<br><img src="https://raw.githubusercontent.com/Yojiaku/MarkdownPhotos/a99a04b1c807a382cb838a0152393470c1335f86/pic/queue-1-1-1.png" alt=""></p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><p>先进先出（First In First Out）</p>
+<p>#队列的抽象数据类型<br>同样是线性表，队列也有类似线性表的各种操作，不同的就是插入数据只能在队尾进行，输出数据只能在队头进行。</p>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ADT</span><br><span class="line">  队列（Queue）</span><br><span class="line">Data</span><br><span class="line">  同线性表。元素具有相同的类型，相邻元素具有线性关系。</span><br><span class="line">Operation</span><br><span class="line">  InitQueue(*Q):初始化操作，建立一个空队列Q。</span><br><span class="line">  DestroyQueue(*Q):若队列Q存在，则销毁它。</span><br><span class="line">  ClearQueue(*Q):将队列Q清空。</span><br><span class="line">  QueueEmpty(*Q):若队列Q为空，则返回true，否则返回false。</span><br><span class="line">  GetHead(Q,*e):若队列Q存在且非空，用e返回队列Q的队头元素。</span><br><span class="line">  EnQueue(*Q,e):若队列Q存在，插入新元素e到队列Q中并成为队尾元素。</span><br><span class="line">  DeQueue(*Q,*e):删除队列Q中队头元素并用e返回其值。</span><br><span class="line">  QueueLength(Q):返回队列Q的元素个数。</span><br></pre></td></tr></table></figure>
+<h1 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h1><p>栈作为一种特殊的线性表，栈有链表栈和顺序栈两种实现方式。同样对于队列来说，队列也是一种特殊的线性表，因此也同样有两种实现方式，但队列更为特殊一点，实现队列常用的两种方式分别是循环队列和链式队列。</p>
+<h2 id="顺序队列"><a href="#顺序队列" class="headerlink" title="顺序队列"></a>顺序队列</h2><p>在引入循环队列之前，我们先来分析一下队列顺序存储的不足。</p>
+<p>和顺序栈相类似，在队列的顺序存储结构中，除了用一组地址连续的存储单元依次存放从队头到队尾的元素之外，还需要两个指针进行管理。一个是队头指针（front）指向队头元素，另一个是队尾指针（rear）指向下一个入队元素的存储位置。</p>
+<p>当我们需要向队列添加一个元素时，只要在队尾追加一个元素就可以了，不需要移动任何元素，因此时间复杂度为θ(1)，如图3-1-1所示。</p>
+<p><img src="https://raw.githubusercontent.com/Yojiaku/MarkdownPhotos/a99a04b1c807a382cb838a0152393470c1335f86/pic/queue-3-1-1.png" alt=""></p>
+<p>当我们需要队头的元素出队时，第一个位置就空出来了。那就意味着，队列中剩下的所有元素都得向前移动，以保证队列的队头有元素存放（如图3-1-2所示）。这就好比我们排队买票，前面的人买好了离开，后面的人就要向前不缺空位，这似乎很合理。但在队列中，若要完成这一行为，此时的时间复杂度为θ(n)，显然这中行为是浪费的。</p>
+<p><img src="https://raw.githubusercontent.com/Yojiaku/MarkdownPhotos/a99a04b1c807a382cb838a0152393470c1335f86/pic/queue-3-1-2.png" alt=""></p>
+<p>既然补缺空位的做法是浪费的，那何必出队列时一定要全部移动呢。如果不去限制队列的元素必须存储在数组的前n个单元这一条件，出队的性能就会大大增加。也就是说，队头(front)不需要一定在存储空间的最前面，如图3-1-3所示。</p>
+<p><img src="https://raw.githubusercontent.com/Yojiaku/MarkdownPhotos/a99a04b1c807a382cb838a0152393470c1335f86/pic/queue-3-1-3.png" alt=""></p>
+<p>但是，当我们这样定义的时候，会出现一种比较的特殊的情况，如图3-1-4所示。</p>
+<p><img src="https://raw.githubusercontent.com/Yojiaku/MarkdownPhotos/a99a04b1c807a382cb838a0152393470c1335f86/pic/queue-3-1-4.png" alt=""></p>
+<p>正如图3-1-4所示，A5入队之后，rear指针移动了数组之外，数组之外是哪里呢？是不是出错了？如果再有一个A6入队，因为队列添加元素只能在队尾进行操作，但数组末尾已经备注占用了，再向后加产生了错误。是不是就不能添加元素了呢？如果你上了俩公交车，发现前两排有个空座位，而后排所有座位都已经占满了，那你会说车上已经没有座位了，所以你要下车。显然这是不可能的。</p>
+<p>在队列中若出现的这种情况，我们称为“假上溢”现象，除此之外，还有“真上溢”，“下溢”现象。</p>
+<p>“假上溢”现象：由于入队和出队操作中，头尾指针只增加不减小，致使被删元素的空间永远无法重新利用。当队列中实际的元素个数远远小于向量空间的规模时，也可能由于尾指针已超越向量空间的上界而不能做入队操作。该现象称为”假上溢”现象。</p>
+<p>“真上溢”现象：当队列满时，做进栈运算产生空间溢出的现象。“真上溢”是一种出错状态，应设法避免。</p>
+<p>“下溢”现象：当队列为空时，做出队运算产生的溢出现象。“下溢”是正常现象，常用作程序控制转移的条件。</p>
+<p>“假上溢”现象显然是很浪费的一种情况，我们肯定是要想办法解决这一问题的，随之而来的也就引入了循环队列。</p>
+<h2 id="循环队列-1"><a href="#循环队列-1" class="headerlink" title="循环队列"></a>循环队列</h2><p>很简单，假上溢的时候，既然后面的满了，前面的还有空缺，那就从头在开始呗，也就是头尾想接的循环。我们把队列的这种头尾相接的顺序储存结构称为循环队列。在图3-1-4中，我们就可以根据循环队列的定义将rear改为下标为0的位置，如图3-2-1所示。</p>
+<p><img src="https://raw.githubusercontent.com/Yojiaku/MarkdownPhotos/a99a04b1c807a382cb838a0152393470c1335f86/pic/queue-3-2-1.png" alt=""></p>
+<p>事实上，我们换一种方式更容易理解循环队列，如图3-2-1所示。</p>
+<p><img src="https://raw.githubusercontent.com/Yojiaku/MarkdownPhotos/a99a04b1c807a382cb838a0152393470c1335f86/pic/queue-3-2-2.png" alt=""></p>
+<p>若我们这样定义循环队列时，我们会发现还有问题：<br>当队列没有元素，为空队列，此时rear=front，如图3-2-3所示；</p>
+<p>当队列满时，此时rear=front，如图3-2-4所示。<br><img src="https://raw.githubusercontent.com/Yojiaku/MarkdownPhotos/a99a04b1c807a382cb838a0152393470c1335f86/pic/queue-3-2-3.png" alt=""></p>
+<p>也就是说当rear=front时，我们并不能确定此时队列究竟是空队列还是满队列。此时有两种方法解决这一问题：</p>
+<ol>
+<li>设置一个标志变量flag，，当front=rear，且flag=0时为空队列，当front=rear。且flag=1是为满队列。</li>
+<li>少用一个空间，也就是说当数组中还有一个空闲单元时，我们认为队列已经满了。如图3-2-5所示。而当队列空时，条件就是front=rear，即我们不允许图3-2-4所示的情况出现。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/Yojiaku/MarkdownPhotos/a99a04b1c807a382cb838a0152393470c1335f86/pic/queue-3-2-5.png" alt=""></p>
+<p>除了上面我们分析的一些情况，在具体的设计中，必须为循环队列设定一个最大队列的长度。具体的代码可参考下面。</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 队列的顺序存储结构(循环队列) */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_QSIZE 5 <span class="comment">/* 最大队列长度+1 */</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  QElemType *base; <span class="comment">/* 初始化的动态分配存储空间 */</span></span><br><span class="line">  <span class="keyword">int</span> front; <span class="comment">/* 头指针，若队列不空，指向队列头元素 */</span></span><br><span class="line">  <span class="keyword">int</span> rear; <span class="comment">/* 尾指针，若队列不空，指向队列尾元素的下一个位置 */</span></span><br><span class="line">&#125;SqQueue;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 循环队列的基本操作(9个) */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitQueue</span><span class="params">(SqQueue *Q)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 构造一个空队列Q */</span></span><br><span class="line">  Q-&gt;base=<span class="built_in">malloc</span>(MAX_QSIZE*<span class="keyword">sizeof</span>(QElemType));</span><br><span class="line">  <span class="keyword">if</span>(!Q-&gt;base) <span class="comment">/* 存储分配失败 */</span></span><br><span class="line">    <span class="built_in">exit</span>(OVERFLOW);</span><br><span class="line">  Q-&gt;front=Q-&gt;rear=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DestroyQueue</span><span class="params">(SqQueue *Q)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 销毁队列Q，Q不再存在 */</span></span><br><span class="line">  <span class="keyword">if</span>(Q-&gt;base)</span><br><span class="line">    <span class="built_in">free</span>(Q-&gt;base);</span><br><span class="line">  Q-&gt;base=<span class="literal">NULL</span>;</span><br><span class="line">  Q-&gt;front=Q-&gt;rear=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ClearQueue</span><span class="params">(SqQueue *Q)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 将Q清为空队列 */</span></span><br><span class="line">  Q-&gt;front=Q-&gt;rear=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">QueueEmpty</span><span class="params">(SqQueue Q)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 若队列Q为空队列，则返回TRUE；否则返回FALSE */</span></span><br><span class="line">  <span class="keyword">if</span>(Q.front==Q.rear) <span class="comment">/* 队列空的标志 */</span></span><br><span class="line">    <span class="keyword">return</span> TRUE;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> FALSE;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">QueueLength</span><span class="params">(SqQueue Q)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 返回Q的元素个数，即队列的长度 */</span></span><br><span class="line">  <span class="keyword">return</span>(Q.rear-Q.front+MAX_QSIZE)%MAX_QSIZE;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">GetHead</span><span class="params">(SqQueue Q,QElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 若队列不空，则用e返回Q的队头元素，并返回OK；否则返回ERROR */</span></span><br><span class="line">  <span class="keyword">if</span>(Q.front==Q.rear) <span class="comment">/* 队列空 */</span></span><br><span class="line">    <span class="keyword">return</span> ERROR;</span><br><span class="line">  *e=Q.base[Q.front];</span><br><span class="line">  <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">EnQueue</span><span class="params">(SqQueue *Q,QElemType e)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 插入元素e为Q的新的队尾元素 */</span></span><br><span class="line">  <span class="keyword">if</span>((Q-&gt;rear+<span class="number">1</span>)%MAX_QSIZE==Q-&gt;front) <span class="comment">/* 队列满 */</span></span><br><span class="line">    <span class="keyword">return</span> ERROR;</span><br><span class="line">  Q-&gt;base[Q-&gt;rear]=e;</span><br><span class="line">  Q-&gt;rear=(Q-&gt;rear+<span class="number">1</span>)%MAX_QSIZE;</span><br><span class="line">  <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">DeQueue</span><span class="params">(SqQueue *Q,QElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 若队列不空，则删除Q的队头元素，用e返回其值，并返回OK；否则返回ERROR */</span></span><br><span class="line">  <span class="keyword">if</span>(Q-&gt;front==Q-&gt;rear) <span class="comment">/* 队列空 */</span></span><br><span class="line">    <span class="keyword">return</span> ERROR;</span><br><span class="line">  *e=Q-&gt;base[Q-&gt;front];</span><br><span class="line">  Q-&gt;front=(Q-&gt;front+<span class="number">1</span>)%MAX_QSIZE;</span><br><span class="line">  <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void QueueTraverse(SqQueue Q,void(*vi)(QElemType))</span><br><span class="line">&#123; <span class="comment">/* 从队头到队尾依次对队列Q中每个元素调用函数vi() */</span></span><br><span class="line">  <span class="keyword">int</span> i;</span><br><span class="line">  i=Q.front;</span><br><span class="line">  <span class="keyword">while</span>(i!=Q.rear)</span><br><span class="line">  &#123;</span><br><span class="line">    vi(Q.base[i]);</span><br><span class="line">    i=(i+<span class="number">1</span>)%MAX_QSIZE;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-链式队列"><a href="#4-链式队列" class="headerlink" title="4.链式队列"></a>4.链式队列</h2><p>在队列的形成过程中，可以利用线性链表的原理，来生成一个队列。基于链表的队列，要动态动态创建和删除节点，效率较低，但是可以动态增长。一个链队列显然需要两个分别指示队头和队尾的指针才能唯一确定，，为了操作上的方便，我们将队头指针指向链队列的头结点，而队尾指针指向终端结点，如图4-1-1所示。</p>
+<p><img src="https://raw.githubusercontent.com/Yojiaku/MarkdownPhotos/a99a04b1c807a382cb838a0152393470c1335f86/pic/queue-4-1-1.png" alt=""></p>
+<p>空队列时，front和rear都指向头结点，如图4-1-2所示。</p>
+<p><img src="https://raw.githubusercontent.com/Yojiaku/MarkdownPhotos/a99a04b1c807a382cb838a0152393470c1335f86/pic/queue-4-1-2.png" alt=""></p>
+<p>入队操作就是在链表尾部插入结点，如图4-1-3所示。</p>
+<p><img src="https://raw.githubusercontent.com/Yojiaku/MarkdownPhotos/a99a04b1c807a382cb838a0152393470c1335f86/pic/queue-4-1-3.png" alt=""></p>
+<p>出队操作时，就是头结点的后继结点出队，将头结点的后继改为它后面的结点如图4-1-4所示。</p>
+<p><img src="https://raw.githubusercontent.com/Yojiaku/MarkdownPhotos/a99a04b1c807a382cb838a0152393470c1335f86/pic/queue-4-1-4.png" alt=""></p>
+<p>若链表除头结点只剩一个元素时，则需将rear指向头结点，如图4-1-5所示。</p>
+<p><img src="https://raw.githubusercontent.com/Yojiaku/MarkdownPhotos/a99a04b1c807a382cb838a0152393470c1335f86/pic/queue-4-1-5.png" alt=""></p>
+<p>链式队列使用链表作为基本数据结果，所以不存在伪溢出的问题，队列长度也没有限制。但插入和读取的时间代价较高</p>
+<figure class="hljs highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 单链队列——队列的链式存储结构 */</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  QElemType data;</span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">QNode</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;QNode,*QueuePtr;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">  QueuePtr front,rear; <span class="comment">/* 队头、队尾指针 */</span></span><br><span class="line">&#125;LinkQueue;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 链队列的基本操作(9个) */</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">InitQueue</span><span class="params">(LinkQueue *Q)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 构造一个空队列Q */</span></span><br><span class="line">  Q-&gt;front=Q-&gt;rear=<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(QNode));</span><br><span class="line">  <span class="keyword">if</span>(!Q-&gt;front)</span><br><span class="line">    <span class="built_in">exit</span>(OVERFLOW);</span><br><span class="line">  Q-&gt;front-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DestroyQueue</span><span class="params">(LinkQueue *Q)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 销毁队列Q(无论空否均可) */</span></span><br><span class="line">  <span class="keyword">while</span>(Q-&gt;front)</span><br><span class="line">  &#123;</span><br><span class="line">    Q-&gt;rear=Q-&gt;front-&gt;next;</span><br><span class="line">    <span class="built_in">free</span>(Q-&gt;front);</span><br><span class="line">    Q-&gt;front=Q-&gt;rear;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ClearQueue</span><span class="params">(LinkQueue *Q)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 将Q清为空队列 */</span></span><br><span class="line">  QueuePtr p,q;</span><br><span class="line">  Q-&gt;rear=Q-&gt;front;</span><br><span class="line">  p=Q-&gt;front-&gt;next;</span><br><span class="line">  Q-&gt;front-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">  <span class="keyword">while</span>(p)</span><br><span class="line">  &#123;</span><br><span class="line">    q=p;</span><br><span class="line">    p=p-&gt;next;</span><br><span class="line">    <span class="built_in">free</span>(q);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">QueueEmpty</span><span class="params">(LinkQueue Q)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 若Q为空队列，则返回TRUE，否则返回FALSE */</span></span><br><span class="line">  <span class="keyword">if</span>(Q.front-&gt;next==<span class="literal">NULL</span>)</span><br><span class="line">    <span class="keyword">return</span> TRUE;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="keyword">return</span> FALSE;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">QueueLength</span><span class="params">(LinkQueue Q)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 求队列的长度 */</span></span><br><span class="line">  <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">  QueuePtr p;</span><br><span class="line">  p=Q.front;</span><br><span class="line">  <span class="keyword">while</span>(Q.rear!=p)</span><br><span class="line">  &#123;</span><br><span class="line">    i++;</span><br><span class="line">    p=p-&gt;next;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">GetHead_Q</span><span class="params">(LinkQueue Q,QElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 若队列不空，则用e返回Q的队头元素，并返回OK，否则返回ERROR */</span></span><br><span class="line">  QueuePtr p;</span><br><span class="line">  <span class="keyword">if</span>(Q.front==Q.rear)</span><br><span class="line">    <span class="keyword">return</span> ERROR;</span><br><span class="line">  p=Q.front-&gt;next;</span><br><span class="line">  *e=p-&gt;data;</span><br><span class="line">  <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EnQueue</span><span class="params">(LinkQueue *Q,QElemType e)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 插入元素e为Q的新的队尾元素 */</span></span><br><span class="line">  QueuePtr p= (QueuePtr)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(QNode));</span><br><span class="line">  <span class="keyword">if</span>(!p) <span class="comment">/* 存储分配失败 */</span></span><br><span class="line">    <span class="built_in">exit</span>(OVERFLOW);</span><br><span class="line">  p-&gt;data=e;</span><br><span class="line">  p-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">  Q-&gt;rear-&gt;next=p;</span><br><span class="line">  Q-&gt;rear=p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Status <span class="title">DeQueue</span><span class="params">(LinkQueue *Q,QElemType *e)</span></span></span><br><span class="line"><span class="function"></span>&#123; <span class="comment">/* 若队列不空，删除Q的队头元素，用e返回其值，并返回OK，否则返回ERROR */</span></span><br><span class="line">  QueuePtr p;</span><br><span class="line">  <span class="keyword">if</span>(Q-&gt;front==Q-&gt;rear)</span><br><span class="line">    <span class="keyword">return</span> ERROR;</span><br><span class="line">  p=Q-&gt;front-&gt;next; <span class="comment">/* 指向头结点 */</span></span><br><span class="line">  *e=p-&gt;data;</span><br><span class="line">  Q-&gt;front=p-&gt;next; <span class="comment">/* 摘下头节点 */</span></span><br><span class="line">  <span class="keyword">if</span>(Q-&gt;rear==p)</span><br><span class="line">    Q-&gt;rear=Q-&gt;front;</span><br><span class="line">  <span class="built_in">free</span>(p);</span><br><span class="line">  <span class="keyword">return</span> OK;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void QueueTraverse(LinkQueue Q,void(*vi)(QElemType))</span><br><span class="line">&#123; <span class="comment">/* 从队头到队尾依次对队列Q中每个元素调用函数vi() */</span></span><br><span class="line">  QueuePtr p;</span><br><span class="line">  p=Q.front-&gt;next;</span><br><span class="line">  <span class="keyword">while</span>(p)</span><br><span class="line">  &#123;</span><br><span class="line">    vi(p-&gt;data);</span><br><span class="line">    p=p-&gt;next;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于循环队列与链队列的比较，可以从两方面来考虑：</p>
+<ol>
+<li><p>从时间上，其实它们的基本操作都是常数时间，即都为0(1)的，不过循环队列是事先申请好空间，使用期间不释放，而对于链队列，每次申请和释放结点也会存在一些时间开销，如果入队出队频繁，则两者还是有细微差异。</p>
+</li>
+<li><p>对于空间上来说，循环队列必须有一个固定的长度，所以就有了存储元素个数和空间浪费的问题。而链队列不存在这个问题，尽管它需要一个指针域，会产生一些空间上的开销，但也可以接受。所以在空间上，链队列更加灵活。</p>
+</li>
+<li>总的来说，在可以确定队列长度最大值的情况下，建议用循环队列，如果你无法预估队列的长度时，则用链队列。</li>
+</ol>
+<p>用数组实现队列时，如果不移动，随着数据的不断读写，会出现假满队列的情况。即尾数组已满但头数组还是空的。循环队列也是一种数组，只是它在逻辑上把数组的头和尾相连，形成循环队列，当数组尾满的时候，要判断数组头是否为空，不为空继续存放数据，可以有效的利用资源。但是用循环队列有个小麻烦，不好判断数列是为空还是为满；<br>链队列就不存在上面的问题。“循环队列”最大优点就是节省空间和少分配空间，而链队列多了一点点地址存储开销。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+        <a class="post-tag button" href="/tags/数据结构/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>数据结构</a>
+        
+        <a class="post-tag button" href="/tags/队列/" style="background: #47aaff;" rel="tag"><i class="fas fa-tags"></i>队列</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/06/19/BFS/" rel="next" title="广度优先搜索算法"><i class="fas fa-angle-left"></i><span class="nav-title">广度优先搜索算法</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/06/21/Heap/" rel="prev" title="堆"><span class="nav-title">堆</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.jpg" alt="yojiaku">
+  
+  <h1 class="author-name">yojiaku</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">43</a></div>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#队列的定义"><span class="toc-text">队列的定义</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#定义"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#特点"><span class="toc-text">特点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#循环队列"><span class="toc-text">循环队列</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#顺序队列"><span class="toc-text">顺序队列</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#循环队列-1"><span class="toc-text">循环队列</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#4-链式队列"><span class="toc-text">4.链式队列</span></a></li></ol></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:2329082643@qq.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/3286626050/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">yojiaku</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

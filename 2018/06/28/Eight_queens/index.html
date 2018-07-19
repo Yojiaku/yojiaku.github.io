@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="YOJIAKU" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>八皇后问题 | YOJIAKU</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">YOJIAKU</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/28/Eight_queens/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">八皇后问题</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-28T22:03:45+08:00">2018-06-28 22:03:45</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>八皇后问题，是一个古老而著名的问题，是回溯算法的典型案例。该问题是国际西洋棋棋手马克斯·贝瑟尔于1848年提出：在8×8格的国际象棋上摆放八个皇后，使其不能互相攻击，即任意两个皇后都不能处于同一行、同一列或同一斜线上，问有多少种摆法。 高斯认为有76种方案。1854年在柏林的象棋杂志上不同的作者发表了40种不同的解，后来有人用图论的方法解出92种结果。计算机发明后，有多种计算机语言可以解决此问题。</p>
+<p>八皇后问题可以推广为更一般的n皇后摆放问题：这时棋盘的大小变为n×n，而皇后个数也变成n。而且仅当 n = 1 或 n ≥ 4 时问题有解。</p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/Eight%20queens/pic/E-Q-1.png" alt="image"><br><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/Eight%20queens/pic/E-Q-2.PNG" alt="image"><br><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/Eight%20queens/pic/E-Q-3.PNG" alt="image"></p>
+<h1 id="历史发展"><a href="#历史发展" class="headerlink" title="历史发展"></a>历史发展</h1><ul>
+<li>1848年，国际象棋作曲家马克斯·贝泽尔发表了八个皇后拼图。</li>
+<li>弗朗茨·瑙克在1850年发表了第一个解决方案。瑙克还将这个拼图延伸到n皇后问题，其中n个皇后位于n×n个方格的棋盘上。此后，包括卡尔弗里德里希高斯在内的许多数学家都参与了八个皇后拼图和其广义的n-queens版本。</li>
+<li>1874年，S.冈瑟提出了一种使用决定因素来寻找解决方案的方法。 JWL Glaisher改进了Gunther的方法。</li>
+<li>1972年，Edsger Dijkstra用这个问题来说明他称之为结构化编程的力量。他发表了深度优先 回溯算法的高度详细的描述。</li>
+</ul>
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>这是典型的回溯算法.从根结点开始,依次遍历所有的结点,若有一个节点错误，则说明该路径走不通，返回上一节点，以此类推，直到遍历所有节点。</p>
+<p>针对这一类的回溯问题，有以下步骤：</p>
+<ul>
+<li>定义一个解空间，该解空间至少包含一个问题的解；</li>
+<li>组织解空间；</li>
+<li>按深度优先的遍历方法进行节点搜索，在搜索执行的同时产生解空间。</li>
+</ul>
+<h1 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h1><ol>
+<li>要将n个皇后放到n×n的棋盘中，则每一列必须且只能放一个皇后。所以问题转化为确定皇后在每一列中的位置（在第几行上）。</li>
+<li>从第一列开始，依次考察每一列。</li>
+<li>在考察每一列的时候，总是从第一行开始，尝试将皇后放入，如果可以放入，就接着考察下一列的第一行。如果不可以放入，就接着考察这一列的下一行，直到成功，然后接着考察下一列的第一行。</li>
+<li>如果这一列的每一行都不可以放入，说明这一列前面各列的皇后放置有问题，导致这一列无法放入，需要回溯。</li>
+<li>回溯的时候，如果前面的一列每一行都已经被尝试过了，就需要接着往前回溯，直到找到还有行未被尝试过的列，然后尝试这一列的下一行。</li>
+<li>在回溯过程中经过的每一列都需要将已经放入的皇后取出来，以备后面重新选择位置放入。</li>
+<li>如果每一列都被考察完毕，即每一列中的皇后都找到了合适的位置，则找到一个解。</li>
+<li>在找到一个解后，如果还要寻找其它解，则需要回溯，尝试其它情况。</li>
+<li>当回溯到第0列时，说明1~n列的所有行都已经被尝试过了，没有其它情况可以尝试，结束程序。</li>
+</ol>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">c语言:</span><br><span class="line">    #include &lt;stdio.h&gt;  </span><br><span class="line">    #include &lt;stdlib.h&gt;  </span><br><span class="line"></span><br><span class="line">    #define max 8  </span><br><span class="line"></span><br><span class="line">    int queen[max], sum=0; /* max为棋盘最大坐标 */  </span><br><span class="line"></span><br><span class="line">    void show() /* 输出所有皇后的坐标 */  </span><br><span class="line">    &#123;  </span><br><span class="line">        int i;  </span><br><span class="line">        for(i = 0; i &lt; max; i++)  </span><br><span class="line">        &#123;  </span><br><span class="line">             printf(&quot;(%d,%d) &quot;, i, queen[i]);  </span><br><span class="line">        &#125;  </span><br><span class="line">        printf(&quot;\n&quot;);  </span><br><span class="line">        sum++;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    int check(int n) /* 检查当前列能否放置皇后 */  </span><br><span class="line">    &#123;  </span><br><span class="line">        int i;  </span><br><span class="line">        for(i = 0; i &lt; n; i++) /* 检查横排和对角线上是否可以放置皇后 */  </span><br><span class="line">        &#123;  </span><br><span class="line">            if(queen[i] == queen[n] || abs(queen[i] - queen[n]) == (n - i))  </span><br><span class="line">            &#123;  </span><br><span class="line">                return 1;  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        return 0;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    void put(int n) /* 回溯尝试皇后位置,n为横坐标 */  </span><br><span class="line">    &#123;  </span><br><span class="line">        int i;  </span><br><span class="line">        for(i = 0; i &lt; max; i++)  </span><br><span class="line">        &#123;         </span><br><span class="line">            queen[n] = i; /* 将皇后摆到当前循环到的位置 */  </span><br><span class="line">            if(!check(n))  </span><br><span class="line">            &#123;             </span><br><span class="line">                if(n == max - 1)  </span><br><span class="line">                &#123;  </span><br><span class="line">                    show(); /* 如果全部摆好，则输出所有皇后的坐标 */  </span><br><span class="line">                &#125;           </span><br><span class="line">                else  </span><br><span class="line">                &#123;  </span><br><span class="line">                    put(n + 1); /* 否则继续摆放下一个皇后 */  </span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    int main()  </span><br><span class="line">    &#123;  </span><br><span class="line">        put(0); /* 从横坐标为0开始依次尝试 */  </span><br><span class="line">        printf(&quot;%d&quot;, sum);  </span><br><span class="line">        return 0;  </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>八皇后问题历来被研究已久，本文档只介绍了用回溯思想解体的方法，网上还有更多的研究资料和优化算法，感兴趣的同学可以深入学习。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+        <a class="post-tag button" href="/tags/应用/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>应用</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/06/27/LZW_Flow_Chart/" rel="next" title="LZW压缩算法"><i class="fas fa-angle-left"></i><span class="nav-title">LZW压缩算法</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/06/29/Interpolation_Search/" rel="prev" title="插值查找"><span class="nav-title">插值查找</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.jpg" alt="yojiaku">
+  
+  <h1 class="author-name">yojiaku</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">43</a></div>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#历史发展"><span class="toc-text">历史发展</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#分析"><span class="toc-text">分析</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#解题思路"><span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#代码实现"><span class="toc-text">代码实现</span></a></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:2329082643@qq.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/3286626050/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">yojiaku</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

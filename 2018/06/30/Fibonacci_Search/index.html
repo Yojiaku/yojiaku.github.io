@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="YOJIAKU" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>斐波那契查找 | YOJIAKU</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">YOJIAKU</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/30/Fibonacci_Search/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">斐波那契查找</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-30T21:45:29+08:00">2018-06-30 21:45:29</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>斐波那契查找就是在二分查找的基础上根据斐波那契数列进行分割的。在斐波那契数列找一个等于略大于查找表中元素个数的数F[n]，将原查找表扩展为长度为F<a href="如果要补充元素，则补充重复最后一个元素，直到满足F[n]个元素">n</a>，完成后进行斐波那契分割，即F[n]个元素分割为前半部分F[n-1]个元素，后半部分F[n-2]个元素，找出要查找的元素在那一部分并递归，直到找到。</p>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>斐波那契查找也是有序查找的一种，它是利用黄金分割原理来实现的。该查找方法的精髓在于采用最接近查找长度的斐波那契数值来确定拆分点。</p>
+<h1 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h1><p>既然叫斐波那契查找，首先得弄明白什么是斐波那契数列。相信大家对这个著名的数列也并不陌生，无论是C语言的循环、递归，还是高数的数列，斐波那契数列都是一个重要的存在。而此处主要是用到了它的一条性质：前一个数除以相邻的后一个数，比值无限接近黄金分割。<br>&nbsp;<br>斐波那契数列指的是这样一个数列 1，1，2，3，5，8，13， 21，34，55， 89，144，233……这个数列从第3项开始，每一项都等于前两项之和。如果我们用数学函数来定义是：<br><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/pic/inter.png" alt=""></p>
+<p>&nbsp;<br>当数列趋向于无穷大时，前一项与后一项的比值越来越逼近黄金分割0.618（或者说后一项与前一项的比值小数部分越来越逼近0.618）。<br>&nbsp;<br>1÷1=1，1÷2=0.5，2÷3=0.666…，3÷5=0.6，5÷8=0.625…，55÷89=0.617977…，144÷233=0.618025…，越到后面，这些比值越接近黄金比。</p>
+<h1 id="斐波那契查找原理"><a href="#斐波那契查找原理" class="headerlink" title="斐波那契查找原理"></a>斐波那契查找原理</h1><p>斐波那契查找是一种在有序表中高效查找指定元素的算法，比折半查找要复杂一些，主要复杂在要多做不少准备工作。下面看它的工作流程：</p>
+<ol>
+<li>计算并保存一个斐波那契序列的数组，方便以后取值。数组名记为F，例如F[1]=1，F[2]=1，F[3]=2，F[4]=3，F[5]=5，F[6]=8，F[7]=13，F[8]=21</li>
+<li>把有序数组的长度扩充到A.length=F[k]-1，k是满足条件的最小值，比如数组长度为13，那么就把它长度扩充到F[8]-1=20，所有在末尾添加的扩充元素都是原数组最后一个元素的复制品。</li>
+<li>找到mid元素，不断进行二分比较，直到找到目标元素为止，这一步的做法与折半查找一模一样，仅仅是计算mid的公式从(low+high)/2改为low+(F[k-1]-1)。</li>
+</ol>
+<p>举个例子来讲，现有长度为9的数组，要对它进行拆分，对应的斐波那契数列（长度先随便取，只要最大数大于9即可）{1，1，2，3，5，8，13，21，34}，不难发现，大于9且最接近9的斐波那契数值是f[6]=13，为了满足所谓的黄金分割，所以它的第一个拆分点应该就是f[6]的前一个值f[5]=8，即待查找数组array的第8个数，对应到下标就是array[7]，依次类推。</p>
+<p>推演到一般情况，假设有待查找数组array[n]和斐波那契数组F[k],并且n满足n&gt;=F[k]-1&amp;&amp;n&lt;F[k+1]-1，则它的第一个拆分点middle=F[k]-1。</p>
+<p>这里得注意，如果n刚好等于F[k]-1,待查找数组刚好拆成F[k-1]和F[k-2]两部分，那万事大吉你好我好；然而大多数情况并不能尽人意，n会小于F[k]-1,这时候可以拆成完整F[k-1]和残疾的F[k-2]两部分，那怎么办呢？</p>
+<p>聪明的前辈们早已想好了解决办法，对了，就是补齐，用最大的数来填充F[k-2]的残缺部分，如果查找的位置落到补齐的部分，那就可以确定要找的那个数就是最后一个最大的了。<br><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/pic/feibo.png" alt="image"></p>
+<h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line">public class FbonacciSearch &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * &lt;p&gt;name: main&lt;/p&gt;</span><br><span class="line">     * &lt;p&gt;description: &lt;/p&gt;</span><br><span class="line">     * &lt;p&gt;return: void&lt;/p&gt;</span><br><span class="line">     */</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        int[] array = &#123; 1, 5, 15, 22, 25, 31, 39, 42, 47, 49, 59, 68, 88, 88,</span><br><span class="line">                88, 88, 88 &#125;;</span><br><span class="line">        System.out.println(&quot;result: &quot; + fbSearch(array, 31));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * &lt;p&gt;</span><br><span class="line">     * name: fbSearch</span><br><span class="line">     * &lt;/p&gt;</span><br><span class="line">     * &lt;p&gt;</span><br><span class="line">     * description: 斐波那契查找实现</span><br><span class="line">     * &lt;/p&gt;</span><br><span class="line">     * &lt;p&gt;</span><br><span class="line">     * return: int</span><br><span class="line">     * &lt;/p&gt;</span><br><span class="line">     */</span><br><span class="line">    public static int fbSearch(int[] array, int a) &#123;</span><br><span class="line">        if (array == null || array.length == 0) &#123;</span><br><span class="line">            return -1;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            int length = array.length;</span><br><span class="line">            int[] fb = makeFbArray(20);// 制造一个长度为10的斐波数列</span><br><span class="line">            int k = 0;</span><br><span class="line">            while (length &gt; fb[k] - 1) &#123;// 找出数组的长度在斐波数列（减1）中的位置，将决定如何拆分</span><br><span class="line">                k++;</span><br><span class="line">            &#125;</span><br><span class="line">            int[] temp = Arrays.copyOf(array, fb[k] - 1);// 构造一个长度为fb[k] - 1的新数列</span><br><span class="line">            for (int i = length; i &lt; temp.length; i++) &#123;</span><br><span class="line">                if (i &gt;= length) &#123;</span><br><span class="line">                    temp[i] = array[length - 1];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            int low = 0;</span><br><span class="line">            int hight = array.length - 1;</span><br><span class="line">            while (low &lt;= hight) &#123;</span><br><span class="line">                int middle = low + fb[k - 1] - 1;</span><br><span class="line">                if (temp[middle] &gt; a) &#123;</span><br><span class="line">                    hight = middle - 1;</span><br><span class="line">                    k = k - 1;</span><br><span class="line">                &#125; else if (temp[middle] &lt; a) &#123;</span><br><span class="line">                    low = middle + 1;</span><br><span class="line">                    k = k - 2;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    if (middle &lt;= hight) &#123;</span><br><span class="line">                        return middle;// 若相等则说明mid即为查找到的位置</span><br><span class="line">                    &#125; else &#123;</span><br><span class="line">                        return hight;// middle的值已经大于hight,进入扩展数组的填充部分,即最后一个数就是要查找的数。</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            return -1;</span><br><span class="line">            // return recurse(array, fb, a, low, hight, k);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * &lt;p&gt;</span><br><span class="line">     * name: makeFbArray</span><br><span class="line">     * &lt;/p&gt;</span><br><span class="line">     * &lt;p&gt;</span><br><span class="line">     * description: 生成指定长度的斐波数列</span><br><span class="line">     * &lt;/p&gt;</span><br><span class="line">     * &lt;p&gt;</span><br><span class="line">     * return: int[]</span><br><span class="line">     * &lt;/p&gt;</span><br><span class="line">     */</span><br><span class="line">    public static int[] makeFbArray(int length) &#123;</span><br><span class="line">        int[] array = null;</span><br><span class="line">        if (length &gt; 2) &#123;</span><br><span class="line">            array = new int[length];</span><br><span class="line">            array[0] = 1;</span><br><span class="line">            array[1] = 1;</span><br><span class="line">            for (int i = 2; i &lt; length; i++) &#123;</span><br><span class="line">                array[i] = array[i - 1] + array[i - 2];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return array;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * &lt;p&gt;</span><br><span class="line">     * name: recurse</span><br><span class="line">     * &lt;/p&gt;</span><br><span class="line">     * &lt;p&gt;</span><br><span class="line">     * description: 递归实现，可以来代替while (low &lt;= hight)遍历</span><br><span class="line">     * &lt;/p&gt;</span><br><span class="line">     * &lt;p&gt;</span><br><span class="line">     * return: int</span><br><span class="line">     * &lt;/p&gt;</span><br><span class="line">     */</span><br><span class="line">    public static int recurse(int[] array, int[] fb, int a, int low, int hight,</span><br><span class="line">            int k) &#123;</span><br><span class="line">        if (array == null || array.length == 0 || a &lt; array[low]</span><br><span class="line">                || a &gt; array[hight] || low &gt; hight) &#123;</span><br><span class="line">            return -1;</span><br><span class="line">        &#125;</span><br><span class="line">        int middle = low + fb[k - 1] - 1;</span><br><span class="line">        if (a &lt; array[middle]) &#123;</span><br><span class="line">            return recurse(array, fb, a, low, middle - 1, k - 1);</span><br><span class="line">        &#125; else if (a &gt; array[middle]) &#123;</span><br><span class="line">            return recurse(array, fb, a, middle + 1, hight, k - 2);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            if (middle &lt;= hight) &#123;</span><br><span class="line">                return middle;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                return hight;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>斐波那契查找算法的核心在于:</p>
+<ol>
+<li>当 key=a[mid]时，查找就成功；</li>
+<li>当 key&lt;a[mid)时，新范围是第 Iow 个到第 mid-l 个，此时范围个数为 F[k-1]-1 个;</li>
+<li>当 key&gt;a[mid]时，新范围是第 m+l 个到第 high 个，此时范围个数为 F[k-2] -1 个。</li>
+</ol>
+<p>也就是说，如果要查找的记录在右侧，则左侧的数据都不用再判断了，不断反复进行下去，对处于当中的大部分数据，其工作效率要高一些。所以尽管斐波那契查找的时间复杂也为0(logn)， 但就平均性能来说，斐波那契查找要优于折半查找。可惜如果是最坏情况，比如这里 key=l ， 那么始终都处于左侧长半区在查找，则查找效率要低于折半查找。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+        <a class="post-tag button" href="/tags/查找/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>查找</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/06/29/Interpolation_Search/" rel="next" title="插值查找"><i class="fas fa-angle-left"></i><span class="nav-title">插值查找</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/07/05/hello-world/" rel="prev" title="Hello World"><span class="nav-title">Hello World</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.jpg" alt="yojiaku">
+  
+  <h1 class="author-name">yojiaku</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">43</a></div>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#定义"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#斐波那契数列"><span class="toc-text">斐波那契数列</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#斐波那契查找原理"><span class="toc-text">斐波那契查找原理</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#代码实现"><span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:2329082643@qq.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/3286626050/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">yojiaku</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

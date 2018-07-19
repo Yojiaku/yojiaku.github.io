@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="YOJIAKU" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>广度优先搜索算法 | YOJIAKU</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">YOJIAKU</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/19/BFS/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">广度优先搜索算法</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-19T23:00:23+08:00">2018-06-19 23:00:23</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>广度优先搜索算法（Breadth First Search，又称宽度优先搜索算法）是最简便的图的搜索算法之一，这一算法也是很多重要的图的算法原型。Dijkstra单源最短路径算法和Prim最小生成树算法都采用了和广度优先搜索类似的思想。广度优先搜索算法属于一种盲目搜寻法，目的是系统地展开并检查图中的所有节点，以找寻结果。换句话说，它并不考虑结果的可能位置，彻底地搜索整张图，直到找到结果为止。</p>
+<h1 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h1><p>广度优先搜索遍历类似于树的按层次遍历。</p>
+<p>对于无向连通图，广度优先搜索是从图的某个顶点V0出发，在访问V0之后，依次搜索访问V0的各个未被访问过的邻接点W1，W2，…。然后顺序搜索访问W1的各未被访问过的邻接点，W2的各未被访问过的邻接点，……即从v0开始，由近至远，按层次依次访问与V0有路径相通且路径长度分别为1，2，……的顶点，直至连通图中所有顶点都被访问一次。</p>
+<p>广度优先搜索的顺序不是唯一的。具体描述如下：</p>
+<ol>
+<li>从图中的某个顶点V出发，访问之；并将其访问标志置为已被访问，即visited[i]=1；</li>
+<li>依次访问顶点V的各个未被访问过的邻接点，将V的全部邻接点都访问到；</li>
+<li>分别从这些邻接点出发，依次访问它们的未被访问过的邻接点，并使“先被访问的顶点的邻接点”先于“后被访问的顶点的邻接点”被访问，直到图中所有已被访问过的顶点的邻接点都被访问到。</li>
+</ol>
+<p>依此类推，直到图中所有顶点都被访问完为止 。</p>
+<p>广度优先搜索在搜索访问一层时，需要记住已被访问的顶点，以便在访问下层顶点时，从已被访问的顶点出发搜索访问其邻接点。所以在广度优先搜索中需要设置一个队列Queue，使已被访问的顶点顺序由队尾进入队列。在搜索访问下层顶点时，先从队首取出一个已被访问的上层顶点，再从该顶点出发搜索访问它的各个邻接点。</p>
+<h1 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h1><p>一般来说，BFS使用队列来实现。在存储数据时，除了需要存储当前状态外，还需要存储当前状态的父状态以及父状态转换过来所执行的操作。</p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-2.png" alt="image"></p>
+<ul>
+<li>初始状态入队Op :=1；</li>
+<li>对队首状态进行操作Op，得到新状态；</li>
+<li>检查此状态是否出现过：如果此状态为目标状态，则输出；如果所有操作都已完成，则队首出列，否则Op:=Op+1。<h2 id="广度优先搜索算法描述"><a href="#广度优先搜索算法描述" class="headerlink" title="广度优先搜索算法描述"></a>广度优先搜索算法描述</h2></li>
+</ul>
+<figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Program Bfs;</span><br><span class="line">  初始化，初始状态存入OPEN表(即队列);</span><br><span class="line">  队列首指针head:=0;尾指针tail:=1;</span><br><span class="line">  repeat</span><br><span class="line">    指针head后移一位，指向待扩展结点;</span><br><span class="line">    for l=1 to max do  &#123;max为产生子结点的规则数&#125;</span><br><span class="line">    begin</span><br><span class="line">     if 子结点符合条件 then</span><br><span class="line">      begin</span><br><span class="line">       tail指针增1，把新结点存入队尾;</span><br><span class="line">       if新结点与原已产生结点重复then删去该结点(取消入队，tail减1)</span><br><span class="line">        else</span><br><span class="line">         if新结点是目标结点then输出并退出;</span><br><span class="line">       end;</span><br><span class="line">     end;</span><br><span class="line">until(head&gt;=tail);&#123;队列空&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="算法实例"><a href="#算法实例" class="headerlink" title="算法实例"></a>算法实例</h1><ol>
+<li>如图所示，初始化：</li>
+</ol>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-3.png" alt="image"></p>
+<ol start="2">
+<li>在List中选择结点i=1</li>
+</ol>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-4.png" alt="image"></p>
+<ol start="3">
+<li>如果结点i和一条可进入弧关联，则如图所示：</li>
+</ol>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-5.png" alt="image"></p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-6.png" alt="image"></p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-7.png" alt="image"></p>
+<ol start="4">
+<li>当结点i没有与可进入弧关联之后，则删除结点i，如图所示：</li>
+</ol>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-8.png" alt="image"></p>
+<ol start="5">
+<li>再次选择结点i=2，如图所示</li>
+</ol>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-9.png" alt="image"></p>
+<ol start="6">
+<li>结点i有与可进入弧关联，如图所示：</li>
+</ol>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-10.png" alt="image"></p>
+<ol start="7">
+<li>当结点i没有与可进入弧关联之后，则删除结点i（i=2），如图所示：</li>
+</ol>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-11.png" alt="image"></p>
+<ol start="8">
+<li>把List上的第一个结点变成结点i，则结点i=5</li>
+</ol>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-12.png" alt="image"></p>
+<ol start="9">
+<li>结点i有与可进入弧关联，如图所示：</li>
+</ol>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-13.png" alt="image"></p>
+<ol start="10">
+<li>当结点i没有与可进入弧关联之后，则删除结点i（i=5），如图所示：</li>
+</ol>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-14.png" alt="image"></p>
+<ol start="11">
+<li>把List上的第一个结点变成结点i，则结点i=3；结点i=3没有与可进入弧关联，则删除结点i（i=3），如图所示：</li>
+</ol>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-15.png" alt="image"></p>
+<ol start="12">
+<li>把List上的第一个结点变成结点i，则结点i=4</li>
+</ol>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-16.png" alt="image"></p>
+<ol start="13">
+<li>当结点i没有与可进入弧关联之后，则删除结点i（i=4），如图所示：</li>
+</ol>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-17.png" alt="image"></p>
+<ol start="14">
+<li>把List上的第一个结点变成结点i，则结点i=6</li>
+</ol>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-18.png" alt="image"></p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-19.png" alt="image"></p>
+<ol start="15">
+<li>当结点i没有与可进入弧关联之后，删除结点i（i=6）；剩下的结点8、7、9均没有与可进入弧关联，则从List中删除这些结点</li>
+</ol>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/BFS/pic/bfs-20.png" alt="image"></p>
+<h1 id="广度优先搜索算法的特性"><a href="#广度优先搜索算法的特性" class="headerlink" title="广度优先搜索算法的特性"></a>广度优先搜索算法的特性</h1><h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>因为所有节点都必须被储存，因此BFS的空间复杂度为 O(|V| + |E|)，其中 |V|是节点的数目，而|E|是图中边的数目。</p>
+<blockquote>
+<p>另一种说法称BFS的空间复杂度为O(B)，其中B是最大分支系数，而M是树的最长路径长度。由于对空间的大量需求，因此BFS并不适合解非常大的问题。</p>
+</blockquote>
+<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>最差情形下，BFS必须寻找所有到可能节点的所有路径，因此其时间复杂度为 O(|V| + |E|)，其中 |V|是节点的数目，而 |E| 是图中边的数目。</p>
+<h3 id="完全性"><a href="#完全性" class="headerlink" title="完全性"></a>完全性</h3><p>广度优先搜索算法具有完全性。这意指无论图形的种类如何，只要目标存在，则BFS一定会找到。然而，若目标不存在，且图为无限大，则BFS将不收敛（不会结束）。</p>
+<h4 id="最佳解"><a href="#最佳解" class="headerlink" title="最佳解"></a>最佳解</h4><p>若所有边的长度相等，广度优先搜索算法是最佳解——亦即它找到的第一个解，距离根节点的边数目一定最少；但对一般的图来说，BFS并不一定回传最佳解。这是因为当图形为加权图（亦即各边长度不同）时，BFS仍然回传从根节点开始，经过边数目最少的解；而这个解距离根节点的距离不一定最短。这个问题可以使用考虑各边权值，BFS的改良算法成本一致搜寻法（en:uniform-cost search）来解决。然而，若非加权图形，则所有边的长度相等，BFS就能找到最近的最佳解。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+        <a class="post-tag button" href="/tags/搜索/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>搜索</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/06/18/DFS/" rel="next" title="深度优先搜索"><i class="fas fa-angle-left"></i><span class="nav-title">深度优先搜索</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/06/20/Queue/" rel="prev" title="队列"><span class="nav-title">队列</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.jpg" alt="yojiaku">
+  
+  <h1 class="author-name">yojiaku</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">43</a></div>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#基本思想"><span class="toc-text">基本思想</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#算法描述"><span class="toc-text">算法描述</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#广度优先搜索算法描述"><span class="toc-text">广度优先搜索算法描述</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#算法实例"><span class="toc-text">算法实例</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#广度优先搜索算法的特性"><span class="toc-text">广度优先搜索算法的特性</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#空间复杂度"><span class="toc-text">空间复杂度</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#时间复杂度"><span class="toc-text">时间复杂度</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#完全性"><span class="toc-text">完全性</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#最佳解"><span class="toc-text">最佳解</span></a></li></ol></li></ol></li></ol></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:2329082643@qq.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/3286626050/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">yojiaku</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

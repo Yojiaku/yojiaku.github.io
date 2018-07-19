@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="YOJIAKU" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>散列 | YOJIAKU</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">YOJIAKU</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/23/Hash/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">散列</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-23T22:24:15+08:00">2018-06-23 22:24:15</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>通过一些计算，即散列函数（Hash function），把关键码值映射到数组中的特定位置来访问记录，这个过程称为散列。通过散列函数得到的固定长度的输出值就是散列值，一般关键码范围中的值比散列值多，有些不同关键码会被映射到相同的散列值的槽里，这种现象称为冲突（碰撞）。</p>
+<h1 id="散列的用途"><a href="#散列的用途" class="headerlink" title="散列的用途"></a>散列的用途</h1><h2 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h2><p>哈希函数用于散列表，可以快速定位给定其搜索关键字（词条）的数据记录（例如字典定义）。具体地，哈希函数用于将搜索关键字映射到列表; 索引给出哈希表中应存储相应记录的位置。哈希表也用于实现关联数组和动态集。</p>
+<p>通常，哈希函数的域（可能的键的集合）大于其范围（不同表索引的数量），因此它将映射几个不同的键到同一个索引。那么，哈希表的每个插槽与（隐含或明确地）一个相关的一系列的记录，而不是单一的记录。因此，哈希表的每个时隙通常称为存储桶，散列值也称为桶列表[ 需要引用 ]或桶索引。</p>
+<p>因此，哈希函数只会在记录的位置提示。然而，在半满表中，好的散列函数通常将搜索缩小到只有一个或两个条目。</p>
+<p>编写完整的哈希表实现的人员会选择一个特定的哈希函数，例如Jenkins哈希或Zobrist哈希，并且独立地选择哈希表冲突解决方案，例如合并散列，杜鹃哈希或跳房子散列散列。</p>
+<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>散列函数也用于为缓存介质中存储的大型数据集构建高速缓存。缓存通常比散列搜索表更简单，因为任何冲突都可以通过丢弃或写回两个较小的碰撞项来解决。这也用于文件比较。</p>
+<h2 id="保护数据"><a href="#保护数据" class="headerlink" title="保护数据"></a>保护数据</h2><p>散列值可用于唯一标识秘密信息。这要求散列函数是防冲突的，这意味着很难找到将生成相同哈希值的数据。这些功能分为加密哈希函数和可证明的安全哈希函数。第二类中的功能是最安全的，但对于大多数实际目的也是太慢。碰撞抵抗是通过产生非常大的哈希值来实现的。例如，最广泛使用的密码散列函数之一的SHA-1生成160位值。</p>
+<h2 id="查找重复记录"><a href="#查找重复记录" class="headerlink" title="查找重复记录"></a>查找重复记录</h2><p>在大型未分类文件中存储记录时，可以使用散列函数将每个记录映射到表T中的索引，并在每个存储桶T [ i ]中收集具有相同散列值的所有记录的编号列表我。一旦表完成，任何两个重复的记录将结束在同一个桶中。然后可以通过扫描包含两个或多个成员的每个桶T [ i ]，获取这些记录并进行比较来找到重复项。使用适当大小的表，该方法可能比任何替代方法（例如排序文件并比较所有连续对）快得多。</p>
+<h2 id="查找类似记录"><a href="#查找类似记录" class="headerlink" title="查找类似记录"></a>查找类似记录</h2><p>散列函数也可用于定位与给定键相似但不完全相同的表记录; 或具有类似键的大文件中的记录对。为此，需要一个散列函数，将类似的键映射到不同于m的散列值，其中m是一个小整数（例如1或2）。如果使用这样的哈希函数建立所有记录号的表T，则类似的记录将在同一个桶或附近的桶中结束。然后，只需要检查每个桶T [ i ]中的记录与桶T [ i + k ]中的记录，其中k的范围在-m和  m。</p>
+<p>该类包括所谓的声音指纹算法，用于在大量音频文件集合中定位类似声音的条目。对于此应用程序，散列函数必须尽可能不敏感，数据捕获或传输错误，以及时间和体积更改，压缩等简单的更改。</p>
+<h2 id="错误校正"><a href="#错误校正" class="headerlink" title="错误校正"></a>错误校正</h2><p>使用一个散列函数可以很直观的检测出数据在传输时发生的错误。在数据的发送方，对将要发送的数据应用散列函数，并将计算的结果同原始数据一同发送。在数据的接收方，同样的散列函数被再一次应用到接收到的数据上，如果两次散列函数计算出来的结果不一致，那么就说明数据在传输的过程中某些地方有错误了。这就叫做冗余校验。</p>
+<p>对于错误校正，假设相似扰动的分布接近最小(a distribution of likely perturbations is assumed at least approximately)。对于一个信息串的微扰可以被分为两类，大的（不可能的）错误和小的（可能的）错误。我们对于第二类错误重新定义如下，假如给定 H(x) 和 x+s，那么只要s足够小，我们就能有效的计算出x。那样的散列函数被称作错误校正编码。这些错误校正编码有两个重要的分类：循环冗余校验和里德所罗门码。</p>
+<h2 id="在信息安全上的应用"><a href="#在信息安全上的应用" class="headerlink" title="在信息安全上的应用"></a>在信息安全上的应用</h2><h3 id="验证文件或消息的完整性"><a href="#验证文件或消息的完整性" class="headerlink" title="验证文件或消息的完整性"></a>验证文件或消息的完整性</h3><p>使用HMAC（哈希消息认证码），以一个密钥和一个消息作为输入，生成一个消息摘要作为输出。通过比较传输之前和传输之后的消息摘要来完成校验。</p>
+<p>HMAC的作用：<br>（1）验证TPM接受的授权数据和认证数据；<br>（2）确认TPM接受到的命令请求是已授权的请求，并且，命令在传送的过程中没有被改动过。</p>
+<p>过程简述：首先根据消息内容提取一个随机长度的信息（可以直接利用关键字，也可以对其进行折叠、平方取中等运算），然后对信息进行补位，使信息的字节长度是32的倍数，经过一系列补位和附加值处理，产生一个128位的消息摘要。</p>
+<h3 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h3><p>Hash签名也称为数字摘要法（digital digest）、数字指纹法（digital finger print）。<br>最常见的实现方法是建立在公钥密码体制和单向安全散列函数的组合基础上的。</p>
+<p>过程简述：将要发送的消息作为输入，用哈希算法得到此消息的消息摘要，并用自己的私钥加密此消息摘要，然后将消息本身和加密后的消息摘要一同发送出去。接收方收到后利用公钥解密加密消息得到消息摘要，然后通过接收到的消息本身利用哈希算法得到用于验证的消息摘要，比较这两个消息摘要是否相同，从而对消息发送者进行身份验证。<br><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/yuanJiaLi/pic/Hash/Hash_Application1.png" alt=""></p>
+<h3 id="密码验证"><a href="#密码验证" class="headerlink" title="密码验证"></a>密码验证</h3><p>使用MD5、SHA1等单向Hash算法可以让原密码无法通过计算还原。<br>过程简述：储存原密码的哈希摘要，当需要进行身份验证时，用户输入的密码被散列并鱼储存的散列进行比较。</p>
+<h4 id="1-7-4-伪随机生成和密钥推导"><a href="#1-7-4-伪随机生成和密钥推导" class="headerlink" title="1.7.4 伪随机生成和密钥推导"></a>1.7.4 伪随机生成和密钥推导</h4><p>散列函数也可用于生成伪随机位，或者从单个安全密钥或密码导出新密钥或密码。</p>
+<h1 id="Hash构造函数的方法"><a href="#Hash构造函数的方法" class="headerlink" title="Hash构造函数的方法"></a>Hash构造函数的方法</h1><p><a href="http://101.132.150.179:4000/publish/data_structure/Construction_Method.html" target="_blank" rel="noopener">详细内容</a></p>
+<h1 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h1><p><a href="https://www.zybuluo.com/AlphaYuan/note/1037471" target="_blank" rel="noopener">详细内容</a></p>
+<h1 id="冲突解决方法"><a href="#冲突解决方法" class="headerlink" title="冲突解决方法"></a>冲突解决方法</h1><p><a href="https://www.zybuluo.com/AlphaYuan/note/1037497" target="_blank" rel="noopener">详细内容</a></p>
+<h1 id="散列算法"><a href="#散列算法" class="headerlink" title="散列算法"></a>散列算法</h1><h2 id="MD5算法"><a href="#MD5算法" class="headerlink" title="MD5算法"></a>MD5算法</h2><p><strong>MD5</strong>即 Message-Digest Algorithm 5（信息-摘要算法5），用于确保信息传输完整一致。是计算机广泛使用的杂凑算法之一（又译摘要算法、哈希算法），主流编程语言普遍已有MD5实现。将数据（如汉字）运算为另一固定长度值，是杂凑算法的基础原理，MD5的前身有MD2、MD3和MD4。</p>
+<p>MD5算法具有以下特点：<br>1、压缩性：任意长度的数据，算出的MD5值长度都是固定的。<br>2、容易计算：从原数据计算出MD5值很容易。<br>3、抗修改性：对原数据进行任何改动，哪怕只修改1个字节，所得到的MD5值都有很大区别。<br>4、强抗碰撞：已知原数据和其MD5值，想找到一个具有相同MD5值的数据（即伪造数据）是非常困难的。</p>
+<p><a href="https://www.baidu.com" target="_blank" rel="noopener">MD5介绍</a></p>
+<h2 id="SHA-1算法"><a href="#SHA-1算法" class="headerlink" title="SHA-1算法"></a>SHA-1算法</h2><p>SHA (Secure Hash Algorithm，译作安全散列算法) 是美国国家安全局 (NSA) 设计，美国国家标准与技术研究院(NIST) 发布的一系列密码散列函数。正式名称为 SHA 的家族第一个成员发布于 1993年。然而人们给它取了一个非正式的名称 SHA-0 以避免与它的后继者混淆。两年之后， SHA-1，第一个 SHA 的后继者发布了。 另外还有四种变体，曾经发布以提升输出的范围和变更一些细微设计： SHA-224, SHA-256, SHA-384 和 SHA-512 (这些有时候也被称做 SHA-2)。</p>
+<hr>
+<h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a><strong>参考资料</strong></h5><ol>
+<li>维基百科。哈希函数，加密散列函数。</li>
+<li>百度百科。<a href="https://baike.baidu.com/item/MD5/212708?fr=aladdin" target="_blank" rel="noopener">MD5</a>、<a href="https://baike.baidu.com/item/SHA-1/1699692?fr=aladdin" target="_blank" rel="noopener">SHA-1</a></li>
+<li>算法导论。第十一章散列表，机械工业出版社。</li>
+<li>数据结构与算法分析第三版（C++版）。第九章，散列方法。</li>
+<li><a href="http://www.jiamisoft.com/blog/21553-hxsf.html" target="_blank" rel="noopener">浅析几种典型的哈希算法</a></li>
+<li><a href="http://blog.csdn.net/tanggao1314/article/details/51457585" target="_blank" rel="noopener">hash算法原理详解</a></li>
+<li><a href="http://blog.csdn.net/jn1158359135/article/details/7205688" target="_blank" rel="noopener">浅谈散列</a></li>
+<li><a href="http://hunteagle.javaeye.com" target="_blank" rel="noopener">几种经典的hash算法</a></li>
+<li><a href="http://blog.csdn.net/lightty/article/details/11191971" target="_blank" rel="noopener">解决哈希（HASH）冲突的主要方法</a></li>
+</ol>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+        <a class="post-tag button" href="/tags/散列/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>散列</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/06/22/Hash_Function/" rel="next" title="散列方法"><i class="fas fa-angle-left"></i><span class="nav-title">散列方法</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/06/24/Graph/" rel="prev" title="图"><span class="nav-title">图</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.jpg" alt="yojiaku">
+  
+  <h1 class="author-name">yojiaku</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">43</a></div>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#散列的用途"><span class="toc-text">散列的用途</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#散列表"><span class="toc-text">散列表</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#缓存"><span class="toc-text">缓存</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#保护数据"><span class="toc-text">保护数据</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#查找重复记录"><span class="toc-text">查找重复记录</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#查找类似记录"><span class="toc-text">查找类似记录</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#错误校正"><span class="toc-text">错误校正</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#在信息安全上的应用"><span class="toc-text">在信息安全上的应用</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#验证文件或消息的完整性"><span class="toc-text">验证文件或消息的完整性</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#数字签名"><span class="toc-text">数字签名</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#密码验证"><span class="toc-text">密码验证</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#1-7-4-伪随机生成和密钥推导"><span class="toc-text">1.7.4 伪随机生成和密钥推导</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#Hash构造函数的方法"><span class="toc-text">Hash构造函数的方法</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#散列函数"><span class="toc-text">散列函数</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#冲突解决方法"><span class="toc-text">冲突解决方法</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#散列算法"><span class="toc-text">散列算法</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#MD5算法"><span class="toc-text">MD5算法</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#SHA-1算法"><span class="toc-text">SHA-1算法</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:2329082643@qq.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/3286626050/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">yojiaku</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

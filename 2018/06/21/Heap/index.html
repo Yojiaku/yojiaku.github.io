@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="YOJIAKU" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>堆 | YOJIAKU</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">YOJIAKU</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/21/Heap/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">堆</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-21T21:02:13+08:00">2018-06-21 21:02:13</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>堆通是一种近似的完全二叉树，树上每一个结点对应数组中的一个元素。除最底层外，该树是完全充满的，且最底层的元素从左往右填入。</p>
+<p>设计目的<br>: 在队列中，调度程序反复提取队列中第一个作业并运行，因为实际情况中某些时间较短的任务将等待很长时间才能结束，或者某些不短小，但具有重要性的作业，同样应当具有优先权。堆即为解决此类问题设计的一种数据结构。</p>
+<h1 id="逻辑定义"><a href="#逻辑定义" class="headerlink" title="逻辑定义"></a>逻辑定义</h1><p>n个元素序列{k1, k2… ki…kn},当且仅当满足下列关系时称之为堆：<br>(ki &lt;= k2i, ki &lt;= k2i+1)或者(ki &gt;= k2i, ki &gt;= k2i+1), (i = 1, 2, 3, 4… n/2)</p>
+<h1 id="堆的结构"><a href="#堆的结构" class="headerlink" title="堆的结构"></a>堆的结构</h1><p>一个堆结构将由一个数组和一个代表当前堆大小的整数组成。</p>
+<h1 id="堆序性质"><a href="#堆序性质" class="headerlink" title="堆序性质"></a>堆序性质</h1><p>使操作被快速执行的性质是堆序性质(heap-order-property)。由于我们想要能够快速地找出最小元， 因此最小元应该在根上。如果考虑任意子树也应该是一个堆，那么任意节点就应该小千它的所有后裔。</p>
+<p>应用这个逻辑， 我们得到堆序性质。在一个堆中，对于每一个节点X,X的父亲中的关键字小于（或等于）X中的关键字，根节点除外（它没有父亲）。在图6.5中左边的树是一个堆，但是，右边的树则不是（虚线表示堆的有序性被破坏）。</p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/yuanJiaLi/pic/Heap_Binary_Tree.png" alt=""><br>根据堆序性质， 最小元总可以在根处找到。因此，我们以常数时间得到附加操作丘find.Min。</p>
+<h1 id="堆操作"><a href="#堆操作" class="headerlink" title="堆操作"></a>堆操作</h1><table>
+<thead>
+<tr>
+<th style="text-align:center">操作</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:center">时间复杂度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">biuld</td>
+<td style="text-align:center">创建一个空堆</td>
+<td style="text-align:center">Ο(n)</td>
+</tr>
+<tr>
+<td style="text-align:center">insert</td>
+<td style="text-align:center">将一个新元素插入到堆中</td>
+<td style="text-align:center">Ο(log n)</td>
+</tr>
+<tr>
+<td style="text-align:center">update</td>
+<td style="text-align:center">将新元素提升使其匹配堆的性质</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">get</td>
+<td style="text-align:center">获取当前堆顶元素的值</td>
+<td style="text-align:center">Ο(1)</td>
+</tr>
+<tr>
+<td style="text-align:center">delete</td>
+<td style="text-align:center">删除堆顶元素</td>
+<td style="text-align:center">Ο(log  n)</td>
+</tr>
+<tr>
+<td style="text-align:center">heapify</td>
+<td style="text-align:center">使删除堆顶元素的堆再次成为堆</td>
+</tr>
+</tbody>
+</table>
+<h4 id="其他的堆操作"><a href="#其他的堆操作" class="headerlink" title="其他的堆操作"></a>其他的堆操作</h4><p>decreaseKey（降低关键字的值）<br>: decreaseKey(p,Δ)操作降低在位置p处的项的值，降低的幅度为正的量Δ。由于这可能破坏堆序性质，因此必须通过上滤对堆进行调整。该操作对系统挂历程序是有用的：系统管理程序能够使他们的程序以最高的优先级来运行。</p>
+<p>increaseKey（增加关键字的值）<br>: increaseKey(p,Δ)操作增加在位置p处的值，增值的幅度为正的量Δ。这可以用下滤来完成。许多调度程序自动降低正在过多地小号CPU时间的进程的优先级。</p>
+<p>为将元素X插入堆中，找到空闲位置，创建一个空穴，若满足堆序性（英文：heap order），则插入完成；否则将父节点元素装入空穴，删除该父节点元素，完成空穴上移。直至满足堆序性。这种策略叫做<strong>上滤</strong>（percolate up）。</p>
+<p>删除该节点元素后，队列最后一个元素必须移动到堆得某个位置，使得堆仍然满足堆序性质。这种向下替换元素的过程叫作<strong>下滤</strong>。</p>
+<h2 id="最小-最大堆的插入"><a href="#最小-最大堆的插入" class="headerlink" title="最小-最大堆的插入"></a>最小-最大堆的插入</h2><p>最小-最大堆：各层交替为最小层和最大层的堆。</p>
+<p>最大层：该层上的节点大于等于以其为根节点的子树上的所有节点。</p>
+<p>最小层：该层上的节点小于等于以其为根节点的子树上的所有节点。</p>
+<p>本文中，我们令堆的层数从1开始，节点编号也从1开始，即根节点为第1层，编号为1。</p>
+<p>最小最大对具有如下性质：</p>
+<p>对于任一节点，从该节点到叶节点的任意一条路径，</p>
+<p>（1）处于最小层的节点关键字逐渐增大；</p>
+<p>（2）处于最大层的节点关键字逐渐减小；</p>
+<p>（3）所有处于最大层的节点关键字大于所有处于最小层的节点的关键字。</p>
+<p>具体实现见下面，我们使用min_max_insert将item插入到堆heap中，插入前节点个数为*n。边界条件不进行详细解释。</p>
+<p>首先将item存入heap[*n+1]处，检查该元素的父节点是最大层还是最小层。</p>
+<p><strong>1）父节点是最小层，且该元素小于父节点</strong></p>
+<p>该节点是最后一个节点且处于最大层，本次插入只增加最大层节点数，最小层节点数不变；</p>
+<p>父节点是最小层的最后一个元素，是最小层节点中最大的节点；</p>
+<p>假设插入前最小层节点数为ms，最大层节点数为mt，则插入后最小层节点数不变，最小层节点数为mt+1。由推论可知，最小层节点是所有节点中最小的前ms个节点，父节点属于这ms个节点中最大的节点，现在新插入的节点小于父节点，就意味着，新节点将代替父节点成为最小的前ms个节点之一，因此父节点属于最大层节点。</p>
+<p>又由于父节点原先小于最小层，因此小于所有原先最大层的节点，现在转入最大层后，成为最大层节点中最小的节点，根据最小最大堆的性质可知，父节点必属于其所属路径上的最后一个节点。因此我们直接把父节点放入heap[*n+1]处即可。</p>
+<p>对于新加入节点，我们不需要改动其它路径，只需沿着heap[*n+1]到根节点的这条路径，找出所有最小层节点，将其放在某位置，使得该路径上节点顺序满足最小最大堆性质(1)即可。</p>
+<p><strong>2）父节点是最小层，且该元素大于父节点</strong></p>
+<p>同理，新加入节点只是改变了最大层节点数，不会改变最小层节点数。</p>
+<p>父节点是前ms个最小节点中最大的，新节点大于父节点，所以新节点不可能是前ms个最小节点，所以新节点属于最大层。</p>
+<p>因此，我们只需找出heap[*n+1]到根节点的这条路径上所有最大层节点，将新节点放入某个位置，其它节点依次后移，使得这些节点满足最小最大堆的性质(2).</p>
+<p><strong>3）父节点是最大层，且该元素大于父节点</strong></p>
+<p>此时，新加入的节点处于最小层，所以新节点的加入改变的是最小层节点数，不会改变最大层节点数。</p>
+<p>最大层节点是所有节点中最大的mt个节点，且父节点是则mt个节点中最小的节点，新节点大于父节点，就意味着父节点不可能再成为最大的前mt个节点，所以新节点代替父节点成为最大层节点。</p>
+<p>由于父节点大于所有最小层节点，所以父节点应该是出于该路径上的最后一个位置，因此直接将父节点放入heap[*n+1]即可。</p>
+<p>对于新节点，只需找出heap[*n+1]到根节点路径上的所有最大层节点，将新节点放入某位置，其它节点依次后移，使得该路径上所有最小层节点满足性质(1)即可。</p>
+<p><strong>4）父节点是最大层，且该元素小于父节点</strong></p>
+<p>最大层节点不变，仍是原先的mt个节点。</p>
+<p>新节点属于最小层节点，将新节点加入heap[<em>n+1]，找出heap[</em>n+1]到根节点路径上所有最小层节点，重新排序，满足性质（1）。</p>
+<h2 id="最小-最大堆的删除（最小元素）"><a href="#最小-最大堆的删除（最小元素）" class="headerlink" title="最小-最大堆的删除（最小元素）"></a>最小-最大堆的删除（最小元素）</h2><p>基本思想：最小元素就是最小-最大堆根节点对应的元素，所以每次都是直接删除该节点。如果还有剩余节点，接着要做的就是将剩余节点重新组织成一个新的最小-最大堆。</p>
+<p>最直接的方式就是对所有元素重新建堆，即把剩余元素逐个输入堆里，每输入一个元素调用一次函数min_max_insert，将已输入元素建成最小-最大堆，直到所有元素输入为止。但这么做显然效率是比较低的，原先的堆里所包含的信息被全部丢弃。直觉告诉我们，可以利用原先堆的信息，找到更简便的方法。</p>
+<p>我们现在将剩余节点全部保留在原位置，缺了一个根节点，于是，我们很自然的想到要找一个节点放入根节点位置，我们找到剩余节点中最小的节点放入根节点。</p>
+<p>因为最小最大堆的根节点是整个堆中最小的元素，所有首先在剩余节点中找到最小的节点，并将该节点放入根节点处；假设最小节点位置为k。</p>
+<p>现在k位置空了下来。另外，现在堆节点数少了一个，最后一个节点需要删除，也就意味着该节点存放的元素将没有位置存放，用item表示，我们很自然地想到，将item放在k位置。那么这么做究竟是否可行呢？通过分析，直接放在有些情况下会违反最小-最大堆，下面我们具体分析：</p>
+<p>（1）只剩一个节点，不需进行任何操作（该节点已被放入根节点）；</p>
+<p>（2）剩余两个或两个以上节点且k是最后一个节点，不需进行任何操作（该节点已被放入根节点）；</p>
+<p>（3）剩余两个或两个以上节点且k不是最后一个节点其它情况，则需要根据k可能出现的位置来进一步分析：</p>
+<p>首先，k只可能出现在第二层或第三层（否则不可能是最小节点）。</p>
+<p>如果出现在第二层，则有两种可能：左儿子、右儿子。</p>
+<p>如果是左儿子，说明左儿子没有子节点，右儿子也没有子节点（完全二叉树），我们只需要将item直接放入k节点处即可；</p>
+<p>如果是右儿子，则右儿子没有子节点，左儿子可能有子节点。不管左儿子有没有子节点，都只需将item放入k节点即可；</p>
+<p>如果出现在第三层，不管最后一个节点是不是k节点的后代，甚至不管k是否有后代，将item放入k节点后，都只会影响从根节点出发到到叶节点结束，且经过k节点的路径，其它路径仍满足最小最大堆的性质。</p>
+<p>我们由最小最大堆的性质和定义可知，检查一个堆是否为最小最大堆，只需检查其各条路径是否满足最小-最大堆性质即可。</p>
+<p>违反最小-最大堆有下面几种情况：</p>
+<p>item大于k的父节点：我们只需要item和父节点调换，此时其它路径仍不会违反，父节点仍是那些路径上的最大节点。接下来，只需把item（此时已变为原先k的父节点元素）放入k节点，但同样不能直接放入，插入方式与最开始将最后一个元素插入根节点一样。</p>
+<p>因为此时k是第三层，其父节点是第二层，为最大层，所以父节点应大于k节点；父节点处于第二层，大于以其为根的堆中所有元素。item既然大于父节点，且即将成为这个堆中的元素之一，因此item是新堆中最大的元素，应将其放在父节点的位置，且不管后面如何排，都不会改变，也就是说，我们接下来只需考虑以k节点及k节点的兄弟为根的子树。另外，以k节点的兄弟为根的子树在父节点和item交换后并不违反最小-最大堆性质，因此，我们只需考虑以k为根的子树。问题就变成了将新的item插入以k为根的子树的根节点（即k节点）。这和最先将最后一个元素插入根节点完全相同。</p>
+<p>item大于k的子节点：把item插入k节点，插入方式与最开始将最后一个元素插入根节点一样。</p>
+<p>通过上面的分析，item插入以k的父节点为根的堆中后，堆的最大元素仍然是k的父节点，所以父节点不变，因此，k的兄弟节点所在的路径或子堆也未违反最小-最大堆性质，不需改变，所以我们就只考虑将item插入以k为根的堆中的根节点（即k节点）即可。</p>
+<p>总结起来就是三种情况：</p>
+<p>a)     k处于第二层：</p>
+<p>b)    k处于第三层且item大于k的父节点；</p>
+<p>c)    k处于第三层且item大于k的子节点；</p>
+<p>结合边界条件，我们很容易进行实现。</p>
+<hr>
+<h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a><strong>参考资料</strong></h5><p>1.<a href="https://zh.wikipedia.org/wiki/%E5%A0%86_(%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84" target="_blank" rel="noopener">中文维基百科——堆 (数据结构)</a>)</p>
+<p>2.数据结构与算法分析——C++描述版(第四版)</p>
+<p>3.<a href="http://blog.sina.com.cn/s/blog_70ec9a6f01012l0v.html" target="_blank" rel="noopener">最小-最大堆的插入和删除</a></p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+        <a class="post-tag button" href="/tags/堆/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>堆</a>
+        
+        <a class="post-tag button" href="/tags/数据结构/" style="background: #47aaff;" rel="tag"><i class="fas fa-tags"></i>数据结构</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/06/20/Queue/" rel="next" title="队列"><i class="fas fa-angle-left"></i><span class="nav-title">队列</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/06/22/Hash_Function/" rel="prev" title="散列方法"><span class="nav-title">散列方法</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.jpg" alt="yojiaku">
+  
+  <h1 class="author-name">yojiaku</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">43</a></div>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#逻辑定义"><span class="toc-text">逻辑定义</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#堆的结构"><span class="toc-text">堆的结构</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#堆序性质"><span class="toc-text">堆序性质</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#堆操作"><span class="toc-text">堆操作</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-4"><a class="list-group-item toc-link" href="#其他的堆操作"><span class="toc-text">其他的堆操作</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#最小-最大堆的插入"><span class="toc-text">最小-最大堆的插入</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#最小-最大堆的删除（最小元素）"><span class="toc-text">最小-最大堆的删除（最小元素）</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:2329082643@qq.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/3286626050/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">yojiaku</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

@@ -191,7 +191,7 @@
   
   <article class="index-article card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/17/BucketSort/">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/30/Fibonacci_Search/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="yojiaku">
         <meta itemprop="description" content="">
@@ -203,12 +203,12 @@
     </div>
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/06/17/BucketSort/" itemprop="url">分块查找（Blocking Search）</a>
+        <a class="post-title-link post-title-link-external" href="/2018/06/30/Fibonacci_Search/" itemprop="url">斐波那契查找</a>
       </h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-17T22:05:35+08:00">2018-06-17 22:05:35</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-30T21:45:29+08:00">2018-06-30 21:45:29</time></span>
         </span>
         
         
@@ -217,55 +217,7 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <p>桶排序 (Bucket sort)或所谓的箱排序，是一个排序算法，工作的原理是将数组分到有限数量的桶子里。每个桶子再个别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排序）。桶排序是鸽巢排序的一种归纳结果。当要被排序的数组内的数值是均匀分配的时候，桶排序使用线性时间（Θ（n））。但桶排序并不是 比较排序，他不受到 O(n log n) 下限的影响。<br>桶排序以下列程序进行
-      
-    </main>
-    <footer class="post-footer">
-      
-      <div class="post-tags">
-        
-        
-        
-        
-        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
-        
-        <a class="post-tag button" href="/tags/排序/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>排序</a>
-        
-      </div>
-      
-    </footer>
-  </article>
-  
-  <article class="index-article card animate" itemscope itemtype="http://schema.org/Article">
-    <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/16/Blocking_Search/">
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="name" content="yojiaku">
-        <meta itemprop="description" content="">
-        <meta itemprop="image" content="/images/myavatar.jpg">
-      </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="YOJIAKU">
-      </span>
-    </div>
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/06/16/Blocking_Search/" itemprop="url">分块查找（Blocking Search）</a>
-      </h1>
-      <div class="post-meta">
-        
-        <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-16T22:51:35+08:00">2018-06-16 22:51:35</time></span>
-        </span>
-        
-        
-        
-      </div>
-    </header>
-    <main class="post-main" itemprop="articleBody">
-      
-      <p>分块查找，又称索引顺序查找。它是一种性能介于顺序查找和二分查找之间的改进方法。它是为了找到 <strong>二分查找的高效但需要顺序存储</strong> 和 <strong>顺序查找可以解决元素动态变化但效率低下</strong> 之间更平衡的方法。</p>
-<h2 id="1-基本思想"><a href="#1-基本思想" class="headerlink" title="1.基本思想
+      <p>斐波那契查找就是在二分查找的基础上根据斐波那契数列进行分割的。在斐波那契数列找一个等于略大于查找表中元素个数的数F[n]，将原查找表扩展为长度为F<a href="如果要补充元素，则补充重复最后一个元素，直到满足F[n]个元素">n</a>，完成后进行斐波那契分割，即F[n]个元素分割为前半部分F[n-1]个元素，后半部分F[n-2]个元素，找出要查找的元素在那一部分并递归，直到找到。</p
       
     </main>
     <footer class="post-footer">
@@ -286,7 +238,7 @@
   
   <article class="index-article card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/15/Prim_Minimum_Spanning_Tree/">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/29/Interpolation_Search/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="yojiaku">
         <meta itemprop="description" content="">
@@ -298,12 +250,12 @@
     </div>
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/06/15/Prim_Minimum_Spanning_Tree/" itemprop="url">Prim最小生成树算法</a>
+        <a class="post-title-link post-title-link-external" href="/2018/06/29/Interpolation_Search/" itemprop="url">插值查找</a>
       </h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-15T20:34:05+08:00">2018-06-15 20:34:05</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-29T21:03:24+08:00">2018-06-29 21:03:24</time></span>
         </span>
         
         
@@ -312,8 +264,8 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <p>Prim最小生成树算法搜索到的边子集所构成的树中，不但包括了连通图里的所有顶点，且其所有边的权值之和亦为最小。该算法于1930年由捷克数学家沃伊捷赫·亚尔尼克发现；并在1957年由美国计算机科学家罗伯特·普里姆独立发现；1959年，艾兹格·迪科斯彻再次发现了该算法。因此，在某些场合，普里姆算法又被称为DJP算法、亚尔尼克算法或普里姆－亚尔尼克算法。</p>
-<h2 id="描述"><a hr
+      <p>我们很容易理解折半查找（二分查找），那么在折半查找原理的基础上我们会进一步思考，为什么一定要折半呢，而不是折四分之一，或者其他呢？比如说我们要搜索的值更接近最后一个元素，为什么还要从中间开始搜索，而不是从较后面的一部分开始搜索呢？因此研究学者们在折半查找的基础上进行了改进，以便更迅速准确的找到要搜素的目标值。</p>
+<h1 id="定义"><a href="#定义" class="head
       
     </main>
     <footer class="post-footer">
@@ -325,7 +277,7 @@
         
         <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
         
-        <a class="post-tag button" href="/tags/最小生成树/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>最小生成树</a>
+        <a class="post-tag button" href="/tags/查找/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>查找</a>
         
       </div>
       
@@ -334,7 +286,7 @@
   
   <article class="index-article card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/10/blockchainPage1/">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/28/Eight_queens/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="yojiaku">
         <meta itemprop="description" content="">
@@ -346,12 +298,12 @@
     </div>
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/06/10/blockchainPage1/" itemprop="url">区块链的技术原理和意义（论文祥读）</a>
+        <a class="post-title-link post-title-link-external" href="/2018/06/28/Eight_queens/" itemprop="url">八皇后问题</a>
       </h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-10T23:52:06+08:00">2018-06-10 23:52:06</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-28T22:03:45+08:00">2018-06-28 22:03:45</time></span>
         </span>
         
         
@@ -360,8 +312,7 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <h3 id="文章重点"><a href="#文章重点" class="headerlink" title="文章重点"></a>文章重点</h3><p>区块链技术原理、数据结构、运行机制、区块链的分叉</p>
-<h3 id="区块链技术原理"><a href="#区块链技术原理" class="headerlink" title="区块链技术原理"></a>区块链技术原理</h3><block
+      <p>八皇后问题，是一个古老而著名的问题，是回溯算法的典型案例。该问题是国际西洋棋棋手马克斯·贝瑟尔于1848年提出：在8×8格的国际象棋上摆放八个皇后，使其不能互相攻击，即任意两个皇后都不能处于同一行、同一列或同一斜线上，问有多少种摆法。 高斯认为有76种方案。1854年在柏林的象棋杂志上不同的作者发表了40种不同的解，后来有人用图论的方法解出92种结果。计算机发明后，有多种计算机语言可以解决此
       
     </main>
     <footer class="post-footer">
@@ -371,9 +322,9 @@
         
         
         
-        <a class="post-tag button" href="/tags/区块链/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>区块链</a>
+        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
         
-        <a class="post-tag button" href="/tags/论文/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>论文</a>
+        <a class="post-tag button" href="/tags/应用/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>应用</a>
         
       </div>
       
@@ -382,7 +333,7 @@
   
   <article class="index-article card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/03/28/BinarySearch/">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/27/LZW_Flow_Chart/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="yojiaku">
         <meta itemprop="description" content="">
@@ -394,12 +345,12 @@
     </div>
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/03/28/BinarySearch/" itemprop="url">Algorithm-二维数组中的查找-BinarySearch</a>
+        <a class="post-title-link post-title-link-external" href="/2018/06/27/LZW_Flow_Chart/" itemprop="url">LZW压缩算法</a>
       </h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-28T13:17:34+08:00">2018-03-28 13:17:34</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-27T22:34:45+08:00">2018-06-27 22:34:45</time></span>
         </span>
         
         
@@ -408,8 +359,10 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <h1 id="二维数组中的查找"><a href="#二维数组中的查找" class="headerlink" title="二维数组中的查找"></a>二维数组中的查找</h1><blockquote>
-<p>题目描述<br>在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</
+      <p>LZW压缩算法是一种压缩方法，由Lemple-Ziv-Welch 三人共同创造，用他们的名字命名。</p>
+<h1 id="算法概念"><a href="#算法概念" class="headerlink" title="算法概念"></a>算法概念</h1><ul>
+<li>LZW逐个地输入源数据，使用贪婪分析算法来形成词典的每一个条目。</li>
+<li>每一次都力图从输入串中分解出已经识
       
     </main>
     <footer class="post-footer">
@@ -419,7 +372,9 @@
         
         
         
-        <a class="post-tag button" href="/tags/BinarySearch-Algorithm/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>BinarySearch Algorithm</a>
+        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+        <a class="post-tag button" href="/tags/压缩/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>压缩</a>
         
       </div>
       
@@ -428,7 +383,7 @@
   
   <article class="index-article card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/03/26/JS逻辑或运算符/">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/26/Conflict_Resolution/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="yojiaku">
         <meta itemprop="description" content="">
@@ -440,12 +395,12 @@
     </div>
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/03/26/JS逻辑或运算符/" itemprop="url">JS逻辑或运算符</a>
+        <a class="post-title-link post-title-link-external" href="/2018/06/26/Conflict_Resolution/" itemprop="url">哈希方法</a>
       </h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:59:12+08:00">2018-03-26 23:59:12</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-26T22:32:34+08:00">2018-06-26 22:32:34</time></span>
         </span>
         
         
@@ -454,9 +409,7 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <h1 id="JavaScript逻辑或运算符"><a href="#JavaScript逻辑或运算符" class="headerlink" title="JavaScript逻辑或运算符"></a>JavaScript逻辑或运算符</h1><p>JScript 使用下面的规则来把非 Boolean 值转换为 Boolean 值： </p>
-<ul>
-<li>所有对象都被认为是 true。 <
+      <h1 id="链接法（开散列方法）"><a href="#链接法（开散列方法）" class="headerlink" title="链接法（开散列方法）"></a>链接法（开散列方法）</h1><p>拉链法解决冲突的做法是：将所有关键字为同义词的结点链接在同一个单链表中。若选定的散列表长度为m，则可将散列表定义为一个由m个头指针组成的指针数 组T[0..m-1]。凡是散列地址为i的结点，均插入
       
     </main>
     <footer class="post-footer">
@@ -466,7 +419,9 @@
         
         
         
-        <a class="post-tag button" href="/tags/JavaScript/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>JavaScript</a>
+        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+        <a class="post-tag button" href="/tags/哈希/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>哈希</a>
         
       </div>
       
@@ -475,7 +430,7 @@
   
   <article class="index-article card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/03/26/JS逻辑与运算符/">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/25/Construction_Method/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="yojiaku">
         <meta itemprop="description" content="">
@@ -487,12 +442,12 @@
     </div>
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/03/26/JS逻辑与运算符/" itemprop="url">JS逻辑与运算符</a>
+        <a class="post-title-link post-title-link-external" href="/2018/06/25/Construction_Method/" itemprop="url">哈希方法</a>
       </h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:58:01+08:00">2018-03-26 23:58:01</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-25T22:28:23+08:00">2018-06-25 22:28:23</time></span>
         </span>
         
         
@@ -501,7 +456,7 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <h1 id="JavaScript逻辑“与”运算符"><a href="#JavaScript逻辑“与”运算符" class="headerlink" title="JavaScript逻辑“与”运算符"></a>JavaScript逻辑“与”运算符</h1><p>当且仅当两个表达式的值都等于 True 时， result 才是 True。如果任一表达式的值等于 False， 则 result 
+      <h1 id="直接定址法"><a href="#直接定址法" class="headerlink" title="直接定址法"></a>直接定址法</h1><p>直接定址法是以数据元素关键字k本身或它的线性函数作为它的哈希地址，即：H（k）=k或 H（k）=a×k+b ； (其中a,b为常数)<br><code>例</code> 有一个人口统计表，记录了从1岁到100岁的人口数目，其中年龄作为关
       
     </main>
     <footer class="post-footer">
@@ -511,7 +466,9 @@
         
         
         
-        <a class="post-tag button" href="/tags/JavaScript/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>JavaScript</a>
+        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+        <a class="post-tag button" href="/tags/哈希/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>哈希</a>
         
       </div>
       
@@ -520,7 +477,7 @@
   
   <article class="index-article card animate" itemscope itemtype="http://schema.org/Article">
     <div class="post-block">
-      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/03/26/JS-Global/">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/24/Graph/">
       <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
         <meta itemprop="name" content="yojiaku">
         <meta itemprop="description" content="">
@@ -532,12 +489,12 @@
     </div>
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link post-title-link-external" href="/2018/03/26/JS-Global/" itemprop="url">JS-Global</a>
+        <a class="post-title-link post-title-link-external" href="/2018/06/24/Graph/" itemprop="url">图</a>
       </h1>
       <div class="post-meta">
         
         <span class="post-date">
-          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-03-26T23:52:06+08:00">2018-03-26 23:52:06</time></span>
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-24T22:26:17+08:00">2018-06-24 22:26:17</time></span>
         </span>
         
         
@@ -546,7 +503,8 @@
     </header>
     <main class="post-main" itemprop="articleBody">
       
-      <h1 id="JavaScript-Global方法"><a href="#JavaScript-Global方法" class="headerlink" title="JavaScript Global方法"></a>JavaScript Global方法</h1><h2 id="isNaN方法"><a href="#isNaN方法" class="headerlink" title="isN
+      <h1 id="图的定义"><a href="#图的定义" class="headerlink" title="图的定义"></a>图的定义</h1><p>图是由顶点的有穷非空集合和顶点之间边的集合组成。图可以用G = ( V , E )来表示，V表示顶点集合，E表示边集合，E中的边由A中的一对顶点连接而成。顶点总数为|V|，边的总数为|E|。</p>
+<h1 id="图的分类"><a href=
       
     </main>
     <footer class="post-footer">
@@ -556,7 +514,57 @@
         
         
         
-        <a class="post-tag button" href="/tags/JavaScript/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>JavaScript</a>
+        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+        <a class="post-tag button" href="/tags/图/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>图</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  <article class="index-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/23/Hash/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="yojiaku">
+        <meta itemprop="description" content="">
+        <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link post-title-link-external" href="/2018/06/23/Hash/" itemprop="url">散列</a>
+      </h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-23T22:24:15+08:00">2018-06-23 22:24:15</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      
+      <p>通过一些计算，即散列函数（Hash function），把关键码值映射到数组中的特定位置来访问记录，这个过程称为散列。通过散列函数得到的固定长度的输出值就是散列值，一般关键码范围中的值比散列值多，有些不同关键码会被映射到相同的散列值的槽里，这种现象称为冲突（碰撞）。</p>
+<h1 id="散列的用途"><a href="#散列的用途" class="headerlink" title="散
+      
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+        <a class="post-tag button" href="/tags/散列/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>散列</a>
         
       </div>
       
@@ -565,7 +573,7 @@
   
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a>
   </nav>
   
   
@@ -595,7 +603,7 @@
     
     <div class="archives-count">
       <div class="site-count-title">归档</div>
-      <div><a href="/archives/">30</a></div>
+      <div><a href="/archives/">43</a></div>
     </div>
     
     

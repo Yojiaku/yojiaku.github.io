@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="YOJIAKU" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>LZW压缩算法 | YOJIAKU</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">YOJIAKU</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/27/LZW_Flow_Chart/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">LZW压缩算法</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-27T22:34:45+08:00">2018-06-27 22:34:45</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>LZW压缩算法是一种压缩方法，由Lemple-Ziv-Welch 三人共同创造，用他们的名字命名。</p>
+<h1 id="算法概念"><a href="#算法概念" class="headerlink" title="算法概念"></a>算法概念</h1><ul>
+<li>LZW逐个地输入源数据，使用贪婪分析算法来形成词典的每一个条目。</li>
+<li>每一次都力图从输入串中分解出已经识别的最长的字串，即把已在词典中出现的最长字串作为前缀Prefix，然后加上下一个输入字符C，组成新的扩展字符串Prefix.C。</li>
+<li>这个新的字符串是否要加到词典中，要看词典中是否存有和它相同的字符串。如有，那么这个字符串就变成新的前缀，继续输入新的字符，否则就把这个字符串加到词典中生成一个新的词条，并给它分配一个代码。<h1 id="LZW算法编码流程"><a href="#LZW算法编码流程" class="headerlink" title="LZW算法编码流程"></a>LZW算法编码流程</h1>1)初始化：将所有的单字符串放入词典<br>2)读第一个输入字符给前缀串P<br>3)Step: 读下一个输入字符C;<br>　　　if  没有这样的C(输入已穷尽)：<br>　　　 　 码字(P) 输出；结束。<br>　　　if  P+C 已存在于词典中：<br>　　　　P:=P+C；repeat Step；<br>　　　else P+C不在于词典中:<br>　　　　　P+C加进词典；<br>　　　　　码字(P) 输出；<br>　　　      P:=C；repeat Step.<br>##流程图<br><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/yuanJiaLi/pic/LZW_Flow_Chart.png" alt=""></li>
+</ul>
+<h1 id="LZW算法译码流程"><a href="#LZW算法译码流程" class="headerlink" title="LZW算法译码流程"></a>LZW算法译码流程</h1><p>1）初始化词典<br>2）初始化P=空<br>3）CW=读入码字<br>4）CW是否在词典中<br>      是：P+CW对应的串中的第一个字符(C1)放入词典（注：如果已经在串表中了就无需放入）<br>      否：P+P中的第一个字符(P1)放入词典<br>5）：P:=CW对应的串<br>6）：输出CW对应的串<br>7）：是否还有下一个码字，如果有跳转到步骤3，否则结束</p>
+<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/yuanJiaLi/pic/LZW_Flow_Chart_Decoding.png" alt=""></p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><h2 id="C"><a href="#C" class="headerlink" title="C"></a>C</h2><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">#include &lt;stdint.h&gt;</span><br><span class="line">#include &lt;unistd.h&gt;</span><br><span class="line">#include &lt;fcntl.h&gt;</span><br><span class="line">#include &lt;sys/types.h&gt;</span><br><span class="line">#include &lt;sys/stat.h&gt;</span><br><span class="line"> </span><br><span class="line">/* -------- aux stuff ---------- */</span><br><span class="line">void* mem_alloc(size_t item_size, size_t n_item)</span><br><span class="line">&#123;</span><br><span class="line">  size_t *x = calloc(1, sizeof(size_t)*2 + n_item * item_size);</span><br><span class="line">  x[0] = item_size;</span><br><span class="line">  x[1] = n_item;</span><br><span class="line">  return x + 2;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">void* mem_extend(void *m, size_t new_n)</span><br><span class="line">&#123;</span><br><span class="line">  size_t *x = (size_t*)m - 2;</span><br><span class="line">  x = realloc(x, sizeof(size_t) * 2 + *x * new_n);</span><br><span class="line">  if (new_n &gt; x[1])</span><br><span class="line">    memset((char*)(x + 2) + x[0] * x[1], 0, x[0] * (new_n - x[1]));</span><br><span class="line">  x[1] = new_n;</span><br><span class="line">  return x + 2;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">inline void _clear(void *m)</span><br><span class="line">&#123;</span><br><span class="line">  size_t *x = (size_t*)m - 2;</span><br><span class="line">  memset(m, 0, x[0] * x[1]);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">#define _new(type, n) mem_alloc(sizeof(type), n)</span><br><span class="line">#define _del(m)   &#123; free((size_t*)(m) - 2); m = 0; &#125;</span><br><span class="line">#define _len(m)   *((size_t*)m - 1)</span><br><span class="line">#define _setsize(m, n)  m = mem_extend(m, n)</span><br><span class="line">#define _extend(m)  m = mem_extend(m, _len(m) * 2)</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">/* ----------- LZW stuff -------------- */</span><br><span class="line">typedef uint8_t byte;</span><br><span class="line">typedef uint16_t ushort;</span><br><span class="line"> </span><br><span class="line">#define M_CLR 256 /* clear table marker */</span><br><span class="line">#define M_EOD 257 /* end-of-data marker */</span><br><span class="line">#define M_NEW 258 /* new code index */</span><br><span class="line"> </span><br><span class="line">/* encode and decode dictionary structures.</span><br><span class="line">   for encoding, entry at code index is a list of indices that follow current one,</span><br><span class="line">   i.e. if code 97 is &apos;a&apos;, code 387 is &apos;ab&apos;, and code 1022 is &apos;abc&apos;,</span><br><span class="line">   then dict[97].next[&apos;b&apos;] = 387, dict[387].next[&apos;c&apos;] = 1022, etc. */</span><br><span class="line">typedef struct &#123;</span><br><span class="line">  ushort next[256];</span><br><span class="line">&#125; lzw_enc_t;</span><br><span class="line"> </span><br><span class="line">/* for decoding, dictionary contains index of whatever prefix index plus trailing</span><br><span class="line">   byte.  i.e. like previous example,</span><br><span class="line">    dict[1022] = &#123; c: &apos;c&apos;, prev: 387 &#125;,</span><br><span class="line">    dict[387]  = &#123; c: &apos;b&apos;, prev: 97 &#125;,</span><br><span class="line">    dict[97]   = &#123; c: &apos;a&apos;, prev: 0 &#125;</span><br><span class="line">   the &quot;back&quot; element is used for temporarily chaining indices when resolving</span><br><span class="line">   a code to bytes</span><br><span class="line"> */</span><br><span class="line">typedef struct &#123;</span><br><span class="line">  ushort prev, back;</span><br><span class="line">  byte c;</span><br><span class="line">&#125; lzw_dec_t;</span><br><span class="line"> </span><br><span class="line">byte* lzw_encode(byte *in, int max_bits)</span><br><span class="line">&#123;</span><br><span class="line">  int len = _len(in), bits = 9, next_shift = 512;</span><br><span class="line">  ushort code, c, nc, next_code = M_NEW;</span><br><span class="line">  lzw_enc_t *d = _new(lzw_enc_t, 512);</span><br><span class="line"> </span><br><span class="line">  if (max_bits &gt; 15) max_bits = 15;</span><br><span class="line">  if (max_bits &lt; 9 ) max_bits = 12;</span><br><span class="line"> </span><br><span class="line">  byte *out = _new(ushort, 4);</span><br><span class="line">  int out_len = 0, o_bits = 0;</span><br><span class="line">  uint32_t tmp = 0;</span><br><span class="line"> </span><br><span class="line">  inline void write_bits(ushort x) &#123;</span><br><span class="line">    tmp = (tmp &lt;&lt; bits) | x;</span><br><span class="line">    o_bits += bits;</span><br><span class="line">    if (_len(out) &lt;= out_len) _extend(out);</span><br><span class="line">    while (o_bits &gt;= 8) &#123;</span><br><span class="line">      o_bits -= 8;</span><br><span class="line">      out[out_len++] = tmp &gt;&gt; o_bits;</span><br><span class="line">      tmp &amp;= (1 &lt;&lt; o_bits) - 1;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  //write_bits(M_CLR);</span><br><span class="line">  for (code = *(in++); --len; ) &#123;</span><br><span class="line">    c = *(in++);</span><br><span class="line">    if ((nc = d[code].next[c]))</span><br><span class="line">      code = nc;</span><br><span class="line">    else &#123;</span><br><span class="line">      write_bits(code);</span><br><span class="line">      nc = d[code].next[c] = next_code++;</span><br><span class="line">      code = c;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    /* next new code would be too long for current table */</span><br><span class="line">    if (next_code == next_shift) &#123;</span><br><span class="line">      /* either reset table back to 9 bits */</span><br><span class="line">      if (++bits &gt; max_bits) &#123;</span><br><span class="line">        /* table clear marker must occur before bit reset */</span><br><span class="line">        write_bits(M_CLR);</span><br><span class="line"> </span><br><span class="line">        bits = 9;</span><br><span class="line">        next_shift = 512;</span><br><span class="line">        next_code = M_NEW;</span><br><span class="line">        _clear(d);</span><br><span class="line">      &#125; else  /* or extend table */</span><br><span class="line">        _setsize(d, next_shift *= 2);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  write_bits(code);</span><br><span class="line">  write_bits(M_EOD);</span><br><span class="line">  if (tmp) write_bits(tmp);</span><br><span class="line"> </span><br><span class="line">  _del(d);</span><br><span class="line"> </span><br><span class="line">  _setsize(out, out_len);</span><br><span class="line">  return out;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">byte* lzw_decode(byte *in)</span><br><span class="line">&#123;</span><br><span class="line">  byte *out = _new(byte, 4);</span><br><span class="line">  int out_len = 0;</span><br><span class="line"> </span><br><span class="line">  inline void write_out(byte c)</span><br><span class="line">  &#123;</span><br><span class="line">    while (out_len &gt;= _len(out)) _extend(out);</span><br><span class="line">    out[out_len++] = c;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  lzw_dec_t *d = _new(lzw_dec_t, 512);</span><br><span class="line">  int len, j, next_shift = 512, bits = 9, n_bits = 0;</span><br><span class="line">  ushort code, c, t, next_code = M_NEW;</span><br><span class="line"> </span><br><span class="line">  uint32_t tmp = 0;</span><br><span class="line">  inline void get_code() &#123;</span><br><span class="line">    while(n_bits &lt; bits) &#123;</span><br><span class="line">      if (len &gt; 0) &#123;</span><br><span class="line">        len --;</span><br><span class="line">        tmp = (tmp &lt;&lt; 8) | *(in++);</span><br><span class="line">        n_bits += 8;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        tmp = tmp &lt;&lt; (bits - n_bits);</span><br><span class="line">        n_bits = bits;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    n_bits -= bits;</span><br><span class="line">    code = tmp &gt;&gt; n_bits;</span><br><span class="line">    tmp &amp;= (1 &lt;&lt; n_bits) - 1;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  inline void clear_table() &#123;</span><br><span class="line">    _clear(d);</span><br><span class="line">    for (j = 0; j &lt; 256; j++) d[j].c = j;</span><br><span class="line">    next_code = M_NEW;</span><br><span class="line">    next_shift = 512;</span><br><span class="line">    bits = 9;</span><br><span class="line">  &#125;;</span><br><span class="line"> </span><br><span class="line">  clear_table(); /* in case encoded bits didn&apos;t start with M_CLR */</span><br><span class="line">  for (len = _len(in); len;) &#123;</span><br><span class="line">    get_code();</span><br><span class="line">    if (code == M_EOD) break;</span><br><span class="line">    if (code == M_CLR) &#123;</span><br><span class="line">      clear_table();</span><br><span class="line">      continue;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    if (code &gt;= next_code) &#123;</span><br><span class="line">      fprintf(stderr, &quot;Bad sequence\n&quot;);</span><br><span class="line">      _del(out);</span><br><span class="line">      goto bail;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    d[next_code].prev = c = code;</span><br><span class="line">    while (c &gt; 255) &#123;</span><br><span class="line">      t = d[c].prev; d[t].back = c; c = t;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    d[next_code - 1].c = c;</span><br><span class="line"> </span><br><span class="line">    while (d[c].back) &#123;</span><br><span class="line">      write_out(d[c].c);</span><br><span class="line">      t = d[c].back; d[c].back = 0; c = t;</span><br><span class="line">    &#125;</span><br><span class="line">    write_out(d[c].c);</span><br><span class="line"> </span><br><span class="line">    if (++next_code &gt;= next_shift) &#123;</span><br><span class="line">      if (++bits &gt; 16) &#123;</span><br><span class="line">        /* if input was correct, we&apos;d have hit M_CLR before this */</span><br><span class="line">        fprintf(stderr, &quot;Too many bits\n&quot;);</span><br><span class="line">        _del(out);</span><br><span class="line">        goto bail;</span><br><span class="line">      &#125;</span><br><span class="line">      _setsize(d, next_shift *= 2);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  /* might be ok, so just whine, don&apos;t be drastic */</span><br><span class="line">  if (code != M_EOD) fputs(&quot;Bits did not end in EOD\n&quot;, stderr);</span><br><span class="line"> </span><br><span class="line">  _setsize(out, out_len);</span><br><span class="line">bail: _del(d);</span><br><span class="line">  return out;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  int i, fd = open(&quot;unixdict.txt&quot;, O_RDONLY);</span><br><span class="line"> </span><br><span class="line">  if (fd == -1) &#123;</span><br><span class="line">    fprintf(stderr, &quot;Can&apos;t read file\n&quot;);</span><br><span class="line">    return 1;</span><br><span class="line">  &#125;;</span><br><span class="line"> </span><br><span class="line">  struct stat st;</span><br><span class="line">  fstat(fd, &amp;st);</span><br><span class="line"> </span><br><span class="line">  byte *in = _new(char, st.st_size);</span><br><span class="line">  read(fd, in, st.st_size);</span><br><span class="line">  _setsize(in, st.st_size);</span><br><span class="line">  close(fd);</span><br><span class="line"> </span><br><span class="line">  printf(&quot;input size:   %d\n&quot;, _len(in));</span><br><span class="line"> </span><br><span class="line">  byte *enc = lzw_encode(in, 9);</span><br><span class="line">  printf(&quot;encoded size: %d\n&quot;, _len(enc));</span><br><span class="line"> </span><br><span class="line">  byte *dec = lzw_decode(enc);</span><br><span class="line">  printf(&quot;decoded size: %d\n&quot;, _len(dec));</span><br><span class="line"> </span><br><span class="line">  for (i = 0; i &lt; _len(dec); i++)</span><br><span class="line">    if (dec[i] != in[i]) &#123;</span><br><span class="line">      printf(&quot;bad decode at %d\n&quot;, i);</span><br><span class="line">      break;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">  if (i == _len(dec)) printf(&quot;Decoded ok\n&quot;);</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  _del(in);</span><br><span class="line">  _del(enc);</span><br><span class="line">  _del(dec);</span><br><span class="line"> </span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h3><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line"> </span><br><span class="line">// Compress a string to a list of output symbols.</span><br><span class="line">// The result will be written to the output iterator</span><br><span class="line">// starting at &quot;result&quot;; the final iterator is returned.</span><br><span class="line">template &lt;typename Iterator&gt;</span><br><span class="line">Iterator compress(const std::string &amp;uncompressed, Iterator result) &#123;</span><br><span class="line">  // Build the dictionary.</span><br><span class="line">  int dictSize = 256;</span><br><span class="line">  std::map&lt;std::string,int&gt; dictionary;</span><br><span class="line">  for (int i = 0; i &lt; 256; i++)</span><br><span class="line">    dictionary[std::string(1, i)] = i;</span><br><span class="line"> </span><br><span class="line">  std::string w;</span><br><span class="line">  for (std::string::const_iterator it = uncompressed.begin();</span><br><span class="line">       it != uncompressed.end(); ++it) &#123;</span><br><span class="line">    char c = *it;</span><br><span class="line">    std::string wc = w + c;</span><br><span class="line">    if (dictionary.count(wc))</span><br><span class="line">      w = wc;</span><br><span class="line">    else &#123;</span><br><span class="line">      *result++ = dictionary[w];</span><br><span class="line">      // Add wc to the dictionary.</span><br><span class="line">      dictionary[wc] = dictSize++;</span><br><span class="line">      w = std::string(1, c);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  // Output the code for w.</span><br><span class="line">  if (!w.empty())</span><br><span class="line">    *result++ = dictionary[w];</span><br><span class="line">  return result;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">// Decompress a list of output ks to a string.</span><br><span class="line">// &quot;begin&quot; and &quot;end&quot; must form a valid range of ints</span><br><span class="line">template &lt;typename Iterator&gt;</span><br><span class="line">std::string decompress(Iterator begin, Iterator end) &#123;</span><br><span class="line">  // Build the dictionary.</span><br><span class="line">  int dictSize = 256;</span><br><span class="line">  std::map&lt;int,std::string&gt; dictionary;</span><br><span class="line">  for (int i = 0; i &lt; 256; i++)</span><br><span class="line">    dictionary[i] = std::string(1, i);</span><br><span class="line"> </span><br><span class="line">  std::string w(1, *begin++);</span><br><span class="line">  std::string result = w;</span><br><span class="line">  std::string entry;</span><br><span class="line">  for ( ; begin != end; begin++) &#123;</span><br><span class="line">    int k = *begin;</span><br><span class="line">    if (dictionary.count(k))</span><br><span class="line">      entry = dictionary[k];</span><br><span class="line">    else if (k == dictSize)</span><br><span class="line">      entry = w + w[0];</span><br><span class="line">    else</span><br><span class="line">      throw &quot;Bad compressed k&quot;;</span><br><span class="line"> </span><br><span class="line">    result += entry;</span><br><span class="line"> </span><br><span class="line">    // Add w+entry[0] to the dictionary.</span><br><span class="line">    dictionary[dictSize++] = w + entry[0];</span><br><span class="line"> </span><br><span class="line">    w = entry;</span><br><span class="line">  &#125;</span><br><span class="line">  return result;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;iterator&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line"> </span><br><span class="line">int main() &#123;</span><br><span class="line">  std::vector&lt;int&gt; compressed;</span><br><span class="line">  compress(&quot;TOBEORNOTTOBEORTOBEORNOT&quot;, std::back_inserter(compressed));</span><br><span class="line">  copy(compressed.begin(), compressed.end(), std::ostream_iterator&lt;int&gt;(std::cout, &quot;, &quot;));</span><br><span class="line">  std::cout &lt;&lt; std::endl;</span><br><span class="line">  std::string decompressed = decompress(compressed.begin(), compressed.end());</span><br><span class="line">  std::cout &lt;&lt; decompressed &lt;&lt; std::endl;</span><br><span class="line"> </span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*;</span><br><span class="line"> </span><br><span class="line">public class LZW &#123;</span><br><span class="line">    /** Compress a string to a list of output symbols. */</span><br><span class="line">    public static List&lt;Integer&gt; compress(String uncompressed) &#123;</span><br><span class="line">        // Build the dictionary.</span><br><span class="line">        int dictSize = 256;</span><br><span class="line">        Map&lt;String,Integer&gt; dictionary = new HashMap&lt;String,Integer&gt;();</span><br><span class="line">        for (int i = 0; i &lt; 256; i++)</span><br><span class="line">            dictionary.put(&quot;&quot; + (char)i, i);</span><br><span class="line"> </span><br><span class="line">        String w = &quot;&quot;;</span><br><span class="line">        List&lt;Integer&gt; result = new ArrayList&lt;Integer&gt;();</span><br><span class="line">        for (char c : uncompressed.toCharArray()) &#123;</span><br><span class="line">            String wc = w + c;</span><br><span class="line">            if (dictionary.containsKey(wc))</span><br><span class="line">                w = wc;</span><br><span class="line">            else &#123;</span><br><span class="line">                result.add(dictionary.get(w));</span><br><span class="line">                // Add wc to the dictionary.</span><br><span class="line">                dictionary.put(wc, dictSize++);</span><br><span class="line">                w = &quot;&quot; + c;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        // Output the code for w.</span><br><span class="line">        if (!w.equals(&quot;&quot;))</span><br><span class="line">            result.add(dictionary.get(w));</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    /** Decompress a list of output ks to a string. */</span><br><span class="line">    public static String decompress(List&lt;Integer&gt; compressed) &#123;</span><br><span class="line">        // Build the dictionary.</span><br><span class="line">        int dictSize = 256;</span><br><span class="line">        Map&lt;Integer,String&gt; dictionary = new HashMap&lt;Integer,String&gt;();</span><br><span class="line">        for (int i = 0; i &lt; 256; i++)</span><br><span class="line">            dictionary.put(i, &quot;&quot; + (char)i);</span><br><span class="line"> </span><br><span class="line">        String w = &quot;&quot; + (char)(int)compressed.remove(0);</span><br><span class="line">        StringBuffer result = new StringBuffer(w);</span><br><span class="line">        for (int k : compressed) &#123;</span><br><span class="line">            String entry;</span><br><span class="line">            if (dictionary.containsKey(k))</span><br><span class="line">                entry = dictionary.get(k);</span><br><span class="line">            else if (k == dictSize)</span><br><span class="line">                entry = w + w.charAt(0);</span><br><span class="line">            else</span><br><span class="line">                throw new IllegalArgumentException(&quot;Bad compressed k: &quot; + k);</span><br><span class="line"> </span><br><span class="line">            result.append(entry);</span><br><span class="line"> </span><br><span class="line">            // Add w+entry[0] to the dictionary.</span><br><span class="line">            dictionary.put(dictSize++, w + entry.charAt(0));</span><br><span class="line"> </span><br><span class="line">            w = entry;</span><br><span class="line">        &#125;</span><br><span class="line">        return result.toString();</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        List&lt;Integer&gt; compressed = compress(&quot;TOBEORNOTTOBEORTOBEORNOT&quot;);</span><br><span class="line">        System.out.println(compressed);</span><br><span class="line">        String decompressed = decompress(compressed);</span><br><span class="line">        System.out.println(decompressed);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<blockquote>
+<p>[84, 79, 66, 69, 79, 82, 78, 79, 84, 256, 258, 260, 265, 259, 261, 263]<br>TOBEORNOTTOBEORTOBEORNOT</p>
+</blockquote>
+<hr>
+<h5 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a><strong>参考资料</strong></h5><ol>
+<li>多媒体技术基础（第三版）</li>
+</ol>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+        <a class="post-tag button" href="/tags/压缩/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>压缩</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/06/26/Conflict_Resolution/" rel="next" title="哈希方法"><i class="fas fa-angle-left"></i><span class="nav-title">哈希方法</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/06/28/Eight_queens/" rel="prev" title="八皇后问题"><span class="nav-title">八皇后问题</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.jpg" alt="yojiaku">
+  
+  <h1 class="author-name">yojiaku</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">43</a></div>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#算法概念"><span class="toc-text">算法概念</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#LZW算法编码流程"><span class="toc-text">LZW算法编码流程</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#LZW算法译码流程"><span class="toc-text">LZW算法译码流程</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#流程图"><span class="toc-text">流程图</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#代码"><span class="toc-text">代码</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#C"><span class="toc-text">C</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#C-1"><span class="toc-text">C++</span></a></li><li class="toc-item toc-level-3"><a class="list-group-item toc-link" href="#Java"><span class="toc-text">Java</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-5"><a class="list-group-item toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:2329082643@qq.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/3286626050/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">yojiaku</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>

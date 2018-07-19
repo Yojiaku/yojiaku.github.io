@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#33363b">
+    <meta name="msapplication-TileColor" content="#33363b">
+    
+    
+    
+    <meta name="keywords" content="Life, ARIA, Hexo">
+    
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicons/android-chrome-192x192.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    
+    
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#33363b">
+    
+    
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    
+    
+    <meta name="msapplication-config" content="/favicons/browserconfig.xml">
+    
+    
+    <link rel="alternate" href="/atom.xml" title="YOJIAKU" type="application/atom+xml" />
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/favicons/favicon.ico">
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    
+    <link rel="stylesheet" type="text/css" href="/css/sidebar.css">
+    
+    
+<link rel="stylesheet" type="text/css" href="/css/page.css">
+<link rel="stylesheet" type="text/css" href="/css/post.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/css/atom-one-dark.css">
+    <link rel="stylesheet" type="text/css" href="/css/lightgallery.min.css">
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script defer type="text/javascript" src="/js/util.js"></script>
+    <script defer type="text/javascript" src="/js/scrollspy.js"></script>
+    <script defer type="text/javascript" src="/js/fontawesome-all.min.js"></script>
+    <script defer type="text/javascript" src="/js/lightgallery.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-fullscreen.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-hash.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-pager.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-thumbnail.min.js"></script>
+    <script defer type="text/javascript" src="/js/lg-zoom.min.js"></script>
+    
+    
+    <script defer type="text/javascript" src="/js/search.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      var searchPath = "search.xml";
+      if (searchPath.length === 0) {
+        searchPath = "search.xml";
+      }
+      var path = "/" + searchPath;
+      searchFunc(path, "search-input", "search-result");
+    });
+    </script>
+    
+    
+    <script defer type="text/javascript" src="/js/index.js"></script>
+    
+    <script defer type="text/javascript" src="/js/custom.js"></script>
+    <title>深度优先搜索 | YOJIAKU</title>
+  </head>
+  <body itemscope itemtype="http://schema.org/WebPage" lang="zh_CN"  data-spy="scroll" data-target=".list-group">
+    
+<header id="header" class="header" style="background: #33363b;">
+  <div class="container">
+    <div class="header-container">
+      <div class="header-title">
+        <h1 class="title"><a href="/">YOJIAKU</a></h1>
+        <h2 class="subtitle"></h2>
+      </div>
+      <div class="logo">
+        <img src="/images/ARIA_logo.png" alt="logo">
+      </div>
+    </div>
+    
+<nav id="nav" class="nav">
+  <a id="nav-toggle" class="nav-toggle"><i class="fas fa-bars"></i></a>
+  <ul id="menu">
+    
+    <li><a href="/">首页</a></li>
+    
+    <li><a href="/archives/">归档</a></li>
+    
+  </ul>
+</nav>
+
+
+  </div>
+</header>
+
+
+    <main id="main" class="main">
+      <div class="container">
+        <div class="main-container">
+          <div class="content">
+            
+<div id="post" class="post">
+  
+  <article class="post-article card animate" itemscope itemtype="http://schema.org/Article">
+    <div class="post-block">
+      <link itemprop="mainEntityOfPage" href="https://yojiaku.github.io/2018/06/18/DFS/">
+      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+       <meta itemprop="name" content="yojiaku">
+       <meta itemprop="description" content="">
+       <meta itemprop="image" content="/images/myavatar.jpg">
+      </span>
+      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+       <meta itemprop="name" content="YOJIAKU">
+      </span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">深度优先搜索</h1>
+      <div class="post-meta">
+        
+        <span class="post-date">
+          <i class="far fa-calendar-plus"></i><span><time title="post-date" itemprop="dateCreated datePublished" datetime="2018-06-18T22:00:35+08:00">2018-06-18 22:00:35</time></span>
+        </span>
+        
+        
+        
+      </div>
+    </header>
+    <main class="post-main" itemprop="articleBody">
+      <p>深度优先搜索属于图算法的一种，英文缩写为DFS即Depth First Search。其过程简要来说是对每一个可能的分支路径深入到不能再深入为止，而且每个节点只能访问一次。深度优先搜索的搜索过程类似树的先序遍历，也叫回溯法。</p>
+<h1 id="深度优先搜索算法的基本思想"><a href="#深度优先搜索算法的基本思想" class="headerlink" title="深度优先搜索算法的基本思想"></a>深度优先搜索算法的基本思想</h1><p>如算法名称那样，深度优先搜索所遵循的搜索策略是尽可能“深”地搜索树。在深度优先搜索中，对于当前发现的结点，如果它还存在以此结点为起点而未探测到的边，就沿此边继续搜索下去，若当结点的所有边都己被探寻过。将回溯到当前结点的父结点，继续上述的搜索过程直到所有结点都被探寻为止。</p>
+<p>深度优先搜索在树的遍历中也称作树的先序遍历。对于树而言，深度优先搜索的思路可以描述为：</p>
+<ol>
+<li>将根结点置为出发结点。</li>
+<li>访问该出发结点。</li>
+<li>依次将出发结点的子结点置为新的出发结点．进行深度优先遍历(执行2）。</li>
+<li>退回上一层的出发结点。</li>
+</ol>
+<p>深度优先搜索的具体编程可用递归过程或模拟递归来实现。他们各有各的优缺点。递归形式的程序符合思维习惯。编写起来较容易。但由于递归过程的调用借助较慢的系统栈空间传递参数和存放局部变量，故降低了执行效率。模拟递归使用数组存放堆栈数据，在管理指针和每层选择决策上不如递归容易编程。但一旦熟悉了程序框架，调试起来要比递归程序方便，由于数组一般使用静态内存。访问速度较快，执行效率也较高。</p>
+<p>为了在遍历过程中区分顶点是否被访问，往往可以引入一个数组，如以mark[1..n]作为标记。数组的元素取0和1，初值为0。当节点被访问时，与节点相应得数组元素为1，每次访问节点时，都得先检查它的标记值，找0值得节点访问，并深度继续。深度大的先得到扩展，具有“后产生先扩展”的特点，因此在数据结构上采用堆栈来存储（新节点入栈，节点不能扩展时，栈定出栈）。</p>
+<h1 id="深度优先搜索算法的特点"><a href="#深度优先搜索算法的特点" class="headerlink" title="深度优先搜索算法的特点"></a>深度优先搜索算法的特点</h1><ol>
+<li>由于深度搜索过程中有保留已扩展节点，则不致于重复构造不必要的子树系统。</li>
+<li>深度优先搜索并不是以最快的方式搜索到解，因为若目标节点在第i层的某处，必须等到该节点左边所有子树系统搜索完毕之后，才会访问到该节点，因此，搜索效率还取决于目标节点在解答树中的位置。</li>
+<li>由于要存储所有已被扩展节点，所以需要的内存空间往往比较大。</li>
+<li>深度优先搜索所求得的是仅仅是目前第一条从起点至目标节点的树枝路径，而不是所有通向目标节点的树枝节点的路径中最短的路径。</li>
+<li>适用范围：适用于求解一条从初始节点至目标节点的可能路径的试题。若要存储所有解答路径，可以再建立其它空间，用来存储每个已求得的解。若要求得最优解，必须记下达到目前目标的路径和相应的路程值，并与前面已记录的值进行比较，保留其中最优解，等全部搜索完成后，把保留的最优解输出。</li>
+</ol>
+<h1 id="算法描述"><a href="#算法描述" class="headerlink" title="算法描述"></a>算法描述</h1><h2 id="算法数据结构描述："><a href="#算法数据结构描述：" class="headerlink" title="算法数据结构描述："></a>算法数据结构描述：</h2><p>深度优先搜索时，最关键的是结点扩展（OPEN）表的生成，它是一个栈，用于存放目前搜索到待扩展的结点，当结点到达深度界限或结点不能再扩展时，栈顶结点出栈，放入CLOSE表（存放已扩展节点），继续生成新的结点入栈OPEN表，直到搜索到目标结点或OPEN栈空为止。具体算法如下：</p>
+<ul>
+<li>把起始结点S放到非扩展结点OPEN表中(后进先出的堆栈)，如果此结点为一目标结点，则得到一个解。</li>
+<li>如果OPEN为一空表，则搜索失败退出。</li>
+<li>取OPEN表最前面(栈顶)的结点，并把它放入CLOSED的扩展结点表中，并冠以顺序编号n。</li>
+<li>如果结点n的深度等于最大深度，则转向第二步。</li>
+<li>否则，扩展结点n，产生其全部子结点，把它们放入OPEN表的前头(入栈)，并配上指向的n返回指针；如果没有后裔，则转向第二步。</li>
+<li>如果后继结点中有任一个为目标结点，则求得一个解，成功退出；否则，转向第二步。</li>
+</ul>
+<h2 id="算法程序描述："><a href="#算法程序描述：" class="headerlink" title="算法程序描述："></a>算法程序描述：</h2><figure class="hljs highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">递归过程为：</span><br><span class="line"> Procedure DEF-GO(step)</span><br><span class="line"> for i:=1 to max do</span><br><span class="line">   if 子结点符合条件 then</span><br><span class="line">     产生新的子结点入栈;</span><br><span class="line">       if 子结点是目标结点 then 输出</span><br><span class="line">         else DEF-GO(step+1);</span><br><span class="line">           栈顶结点出栈;</span><br><span class="line">        endif;</span><br><span class="line">    enddo;</span><br><span class="line"></span><br><span class="line">主程序为：</span><br><span class="line"> Program DFS;</span><br><span class="line">   初始状态入栈;</span><br><span class="line">   DEF-GO(1);</span><br></pre></td></tr></table></figure>
+<h1 id="深度优先搜索算法与广度优先搜索算法的对比图解"><a href="#深度优先搜索算法与广度优先搜索算法的对比图解" class="headerlink" title="深度优先搜索算法与广度优先搜索算法的对比图解"></a>深度优先搜索算法与广度优先搜索算法的对比图解</h1><h2 id="无向图的深度优先搜索"><a href="#无向图的深度优先搜索" class="headerlink" title="无向图的深度优先搜索"></a>无向图的深度优先搜索</h2><p>下面以无向图为例，来对深度优先搜索进行演示。</p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/DFS/pic/dfs-1.jpg" alt="image"></p>
+<p>对上面的图G1进行深度优先遍历，从顶点A开始。</p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/DFS/pic/dfs-2.jpg" alt="image"></p>
+<ul>
+<li>第1步：访问A。</li>
+<li>第2步：访问(A的邻接点)C。在第1步访问A之后，接下来应该访问的是A的邻接点，即”C,D,F”中的一个。但在本文的实现中，顶点ABCDEFG是按照顺序存储，C在”D和F”的前面，因此，先访问C。</li>
+<li>第3步：访问(C的邻接点)B。在第2步访问C之后，接下来应该访问C的邻接点，即”B和D”中一个(A已经被访问过，就不算在内)。而由于B在D之前，先访问B。</li>
+<li>第4步：访问(C的邻接点)D。在第3步访问了C的邻接点B之后，B没有未被访问的邻接点；因此，返回到访问C的另一个邻接点D。</li>
+<li>第5步：访问(A的邻接点)F。前面已经访问了A，并且访问完了”A的邻接点B的所有邻接点(包括递归的邻接点在内)”；因此，此时返回到访问A的另一个邻接点F。</li>
+<li>第6步：访问(F的邻接点)G。</li>
+<li>第7步：访问(G的邻接点)E。</li>
+</ul>
+<p>因此访问顺序是：<strong>A -&gt; C -&gt; B -&gt; D -&gt; F -&gt; G -&gt; E</strong></p>
+<h2 id="有向图的深度优先搜索"><a href="#有向图的深度优先搜索" class="headerlink" title="有向图的深度优先搜索"></a>有向图的深度优先搜索</h2><p>下面以有向图为例，来对深度优先搜索进行演示。</p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/DFS/pic/dfs-3.jpg" alt="image"></p>
+<p>对上面的图G2进行深度优先遍历，从顶点A开始。</p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/DFS/pic/dfs-4.jpg" alt="image"></p>
+<ul>
+<li>第1步：访问A。</li>
+<li>第2步：访问B。在访问了A之后，接下来应该访问的是A的出边的另一个顶点，即顶点B。</li>
+<li>第3步：访问C。在访问了B之后，接下来应该访问的是B的出边的另一个顶点，即顶点C,E,F。在本文实现的图中，顶点ABCDEFG按照顺序存储，因此先访问C。</li>
+<li>第4步：访问E。接下来访问C的出边的另一个顶点，即顶点E。</li>
+<li>第5步：访问D。接下来访问E的出边的另一个顶点，即顶点B,D。顶点B已经被访问过，因此访问顶点D。</li>
+<li>第6步：访问F。接下应该回溯”访问A的出边的另一个顶点F”。</li>
+<li>第7步：访问G。</li>
+</ul>
+<p>因此访问顺序是：<strong>A -&gt; B -&gt; C -&gt; E -&gt; D -&gt; F -&gt; G</strong></p>
+<h2 id="无向图的广度优先搜索"><a href="#无向图的广度优先搜索" class="headerlink" title="无向图的广度优先搜索"></a>无向图的广度优先搜索</h2><p>以无向图为例，来对广度优先搜索进行演示。还是图G1为例进行说明。</p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/DFS/pic/dfs-1.jpg" alt="image"></p>
+<p>对上面的图G1进行深度优先遍历，从顶点A开始。</p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/DFS/pic/dfs-5.jpg" alt="image"></p>
+<ul>
+<li>第1步：访问A。</li>
+<li>第2步：依次访问C,D,F。在访问了A之后，接下来访问A的邻接点。前面已经说过，在本文实现中，顶点ABCDEFG按照顺序存储的，C在”D和F”的前面，因此，先访问C。再访问完C之后，再依次访问D,F。</li>
+<li>第3步：依次访问B,G。在第2步访问完C,D,F之后，再依次访问它们的邻接点。首先访问C的邻接点B，再访问F的邻接点G。</li>
+<li>第4步：访问E。在第3步访问完B,G之后，再依次访问它们的邻接点。只有G有邻接点E，因此访问G的邻接点E。</li>
+</ul>
+<p>因此访问顺序是：<strong>A -&gt; C -&gt; D -&gt; F -&gt; B -&gt; G -&gt; E</strong></p>
+<h2 id="有向图的广度优先搜索"><a href="#有向图的广度优先搜索" class="headerlink" title="有向图的广度优先搜索"></a>有向图的广度优先搜索</h2><p>以有向图为例，来对广度优先搜索进行演示。还是以图G2为例进行说明。</p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/DFS/pic/dfs-3.jpg" alt="image"></p>
+<p>对上面的图G2进行深度优先遍历，从顶点A开始。</p>
+<p><img src="https://gitee.com/yojiaku/visualAlgorithm/raw/master/algorithmDocument/zhuHuiXia/doc/DFS/pic/dfs-6.jpg" alt="image"></p>
+<ul>
+<li>第1步：访问A。</li>
+<li>第2步：访问B。</li>
+<li>第3步：依次访问C,E,F。在访问了B之后，接下来访问B的出边的另一个顶点，即C,E,F。前面已经说过，在本文实现中，顶点ABCDEFG按照顺序存储的，因此会先访问C，再依次访问E,F。</li>
+<li>第4步：依次访问D,G。在访问完C,E,F之后，再依次访问它们的出边的另一个顶点。还是按照C,E,F的顺序访问，C的已经全部访问过了，那么就只剩下E,F；先访问E的邻接点D，再访问F的邻接点G。</li>
+</ul>
+<p>因此访问顺序是：<strong>A -&gt; B -&gt; C -&gt; E -&gt; F -&gt; D -&gt; G</strong></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>DFS 的时间和空间分析根据其应用领域而有所不同。在理论计算机科学中，DFS通常用于遍历整个图，并且其时间Θ（| V | + | E |），[4]在图的大小上是线性的。在这些应用程序中，它还使用空间O（|V|）在最坏的情况下存储当前搜索路径上的顶点堆栈以及已经访问的顶点集合。因此，在这种情况下，时间和空间范围与广度优先搜索相同，并且选择使用这两种算法中的哪一种更少取决于它们的复杂性，更多取决于两种算法产生的顶点排序的不同性质。</p>
+<p>对于与特定域相关的DFS应用，例如在人工智能或网络爬行中搜索解决方案，要遍历的图通常太大而无法完整访问或无限（DFS可能会因无终止而受到影响）。在这种情况下，搜索只能进行到有限的深度;由于资源有限（如内存或磁盘空间），通常不会使用数据结构来跟踪所有以前访问过的顶点的集合。当搜索被执行到有限的深度时，时间仍然是线性扩展的顶点和边的数量（尽管这个数与整个图的大小不一样，因为一些顶点可能被搜索多次，其他的根本没有），但是这种DFS变体的空间复杂度仅与深度限制成正比，因此比使用广度优先搜索搜索相同深度所需的空间小得多。对于这样的应用程序，DFS也更适合用于选择可能分支的启发式方法。如果事先并不知道适当的深度限制，迭代加深深度优先搜索重复应用DFS以增加一系列限制。在人工智能分析模式中，在分支因子大于1的情况下，由于每层级的节点数量的几何增长，迭代加深使得运行时间仅增加一个常数因子，其中正确的深度限制是已知的。</p>
+<p>DFS也可用于收集图形节点的样本。然而，不完整的DFS，类似于不完整的BFS，被偏压向高的节点度。</p>
+
+    </main>
+    <footer class="post-footer">
+      
+      <div class="post-tags">
+        
+        
+        
+        
+        <a class="post-tag button" href="/tags/算法/" style="background: #fc6423;" rel="tag"><i class="fas fa-tags"></i>算法</a>
+        
+        <a class="post-tag button" href="/tags/搜索/" style="background: #a3bb54;" rel="tag"><i class="fas fa-tags"></i>搜索</a>
+        
+      </div>
+      
+    </footer>
+  </article>
+  
+  
+  <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+      
+      <a href="/2018/06/17/BucketSort/" rel="next" title="桶排序 (Bucket sort)"><i class="fas fa-angle-left"></i><span class="nav-title">桶排序 (Bucket sort)</span></a>
+      
+    </div>
+    <div class="post-nav-prev post-nav-item">
+      
+      <a href="/2018/06/19/BFS/" rel="prev" title="广度优先搜索算法"><span class="nav-title">广度优先搜索算法</span><i class="fas fa-angle-right"></i></a>
+      
+    </div>
+  </div>
+  
+  
+</div>
+
+          </div>
+          
+          
+          
+<aside class="sidebar" id="sidebar" style="background: url(/images/sidebar_background.png);">
+  
+  <div class="search">
+    <div class="form-group">
+      <i class="fas fa-search"></i><input type="search" id="search-input" name="q" results="0" placeholder="搜索" class="form-control"/>
+    </div>
+  </div>
+  <div class="search-result-box" id="search-result"></div>
+  
+  
+<div class="info sidebar-item" id="info">
+  
+  <img class="author-avatar" src="/images/myavatar.jpg" alt="yojiaku">
+  
+  <h1 class="author-name">yojiaku</h1>
+  <h2 class="author-description"> </h2>
+  <div class="site-count">
+    
+    <div class="archives-count">
+      <div class="site-count-title">归档</div>
+      <div><a href="/archives/">43</a></div>
+    </div>
+    
+    
+    
+  </div>
+  
+  <div class="rss">
+    <a class="rss-link button sidebar-item" href="/atom.xml"><i class="fas fa-rss"></i>RSS</a>
+  </div>
+  
+</div>
+
+
+  <div class="sidebar-sticky">
+    
+    
+
+
+
+
+<hr>
+<div class="post-toc sidebar-item" id="toc-div">
+  <div><i class="fas fa-list-ol"></i>文章目录</div>
+  <div class="post-toc-content"><ol class="list-group toc"><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#深度优先搜索算法的基本思想"><span class="toc-text">深度优先搜索算法的基本思想</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#深度优先搜索算法的特点"><span class="toc-text">深度优先搜索算法的特点</span></a></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#算法描述"><span class="toc-text">算法描述</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#算法数据结构描述："><span class="toc-text">算法数据结构描述：</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#算法程序描述："><span class="toc-text">算法程序描述：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#深度优先搜索算法与广度优先搜索算法的对比图解"><span class="toc-text">深度优先搜索算法与广度优先搜索算法的对比图解</span></a><ol class="list-group toc-child"><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#无向图的深度优先搜索"><span class="toc-text">无向图的深度优先搜索</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#有向图的深度优先搜索"><span class="toc-text">有向图的深度优先搜索</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#无向图的广度优先搜索"><span class="toc-text">无向图的广度优先搜索</span></a></li><li class="toc-item toc-level-2"><a class="list-group-item toc-link" href="#有向图的广度优先搜索"><span class="toc-text">有向图的广度优先搜索</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="list-group-item toc-link" href="#总结"><span class="toc-text">总结</span></a></li></ol></div>
+</div>
+
+
+
+    
+    
+    
+<hr>
+<div class="social-link sidebar-item">
+  <div><i class="far fa-address-card"></i>社交链接</p></div>
+  <ul>
+    
+    <li><i class="fas fa-envelope"></i><a href="mailto:2329082643@qq.com" target="_blank">E-Mail</a></li>
+    
+    <li><i class="fab fa-github"></i><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+    <li><i class="fab fa-weibo"></i><a href="https://weibo.com/3286626050/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank">Weibo</a></li>
+    
+  </ul>
+</div>
+
+
+    
+    
+    
+<hr>
+<div class="blogroll sidebar-item">
+  <div><i class="fas fa-link"></i>友情链接</div>
+  <ul>
+    
+    <li><a href="https://github.com/Yojiaku" target="_blank">GitHub</a></li>
+    
+  </ul>
+</div>
+
+
+    
+  </div>
+</aside>
+
+
+          
+        </div>
+      </div>
+    </main>
+    
+<footer id="footer" class="footer" style="background: #33363b;">
+  <div class="container">
+    <div class="back-to-top">
+      <a id="back-to-top"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <div class="footer-container">
+      <div class="footer-left">
+        <div class="copyright">
+          <span class="author">yojiaku</span><span class="year"><i class="far fa-copyright"></i>2018</span>
+        </div>
+        
+      </div>
+      <div class="footer-right">
+        <div class="custom-info">
+          
+          托管于<i class="fab fa-github-alt"></i><a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
+          
+        </div>
+        <div class="powered-by">
+          由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动 | 主题 <a href="https://github.com/AlynxZhou/hexo-theme-aria/" target="_blank">ARIA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  </body>
+</html>
